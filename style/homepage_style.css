@@ -1,0 +1,199 @@
+body{
+    --header-height : 50px;
+    --footer-height : 70px;
+    margin: var(--header-height) 0 0 var(--footer-height);
+    margin: auto;
+    font-family: sans-serif;
+    
+}
+
+
+.header{
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    border: none;
+    display: flex;
+    background: #33628C;
+}
+
+
+@media (min-width: 700px) {
+
+    .nav-link{
+        display: flex;
+        height: 30px;
+        align-items: center;
+        color: #000000;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 10px 15px;
+        background: transform 0.2s;
+        margin-left:auto;
+        
+    }
+    
+    .nav-link span{
+        padding: 10px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    
+    
+    .container{
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 100vw;
+        height: 93.3vh;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.623), rgba(78, 138, 207, 0.5)),
+        url('../Asserts/home.png');
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .item1 {
+        margin-top: 80px;
+        font-size: 50px;
+        font-weight: 600;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:#0b0977c0;
+    }
+    
+    .item1 span{
+        color: rgba(255, 159, 14, 0.699);
+    }
+    
+    .item2 {
+        margin-top: 230px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+        font-size: 25px;
+        font-weight: 400;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #33628c9d;
+        height: 260px;
+    }
+    
+    .item2 i{
+        padding: 10px;
+        color: #2d2d2d;
+    }
+    
+    .card1, .card2, .card3{
+        padding-top: 20px;
+        width: 300px;
+        height: 150px; 
+        color: #2c2c2c;  
+    }
+
+    .open-img{
+        margin-left: 50px;
+        width: fit-content;
+    }
+
+    
+    .date{
+        padding-top: 15px;
+        padding-left: 25px;
+        color: #000000;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    
+
+}
+
+@media (max-width: 699px) {
+    
+    .nav-link{
+        display: flex;
+        height: 30px;
+        align-items: center;
+        color: #000000;
+        text-decoration: none;
+        padding: 10px 5px;
+        background: transform 0.2s;
+        margin-left: auto;
+    }
+    
+    .nav-link span{
+        padding: 5px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    
+    
+    .container{
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px;
+        object-fit:scale-down;
+        background-size: cover;
+        background-position: center;
+        background-image: linear-gradient(to bottom, rgba(122, 122, 122, 0.486), rgba(61, 119, 185, 0.5)),
+        url('../Asserts/home.png');
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .item1 {
+        margin-top: 100px;
+        font-size: 30px;
+        font-weight: 500;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:#0b0977c0;
+    }
+    
+    .item1 span{
+        color: rgba(255, 159, 14, 0.699);
+    }
+    
+    .item2 {
+        margin-top: 100px;
+        display: grid;
+        justify-content: center;
+        justify-content: space-evenly;
+        font-size: 15px;
+        font-weight: 300;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #33628c9d;
+        height: 200px;
+    }
+    
+    .item2 i{
+        padding: 10px;
+        color: #2d2d2d;
+    }
+    
+    .card1, .card2, .card3{
+        padding-top: 20px;
+        color: #2c2c2c;  
+    }
+
+    .card3{
+        padding-bottom: 50px;
+    }
+
+
+    .date{
+        visibility: hidden;
+        display: none;
+    }
+    
+    
+}
+    
+
+
+
