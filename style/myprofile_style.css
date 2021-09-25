@@ -1,0 +1,340 @@
+
+@media (min-width: 800px) {
+
+    .item1 { grid-area: one; }
+    .item2 { grid-area: two; }
+
+    .container {
+        padding: 30px;
+        display: grid;
+        grid-template-areas:
+        'one two two '  ;   
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 12px;
+        background: #eeeeee;
+        height: 100vh;
+    }
+
+    .containerN {
+        padding: 30px;
+        display: grid;
+        grid-template-areas:
+        'one two two '   ;  
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 12px;
+        background-color: #eeeeee;
+        margin-left: 244px;
+    }
+
+    .container >div{
+        text-align: center;
+        font-size: 18px;
+        padding: 20px;
+        font-weight: 500;
+        background-color: #ffffff;
+    }
+
+    .item1, .item2{
+        margin-top: 50px;
+    }
+
+    .img-card{
+        margin: auto;
+        margin-top: 50px;
+        justify-content: center;
+        width: 250px;
+        height: 250px;
+    }
+
+    #photo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    #file{
+        justify-content:space-evenly;
+        display: none;
+
+    }
+
+    #uploadBtn{
+        position: relative;
+        top: 20px;
+        height: 25px;
+        width: 50px;
+        padding: 10px;
+        color: white;
+        background-color: teal;
+        font-size: 11pt;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .data-form{
+        justify-content: center;
+        margin-top: 50px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .data-form label{
+        text-align: left;
+        width: 180px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .input-fields{
+        width: 220px; 
+        padding: 7px; 
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12pt;  
+        border-radius: 5px;
+        border: 1px solid #c0bfbf;
+    }
+
+    .button{
+        position: absolute;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: teal;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 799px) {
+    
+    .item1 { grid-area: one; }
+    .item2 { grid-area: two; }
+
+    .container {
+        padding: 30px;
+        display: grid;
+        grid-template-areas:
+        'one'
+        'two'  ;   
+        background: #eeeeee;
+        justify-content: center;
+    }
+
+
+    .container >div{
+        text-align: center;
+        font-size: 16px;
+        padding: 20px;
+        font-weight: 500;
+        background-color: #ffffff;
+    }
+
+    .item1, .item2{
+        margin-top: 50px;
+    }
+
+    .item1{
+        height: 300px;
+    }
+
+    .item2{
+        height: 500px;
+    }
+
+    .img-card{
+        margin: auto;
+        margin-top: 20px;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+    }
+
+    #photo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    #file{
+        justify-content:space-evenly;
+        display: none;
+
+    }
+
+    #uploadBtn{
+        position: relative;
+        top: 20px;
+        height: 25px;
+        width: 50px;
+        padding: 10px;
+        color: white;
+        background-color: teal;
+        font-size: 11pt;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .data-form{
+        justify-content: center;
+        margin-top: 30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .data-form label{
+        text-align: left;
+        width: 170px;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 12pt;
+    }
+
+    .input-fields{
+        width: 210px; 
+        padding: 7px; 
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11pt;  
+        border-radius: 5px;
+        border: 1px solid #c0bfbf;
+    }
+
+    .button{
+        position: relative;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: teal;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        justify-content: center;
+    }
+    
+    
+}
+
+@media (max-width: 499px) {
+    
+    .item1 { grid-area: one; }
+    .item2 { grid-area: two; }
+
+    .container {
+        padding: 30px;
+        display: grid;
+        grid-template-areas:
+        'one'
+        'two'  ;   
+        background: #ffffff;
+        justify-content: center;
+    }
+
+
+    .container >div{
+        text-align: center;
+        font-size: 15px;
+        padding: 20px;
+        font-weight: 500;
+        background-color: #ffffff;
+    }
+
+    .item1{
+        margin-top: 50px;
+        height: 300px;
+    }
+    
+    .item2{
+        margin-top: 20px;
+        height: 600px;
+    }
+
+    .img-card{
+        margin: auto;
+        margin-top: 20px;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+    }
+
+    #photo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    #file{
+        justify-content:space-evenly;
+        display: none;
+
+    }
+
+    #uploadBtn{
+        position: relative;
+        top: 20px;
+        height: 25px;
+        width: 50px;
+        padding: 10px;
+        color: white;
+        background-color: teal;
+        font-size: 11pt;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .data-form{
+        justify-content: center;
+        margin-top: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .data-form label{
+        text-align: left;
+        width: 170px;
+        display: block;
+        font-size: 12pt;
+        margin-bottom: 5px;
+    }
+
+    .input-fields{
+        width: 210px; 
+        padding: 7px; 
+        margin-bottom: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11pt;  
+        border-radius: 5px;
+        border: 1px solid #c0bfbf;
+    }
+
+    .button{
+        position: relative;
+        margin-top: 20px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: teal;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        justify-content: center;
+    }
+    
+    
+}
+    
+
+
+
