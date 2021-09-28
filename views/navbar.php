@@ -1,236 +1,72 @@
-body{
-    --header-height : 50px;
-    --footer-height : 70px;
-    margin: var(--header-height) 0 0 var(--footer-height);
-    margin: auto;
-    font-family: sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/navbar_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
 
-.preload *{
-    transition: none !important;
-}
+<body>
+    <header class="header">
+        
+        <button class="header-button" id="btnNav" type="button">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
+        <img src="../Asserts/logo.jpg" alt="" class="open-img">
+        <label for="" class="date"> <?php 
+                                        $day;
+                                        if(date("d") == 1){
+                                            $day = "st ";
+                                        }elseif(date("d") == 2){
+                                            $day = "nd ";
+                                        }elseif(date("d") == 3){
+                                            $day = "rd ";
+                                        }else{
+                                            $day = "th ";
+                                        }
 
+                                        echo "Today, " . date("d") . $day .date("M") . " " . date("Y") . "<br>"; 
+                                        
+                                    ?>
+        </label>
+        <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg" "></i></a></div>
+        <span class="user-login">UserName</span>
+        <img  class="img-rounded-circle" src="../Asserts/avator.jpg" alt="">
+        
+    </header>
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="#" class="nav-link nav-link-active">
+                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fa fa-bars fa-lg"><span>My Profile</span></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fa fa-bars fa-lg"><span>My Profile</span></i>
+            </a>
+        </div> 
+        <div class="nav-overlay"></div>    
+    </nav>
+    <main>
+        
+    </main>
 
-.header , .nav-bar{
-    margin: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    border: none;
-    display: flex;
-}
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            const nav = document.querySelector(".nav");
 
-.header{
-    background: #33628C;
-}
+            document.querySelector("#btnNav").addEventListener("click" , () =>{
+                nav.classList.add("nav-open");
+            });
 
-.footer{
-    margin: auto;
-    position: fixed;
-    margin-top: 608px;
-    width: 100%;
-    height: var(--footer-height);
-    border: none;
-    display: flex;
-    background: #C2D3E2;
-    font-size: 14px; 
-       
-}
-
-.footer-data{
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-content: center;
-    color: #716D6D;
-    text-align: center;
-}
-
-.nav-bar{
-    background: #33628C;
-}
-
-.header-button{
-    width: var(--header-height);
-    height: var(--header-height);
-    flex-shrink: 0;
-    background: #33628C;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.date{
-    padding-top: 15px;
-    padding-left: 25px;
-    color: #000000;
-    font-family:sans-serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 18px;
-}
-
-.open-img{
-    width: 195px;
-}
-
-.nav-links{
-    margin-top: 50px;
-    padding-top: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    height: 100vh;
-    width: 244px;
-    background: #33628C;
-    transform: translateX(-244px);
-    transition: transform 0.3s;
-    
-}
-
-
-.nav-links .nav-bar .nav-header-button{
-    width: var(--header-height);
-    height: var(--header-height);
-    flex-shrink: 0;
-    background: none;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.nav-links .nav-bar .close-img{
-    width: fit-content;
-    height: 50px;
-}
-
-.nav-open .nav-links{
-    transform: translateX(0);
-}
-
-.nav-link{
-    display: flex;
-    height: 30px;
-    align-items: center;
-    color: #ffffff;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 12px 15px;
-    background: transform 0.2s;
-    
-}
-
-
-.nav-links > a i::before{
-    padding-right: 25px; 
-}
-
-.nav-links span{
-    font-size: 16px;
-    font-family:sans-serif;
-}
-
-.nav-link-active{
-    color: white; 
-    background: rgba(255, 253, 253, 0.13);  
-}
-
-.nav-link:hover{
-    background: rgba(255, 253, 253, 0.363);
-}
-
-
-.nav-overlay{
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100vh;
-    visibility: hidden;
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-
-.nav-open .nav-overlay{
-    visibility: visible;
-    opacity: 1;
-}
-
-
-@media (min-width: 800px) {
-
-
-    .notification {
-        position: absolute;
-        right: 25%;
-        padding-top: 15px;
-        margin-right: 10px;
-    }
-    
-    .notification i{
-        color: #000000;
-    }
-    
-    .user-login{
-        position: absolute;
-        right: 16%;
-        padding-top: 15px;
-        display: flex;
-    }
-    
-    .img-rounded-circle{
-        position: absolute;
-        right: 5%;
-        border-radius: 50%;
-        width:50px;
-        height: 50px;
-    }
-
-}
-
-@media (max-width: 799px) {
-    
-    .open-img{
-        visibility: hidden;
-    }
-
-    .date{
-        visibility: hidden;
-    }
-
-    .notification {
-        position: absolute;
-        right: 70%;
-        padding-top: 15px;
-    }
-    
-    .notification i{
-        color: #000000;
-    }
-    
-    .user-login{
-        position: absolute;
-        right: 40%;
-        padding-top: 15px;
-        display: flex;
-        visibility: hidden;
-    }
-    
-    .img-rounded-circle{
-        position: absolute;
-        right: 5%;
-        border-radius: 50%;
-        width:50px;
-        height: 50px;
-    }
-    
-}
-    
-
-
-
+            document.querySelector(".nav-overlay").addEventListener("click" , () =>{
+                nav.classList.remove("nav-open");
+            });
+        });
+    </script>
+</body>
+</html>
