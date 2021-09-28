@@ -28,14 +28,15 @@ body{
 
 .footer{
     margin: auto;
-    position: static;
+    position: fixed;
+    margin-top: 608px;
     width: 100%;
     height: var(--footer-height);
     border: none;
     display: flex;
     background: #C2D3E2;
-    font-size: 14px;
-    
+    font-size: 14px; 
+       
 }
 
 .footer-data{
@@ -66,14 +67,19 @@ body{
     padding-top: 15px;
     padding-left: 25px;
     color: #000000;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:sans-serif;
     font-style: italic;
     font-weight: 700;
     font-size: 18px;
 }
 
+.open-img{
+    width: 195px;
+}
+
 .nav-links{
     margin-top: 50px;
+    padding-top: 50px;
     position: fixed;
     top: 0;
     left: 0;
@@ -83,6 +89,7 @@ body{
     background: #33628C;
     transform: translateX(-244px);
     transition: transform 0.3s;
+    
 }
 
 
@@ -115,6 +122,7 @@ body{
     text-decoration: none;
     padding: 12px 15px;
     background: transform 0.2s;
+    
 }
 
 
@@ -124,20 +132,18 @@ body{
 
 .nav-links span{
     font-size: 16px;
+    font-family:sans-serif;
 }
 
 .nav-link-active{
     color: white; 
-    background: #9ac3f8;  
+    background: rgba(255, 253, 253, 0.13);  
 }
 
 .nav-link:hover{
-    background: #245bd1;
+    background: rgba(255, 253, 253, 0.363);
 }
 
-.nav-link-active:hover{
-    background: #9ac3f8;
-}
 
 .nav-overlay{
     position: fixed;
@@ -159,14 +165,11 @@ body{
 @media (min-width: 800px) {
 
 
-    .open-img{
-        width: fit-content;
-    }
-
     .notification {
         position: absolute;
         right: 25%;
         padding-top: 15px;
+        margin-right: 10px;
     }
     
     .notification i{
