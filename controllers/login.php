@@ -19,10 +19,13 @@ class login extends Controller{
     function run(){
         
         $res = $this->model->login();
-
-        if($res=="no"){
+        
+        
+        if($res){
+            header('location: http://localhost/CO-WMS/depManager');
+        }
+        else if(!$res){
             header('location: http://localhost/CO-WMS/login');
-            /*header("Location: " . $_SERVER["HTTP_REFERER"]);*/
         }
 
     }
