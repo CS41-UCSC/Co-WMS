@@ -1,0 +1,242 @@
+table,td,th {
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: left;
+    border: 1px solid rgb(255, 255, 255);
+    
+} 
+
+th{    
+    background-color: teal;
+    color: rgb(255, 255, 255);
+}
+
+.result{
+    width: 100%;
+}
+
+#edit{
+    width: 50px;
+}
+
+.pen{
+    border: none;
+    background-color: transparent;
+}
+
+.pen i{
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (min-width: 800px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    .item2 {grid-area: top;}
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'top';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+    }
+
+    .containerN {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+        margin-left: 244px;
+    }
+
+    .item1{
+        text-align: right;
+    }
+
+    .item1 a{
+        padding-right: 50px;
+        text-decoration: none;
+    }
+
+    .item1 span{
+        font-weight: 500;
+        font-size: 15pt;
+        color: teal;
+        font-family:sans-serif;
+    }
+
+
+    .activelink span{
+        font-weight: 550;
+    }
+
+    .item2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .search{
+        border: transparent;
+        border-radius: 5px;
+        width: 250px;
+        height: 30px;
+        background-color: #eeeeee;
+        padding-left: 5px;
+    }
+
+    .button{
+
+        border-radius: 5px;
+        cursor: pointer;
+        width: 70px;
+        height: 30px;
+        border: transparent;
+        background-color: teal;
+        text-align: center;
+        color: white;
+    }
+
+    table{
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: auto;
+        padding: 0;
+        width: 97%;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 40%;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        background-color: white;
+        
+    }
+
+    .form-popup{
+        width: max-content;
+        margin: 20px;
+    }
+
+    .popup label{
+        text-align: left;
+        width: 170px;
+        display: inline-block;
+    }
+
+    .popup input{
+        width: 210px;
+        height: 30px; 
+        border: 1px solid #a8a8a8;
+        background-color: #eeeeee96;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .popup .btn{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .popup .button{
+        margin-top: 30px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: teal;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: sans-serif;
+        font-size: 12pt;
+        cursor: pointer;
+    }
+    
+}
+
+@media (max-width: 799px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    .item2 { grid-area: left; }
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+    }
+
+    .item1{
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+        display: flex;
+    }
+
+    .item1 a{
+        text-decoration: none;
+    }
+
+    .item1 span{
+        font-weight: 400;
+        font-size: 11pt;
+        color: teal;
+        font-family:sans-serif;
+    }
+
+    .activelink span{
+        font-weight: 550;
+    }
+
+    .item2{
+        display: flex;
+        justify-content: center;
+    }
+
+    table{
+        border-collapse: separate;
+        padding: 0;
+        width: 100%;
+        border-spacing: 0 10px;
+    }
+
+    .button{
+
+        border-radius: 5px;
+        cursor: pointer;
+        width: 70px;
+        height: 30px;
+        border: transparent;
+        background-color: teal;
+        text-align: center;
+        color: white;
+    }
+
+    .search{
+        border: transparent;
+        border-radius: 5px;
+        width: 250px;
+        height: 30px;
+        background-color: #eeeeee;
+        padding-left: 5px;
+    }
+}
