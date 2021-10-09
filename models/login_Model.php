@@ -41,7 +41,7 @@ class login_Model extends Model{
                 $_SESSION['msg'] = $msg ;
                 ob_start();
                 
-                return true;
+                return $result[0][4];
                 /*header('location: http://localhost/CO-WMS/depManager');*/
             }
             
