@@ -7,30 +7,20 @@ class manageEmployeeAdd_Model extends Model{
         parent::__construct();
     }
 
-    // public function addData($data){
+    function insertEmployee($empid,$empname,$empemail,$emprole,$password,$empstatus){
 
-    //     $fname = $data['fname'];
-    //     $email = $data['email'];
-    //     $password = $data['password'];
-       
-    //     $query = "INSERT INTO systemuser(fname, email, password)
-    //     //     VALUES ('$fname','$email','$password')";
+        $sql = "INSERT INTO `systemuser`(`EmpID`, `EmpName`, `EmpEmail`, `EmpRole`, `PASSWORD`, `EmpStatus`) VALUES ('$empid','$empname','$empemail','$emprole','$password','$empstatus') " ;
+    
+        try{
+            $this->db->exec($sql);
+                $_SESSION['error-msg'] = "New record created successfully";
+            }
+        catch(PDOException $e)
+        {
 
-    //     $this->db->insertQuery($query);
-    // }
+    	    $_SESSION['error-msg'] = $e->getMessage();
+        }
 
-
-    public function addData($data) {
-        $fname = $data['fname'];
-        $email = $data['email'];
-        $password = $data['password'];
-        
-        
-
-        $query = "INSERT INTO systemuser(EmpId, EmpName, EmpEmail, password) values('$EmpID','$fname','$email', '$password')";
-        
-            $this->db->insertQuery($query);
-
-        // $this->db->insertQuery($query);
     }
+
 }
