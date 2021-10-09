@@ -11,8 +11,25 @@ class manageEmployeeAdd extends Controller{
     }
 
     function index(){
-        
+
         $this->view->render('manageEmployeeAdd');
+
+    }
+        
+    function setData(){
+        
+        $empid = $_POST['epmId'];
+        $empname= $_POST['Ename'];
+        $empemail = $_POST['email'];
+        $emprole = $_POST['role'];
+        $password = $_POST['password'];
+        $empstatus = $_POST['active'];
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash,$empstatus);
+
+        header('location: http://localhost/CO-WMS/manageEmployeeAdd');
 
     }
     
