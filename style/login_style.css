@@ -127,6 +127,7 @@ label{
 }
 
 .button:hover{
+    color: #265397;
     background-color: #467af1;
 }
 
