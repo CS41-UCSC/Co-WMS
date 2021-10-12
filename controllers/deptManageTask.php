@@ -10,9 +10,13 @@ class deptManageTask extends Controller{
 
     function index(){
         
+        $this->view->task = $this->model->getData($_SESSION['login_user']);
+        
         $this->view->render('deptManageTask');
 
     }
+
+   
 
 }
 

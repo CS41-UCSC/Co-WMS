@@ -12,6 +12,8 @@ class assignTasksTeam extends Controller{
 
     function index(){
 
+        $this->view->users = $this->model->getData($_SESSION['login_user']);
         $this->view->render('assignTasksTeam');
+
     }
 }
