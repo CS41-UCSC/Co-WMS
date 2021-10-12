@@ -132,7 +132,7 @@
                     <label for="empstatus">Employee Status</label>
                     <input type="text" name="empstatus" value="<?php echo $result[0]['EmpStatus'] ?>" readonly class="input-fields" ><br>
                     <label for="add">Current Password</label>
-                    <input type="password" name="cpass" id="cpass" value="<?php echo $_SESSION['password'] ?>" class="input-fields" onkeyup="validationc();"><br>
+                    <input type="password" name="cpass" id="cpass" value="" class="input-fields" onkeyup="validationc();"><br>
                     <label for="add">New Password</label>
                     <input type="password" name="npass" id="npass" value="" class="input-fields" onkeyup="validationc();"><br>
                     <input type="submit" value="Save Changes" class="button" onclick="saveform();">
