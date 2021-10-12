@@ -1,5 +1,5 @@
 <?php
-require_once('../Co-WMS/views/navbar.php')
+    require_once("../Co-WMS/views/navbar.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +11,14 @@ require_once('../Co-WMS/views/navbar.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Co-WMS/style/AssignTasksMember_style.css" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css" type="text/css">
+    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Document</title>
 </head>
 
-<body class="preload">
-    <!--<header class="header">
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
+    <<header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
         </button>
@@ -43,26 +44,58 @@ require_once('../Co-WMS/views/navbar.php')
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
         
 
-    </header>  -->
+    </header>
 
     <nav class="nav">
         <div class="nav-links">
 
-            <a href="deptManager" class="nav-link">
-                <i class="fa fa-address-card-o fa-lg"><span>Department Progress</span></i>
+        <a href="#" class="nav-link " id="manage_access" >
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="myprofile" class="nav-link">
-                <i class="fa fa-user fa-lg"><span> My Profile</span></i>
+            <a href="landingpage" class="nav-link nav-link-active" id="dashboard" >
+                <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
             </a>
-            <a href="deptManageTask" class="nav-link nav-link-active">
-                <i class="fa fa-list fa-lg"><span>Manage Tasks</span></i>
+            <a href="#" class="nav-link" id="d_progress">
+                <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
             </a>
-            <a href="assignTasks" class="nav-link">
-                <i class="fa fa-calendar-times-o fa-lg"><span>Department Leave</span></i>
+            <a href="myprofile" class="nav-link" id="my_profile" onclick="toggleColor(this)">
+                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
             </a>
-            <a href="#" class="nav-link">
-                <i class="fa fa-sign-out fa-lg"><span>Logout</span></i>
+            <a href="#" class="nav-link" id="my_progress">
+                <i class="fa fa-user fa-lg"><span>My Progress</span></i>
             </a>
+            <a href="#" class="nav-link" id="t_progress">
+                <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_progress">
+                <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
+            </a>
+            <a href="deptManageTask" class="nav-link nav-link-active" id="manage_task_dpt">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="#" class="nav-link" id="manage_task_leader">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="#" class="nav-link" id="manage_emp">
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
+            </a>
+            <a href="#" class="nav-link" id="my_leave">
+                <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="t_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="d_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="logout">
+                <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
+            </a>
+
+
         </div>
         <div class="nav-overlay"></div>
     </nav>
@@ -97,87 +130,100 @@ require_once('../Co-WMS/views/navbar.php')
 
             </div>
 
-        </div>
+            <div class="item3">
 
-        <div class="popup" id="myForm">
+                <div class="result" id="result" style="overflow-x:auto;">
 
-            <form action="" class="form-popup" id="form-popup">
+                    <table id="mytable">
 
-                <label for="dep">Team </label>
-                <input type="text" name="tname" id="tname" value=""><br>
-                <label for="task">Task title</label>
-                <input type="text" name="tasktitle" value=""><br>
+                        <col id="teamid">
+                        <col id="teamname">
+                        <col id="leader">
+                        <col id="teamid">
+                        <col id="teamname">
+                        <col id="leader">
+                        <col id="">
+                        <col id="edit">
 
-                <div class="btn"><input type="submit" value="Save Changes" class="button">
-                    <button type="button" class="button" onclick="closeForm()">Close</button>
+                        <thead>
+                            <tr>
+
+                                <th>Task ID</th>
+                                <th>Assigned Time</th>
+                                <th>Assigned To</th>
+                                <th>Assigned By</th>
+                                <th>Required Time</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Edit</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="1">
+
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>
+
+                            </tr>
+                            <tr>
+
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td class="row-data"></td>
+                                <td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>
+
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
                 </div>
 
-            </form>
+            </div>
 
         </div>
 
     </main>
 
-    <div class="result" id="result" style="overflow-x:auto;">
+    <div class="popup" id="myForm">
 
-        <table id="mytable">
+        <form action="" class="form-popup" id="form-popup">
 
-            <col id="teamid">
-            <col id="teamname">
-            <col id="leader">
-            <col id="teamid">
-            <col id="teamname">
-            <col id="leader">
-            <col id="">
-            <col id="edit">
+            <label for="dep">Task ID</label>
+            <input type="text" name="tid" id="tname" value=""><br>
+            <label for="">Task Title</label>
+            <input type="text" name="tname" id="tname" value=""><br>
+            <label for="task">Assigned Time</label>
+            <input type="text" name="atime" value=""><br>
+            <label for="task">Assigned To</label>
+            <input type="text" name="to" value=""><br>
+            <label for="task">Required Time</label>
+            <input type="text" name="rtime" value=""><br>
+            <label for="task">Due Date</label>
+            <input type="text" name="ddate" value=""><br>
+            <label for="">Status</label>
+            <input type="text" name="status" value=""><br>
 
-            <thead>
-                <tr>
+            <div class="btn"><input type="submit" value="Save Changes" class="button">
+                <button type="button" class="button" onclick="closeForm()">Close</button>
+            </div>
 
-                    <th>Task ID</th>
-                    <th>Assigned Time</th>
-                    <th>Assigned To</th>
-                    <th>Assigned By</th>
-                    <th>Required Time</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Edit</th>
+        </form>
 
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="1">
-
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>
-
-                </tr>
-                <tr>
-
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td class="row-data"></td>
-                    <td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>
-
-
-                </tr>
-
-            </tbody>
-
-        </table>
     </div>
-
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -207,20 +253,35 @@ require_once('../Co-WMS/views/navbar.php')
     <script>
         function show() {
 
+            var rowId = event.target.parentNode.parentNode.parentNode.id;
 
-            document.getElementById("myForm").style.display = "flex";
+            //this gives id of tr whose button was clicked
+            var data = document.getElementById(rowId).querySelectorAll(".row-data");
+
+
+            /*returns array of all elements with 
+            "row-data" class within the row with given id*/
+
+            var name = data[0].innerHTML;
+            var title = data[1].innerHTML;
+
+            //alert("Name: " + name + "\nAge: " + title);
+
+            //document.getElementById("tname").value = name;
+
+            document.getElementById("myForm").style.display = "block";
             document.getElementById("container").style.filter = "grayscale(100%)";
-            document.getElementById("result").style.filter = "grayscale(100%)";
-            document.getElementById("item1").style.filter = "grayscale(100%)";
-
+            /*document.getElementById("item1").style.filter = "grayscale(100%)";
+            document.getElementById("main").style.opacity = "0.3";*/
 
         }
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
             document.getElementById("container").style.filter = "none";
-            document.getElementById("result").style.filter = "none";
-            document.getElementById("item1").style.filter = "none";
+            /*document.getElementById("item1").style.filter = "none";
+            document.getElementById("main").style.opacity = "1";*/
+
         }
     </script>
 
