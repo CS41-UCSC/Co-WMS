@@ -11,12 +11,12 @@
     <title>Document</title>
 </head>
 
-<body class="preload">
-    <header class="header">
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
+<header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
         </button>
-        <img src="logo.jpg" alt="" class="open-img">
+        <img src="../Co-WMS/Asserts/logo.jpg" alt="" class="open-img">
         <label for="" class="date"> <?php
                                     $day;
                                     if (date("d") == 1) {
@@ -33,11 +33,12 @@
 
                                     ?>
         </label>
-        <div class="notification"><a href="#"><i class="fa fa-bell fa-lg "></i></a></div>
-
-
+        <div class="notification"><a href="#"><i class="fa fa-bell fa-lg"></i></a></div>
+        <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
 
     </header>
+
     <nav class="nav">
         <div class="nav-links">
             <a href="#" class="nav-link nav-link-active">
@@ -145,12 +146,12 @@
                     </div>
                     <div>
 
-                        <input type="submit" value="Cancel" class="rectan">
+                        <input type="submit" value="Back" class="rectan">
 
                     </div>
                     <div>
 
-                        <input type="submit" value="Add" class="rectan">
+                        <input type="submit" value="Submit" class="rectan">
 
                     </div>
 
