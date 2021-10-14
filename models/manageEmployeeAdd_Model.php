@@ -13,12 +13,14 @@ class manageEmployeeAdd_Model extends Model{
     
         try{
             $this->db->exec($sql);
-                $_SESSION['error-msg'] = "New record created successfully";
+                $_SESSION['add-emp-msg'] = "New record created successfully";
+                return true;
             }
         catch(PDOException $e)
         {
 
-    	    $_SESSION['error-msg'] = $e->getMessage();
+    	    $_SESSION['add-emp-msg'] = $e->getMessage();
+            return false;
         }
 
     }
