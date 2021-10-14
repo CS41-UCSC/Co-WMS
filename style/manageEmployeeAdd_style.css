@@ -65,7 +65,9 @@ nav .icon-burger .line {
   transition: all .3s ease-in-out;
 }
 
-
+input:focus{
+  outline: none !important;
+}
     
     /*background: rgba(87, 87, 87, 0.5);
     backdrop-filter: blur(1px);*/
@@ -126,6 +128,18 @@ nav .icon-burger .line {
         border-color: #33628C;
       }
 
+      input[type=password], select {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border-color: #33628C;
+      }
+
+      
   input[type=email], select {
         width: 90%;
         padding: 12px 20px;
@@ -185,7 +199,12 @@ nav .icon-burger .line {
         
       }
 
-     
+      .back{
+        text-decoration: none;
+        color: #33628C;
+        font-size: 20px;
+        
+      }
 
 
 
