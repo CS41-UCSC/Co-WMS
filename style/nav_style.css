@@ -212,7 +212,7 @@ body {
  
  .container{
 	display: grid;
-	/*margin-top: var(--header-height);*/
+	margin-top: var(--header-height);
 	margin-left: var(--naviconwidth);
 }
 
