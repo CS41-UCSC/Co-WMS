@@ -9,12 +9,13 @@ class adminHome extends Controller{
 	}
 	
 	function index(){
-		$this->view->emp=$this->model->getdata();
-		$this->view->render('adminHome');
-	}
-	
-	function search(){
-		$this->view->emp=$this->model->searchdata($_POST['empId']);
+		if (isset($_POST['search_btn'])){
+			$this->view->emp=$this->model->searchdata($_POST['empId']);
+		}else if (isset($_POST['search_all'])){
+			$this->view->emp=$this->model->getdata();
+		}else{
+			$this->view->emp=$this->model->getdata();
+		}
 		$this->view->render('adminHome');
 	}
 	

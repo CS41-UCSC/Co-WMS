@@ -19,7 +19,7 @@ function setbutton(){
 	
 	if(!MyProfile){
 		
-		document.getElementById("my_profile").style.display="none"; 
+		document.getElementById("my_profile").style.display="none";
 		
 	}
 	

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
-	<link rel="stylesheet" href="../Co-WMS/style/adminHome.css?<?php echo time(); ?>" type="text/css">
+	<link rel="stylesheet" href="../Co-WMS/style/myleave.css" type="text/css">
+	<link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script language="javascript" src="../Co-WMS/views/navigation.js" >
 	</script>
-    <title>Co-WMS</title>
+	<style>
+	.item4{
+		height: 60vh;
+	}
+	</style>
+    <title>CO-WMS</title>
 </head>
 
 <body class="preload" onload='setbutton()'>
@@ -70,7 +75,7 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
+            <a href="#" class="nav-link  nav-link-active" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
 			<a href="#" class="nav-link" id="t_leave">
@@ -83,12 +88,12 @@
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
 			<a href="#" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg" ></i>
+                <i class="fa fa-sign-out fa-lg" ></i>
             </a>
         </div>-->
 		<nav class="nav">
-        <div class="nav-links nav-link-icons">
-			<a href="#" class="nav-link nav-link-active" id="manage_access">
+        <div class="nav-links">
+			<a href="#" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
             <a href="#" class="nav-link" id="dashboard">
@@ -118,7 +123,7 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
+            <a href="#" class="nav-link  nav-link-active" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="t_leave">
@@ -131,7 +136,7 @@
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
+                <i class="fa fa-sign-out fa-lg" ><span>Logout</span></i>
             </a>
         </div>
 		<div class="nav-overlay"></div>
@@ -139,42 +144,44 @@
 
     <main>
         <div class="container">
-		<div class="item1" >
-			<form method="POST" action="adminHome" >
-			<center><input type="text" name="empId" placeholder="EmployeeID" id="emp_search" />
-			<button type="submit" name="search_btn" class="fabtn" id="searchbtn" >
-				<i class="fa fa-search fa-lg" ></i>
-			</button>
-			</br></br>
-			<button type="submit" name="search_all" class="fabtn" id="searchall" >
-				<span style="font-weight: bold">Show All</span>
-			</button>
-			</center>
-			</form>
-        </div>
-		<div class="item2">
-			<center> 
-				<table id="emp_table" >
-				<tr><th>ID</th><th>Name</th><th>Role</th><th>Action</th></tr>
-				<?php
-					$emp=$this->emp;
-					if(!empty($emp)){
-					foreach($emp as $row){
-						echo '<tr id= ' . $row['0'] . '>';
-						echo'<td class="row-data">'.$row['EmpID'].'</td>';
-						echo '<td class="row-data">'.$row['EmpName'].'</td>';
-						echo '<td class="row-data">'.$row['EmpRole'].'</td>';
-						echo '<td class="row-data">'.'<a href="manageAccess?empID='.$row['EmpID'].' " >'.'<button type="button" class="fabtn">'.'<i class="fa fa-pencil fa-lg">'.'</i>'.'</button>'.'</a>'.'</td>';
-						echo'</tr>';
-					}
-					}else{
-						echo "No records found";
-					}
-				?>
-				
-			</table></center>
-		</div>
-		</div>
+			<div class="item1">
+				<div class="toplinkbar">
+				<center>
+					<a href="myleaveApproved" class="toplink" id="toplink1" ><span>Approved</span></a>
+					<a href="#" class="toplink toplink-active" id="toplink2"><span>Pending</span>
+					<a href="myleaveRequest" class="toplink" id="toplink3"><span>Leave Request</span></a>
+				</center>
+				</div>
+			</div>
+			<div class="item2">
+				<form class="date-filter" method="POST" action="#">
+					<select name="month" class="filter" id="mfilter">
+						<option value="JAN">JAN</option>
+						<option value="FEB">FEB</option>
+						<option value="MAR">MAR</option>
+						<option value="ARP">APR</option>
+						<option value="MAY">MAY</option>
+						<option value="JUN">JUN</option>
+						<option value="JUL">JUL</option>
+						<option value="AUG">AUG</option>
+						<option value="SEP">SEP</option>
+						<option value="OCT">OCT</option>
+						<option value="NOV">NOV</option>
+						<option value="DEC" selected>DEC</option>
+					</select>
+					<select name="year" class="filter" id="yfilter">
+						<option value="2020">2020</option>
+						<option value="2021" selected>2021</option>
+						<option value="2022">2022</option>
+					</select>
+				</form>
+			</div>
+			<div class="item4">
+				<table>
+					<tr><td>Annual Leave</td><td>15/12/2021 - 16/12/2021</td><td>Pending</td></tr>
+				</table>
+			</div>
+        </div>        
     </main>
 	</div>
    <footer class="footer">
@@ -186,17 +193,15 @@
 			const con = document.querySelector(".container");
 			const navbtn = document.querySelector("#btnNav");
 			const overlay = document.querySelector(".nav-overlay");
-			const span = document.querySelector("span")
 
             navbtn.addEventListener("click" , () =>{
                 nav.classList.add("nav-open");
                 con.classList.add("containerN");
             });
-
+			
             overlay.addEventListener("click" , () =>{
                 nav.classList.remove("nav-open");
                 con.classList.remove("containerN");
-				
             });
 			
         });

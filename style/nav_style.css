@@ -212,9 +212,8 @@ body {
  
  .container{
 	display: grid;
-	grid-template-areas: 'one' 'two' 'three' 'four';
-	padding-top: var(--header-height);
-	padding-left: var(--naviconwidth);
+	/*margin-top: var(--header-height);*/
+	margin-left: var(--naviconwidth);
 }
 
 @media (min-width: 800px) {
@@ -240,7 +239,7 @@ body {
     }
 	
 	.containerN{
-		padding-left: var(--navbarwidth);
+		margin-left: var(--navbarwidth);
 	}
 }
 

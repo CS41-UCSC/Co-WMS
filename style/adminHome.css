@@ -14,20 +14,20 @@ main{
 	padding: 100px;
 }
 
-.item1{
-	grid-area: one;
-	margin-top: 1%;
-	margin-bottom: 1%;
+.back_arrow i{
+	color: var(--orange);
 }
 
-.item1 > a:hover{
-	cursor: pointer;
+.item1{
+	grid-area: one;
+	margin-top: 0;
+	margin-bottom: 1%;
 }
 
 .item2{
 	grid-area: two;
 	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-bottom: 1%;
 }
 
 .item3{
@@ -41,12 +41,29 @@ main{
 	padding: 1%;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
+	border: transparent;
+	outline: none;
+	background: var(--grey);
+}
+
+#emp_search:focus{
 	border: 1px solid blue;
 }
 
+.fabtn{
+	background: none;
+	padding: 0px;
+	border: none;
+}
+
+.fabtn:hover{
+	cursor: pointer;
+}
+
 #emp_table{
-	border: 1px solid black;
+	border: none;
 	width: 50%;
+	padding-right: 2%;
 }
 
 #emp_table td,th{
@@ -63,8 +80,8 @@ main{
 	color: var(--blue);
 }
 
-#emp_table tr:nth-child(even){
-	background-color: var(--grey);
+#emp_table tr {
+	
 }
 
 #emp_table tr:hover {
@@ -100,15 +117,23 @@ main{
 	grid-template-areas: 'one' 'two' 'three';
 }
 
+.page{
+	padding-bottom: var(--footer-height);
+}
+
+.footer{
+	margin-top: auto;
+}
+
 @media (max-width: 799px){
 	main{
-		padding: 90px;
-		padding-left: 60px;
+		padding-left: 0px;
 		padding-right: 0px;
 	}
 	
 	#emp_search{
-		width: 85%;
+		width: 80%;
+		padding: 3%;
 	}
 	
 	#emp_table{

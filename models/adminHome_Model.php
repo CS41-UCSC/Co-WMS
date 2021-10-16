@@ -15,7 +15,7 @@ class adminHome_Model extends Model{
 	
 	function searchdata($empid)
 	{
-		$sql='SELECT * FROM systemuser WHERE EmpID="$empid"';
+		$sql="SELECT * FROM systemuser WHERE EmpID='$empid'";
 		return $this->db->runQuery($sql);
 		
 	}
