@@ -1,0 +1,248 @@
+
+
+/*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    nav {
+        position: fixed;
+        z-index: 10;
+        left : 245px;
+        right: 0;
+        top: 50px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 10 5%;
+        height: 30px;
+        background-color: #ffffff;
+        /* visibility: hidden; */
+    }
+    
+    nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 600px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .links li {
+        list-style: none;
+    }
+    nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    /* nav .links a :hover{
+        color: rgb(0, 255, 106);
+    } */
+    #nav-toggle {
+        position: absolute;
+        top: -100px;
+    }
+    nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 5px;
+    }
+    nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #265397;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .3s ease-in-out;
+        
+    }
+
+
+    
+    /*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    .flex-container {
+        display: flex;
+        margin-top: 70px;
+        margin-left: 2%;
+        margin-right: 2%;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+        
+        
+      }
+      
+      .table{
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .table td,.table th{
+      padding:12px 15px;
+      border:1px solid rgb(0, 0, 0);
+      text-align: center;	
+      font-size:16px;
+    }
+    
+    .table th{
+        background-color: #33628C;
+        color:#ffffff;
+    }
+    
+    .table tbody tr:nth-child(even){
+        background-color: #f5f5f5;
+    }
+      
+
+
+
+@media (min-width: 800px) {
+        
+    .container {
+        padding: 20px;
+        
+        
+        height: 82vh;
+    }
+
+    /* .containerN {
+        padding: 30px;
+        
+        
+        height: 82vh;
+        margin-left: 244px;
+    } */
+
+    .container >div{
+        
+        text-align: center;
+        font-size: 28px;
+        
+        padding: 40px;
+        /*color: #245bd1;*/
+        
+        font-weight: 600;
+    }
+    
+   
+    .open-img{
+        width: 194px;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+
+    .text{
+        font-weight: bold;
+        margin-top: 80px;
+    }
+    
+    .open-img{
+        visibility: hidden;
+    }
+
+
+    .date{
+        visibility: hidden;
+    }
+
+    
+}
+    
+@media (max-width: 567px) {
+
+  
+    nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 60%;
+		right: 0;
+		top: 80px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(121, 121, 121, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+        background-color: rgb(255, 255, 255);
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+        background-color: #265397;
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+        background-color: #265397;
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+
+
+    .table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+    .table{
+        margin-left: -23px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 88%;
+	}
+}
+
+
+
+

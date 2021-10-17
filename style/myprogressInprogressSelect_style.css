@@ -1,0 +1,496 @@
+
+
+/*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    nav {
+        position: fixed;
+        z-index: 10;
+        left : 245px;
+        right: 0;
+        top: 50px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 10 5%;
+        height: 30px;
+        background-color: #ffffff;
+        /* visibility: hidden; */
+    }
+    
+    nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 600px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .links li {
+        list-style: none;
+    }
+    nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    /* nav .links a :hover{
+        color: rgb(0, 255, 106);
+    } */
+    #nav-toggle {
+        position: absolute;
+        top: -100px;
+    }
+    nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 5px;
+    }
+    nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #265397;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .3s ease-in-out;
+        
+    }
+    
+    /*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    .flex-container {
+        display: flex;
+        margin-top: 73px;
+        margin-left: 0px;
+        margin-right: 40px;
+        flex-wrap: wrap;
+        height : 60vh;
+        background-color: #ffffff;
+        border: 1px solid #777ee0;
+        
+        
+      }
+     
+      
+      .content{
+          height: 50vh;
+          width: 89vw;
+          background-color: #ffffff;
+      }
+      .progress {
+        position: relative;
+        width: 80%;
+        margin-left: 10%;
+        height: 30px;
+        background: #9cbab4;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      
+      .progress__fill {
+        width: 0%;
+        height: 100%;
+        background: #0c56b6;
+        transition: all 0.2s;
+      }
+      
+      .progress__text {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        font: bold 14px "Quicksand", sans-serif;
+        color: #ffffff;
+      }
+      .content h2{
+          color: black;
+          font-size: 12pt;
+          text-align: left;
+          margin-left: 18%;
+      }
+      .tick-box{
+          width:30vw;
+          height: 20vh;
+          background-color: #ffffff;
+          margin-left: 20%;
+          margin-top: -8px;
+      }
+      .box {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: black;
+        margin-right: 10%;
+        
+        
+      }
+      
+      /* Hide the browser's default checkbox */
+      .box input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        
+        
+        
+        
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 21px;
+        width: 21px;
+        background-color: #eee;
+        margin-left: 80%;
+        border: 1px solid #00010a;
+        
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .boxr:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .box input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .box input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .box .checkmark:after {
+        left: 8px;
+        top: 4px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .btns{
+          height : 10vh;
+          margin-top: 20px;
+          background-color: #ffffff;
+          width : 90vw;
+      }
+      .button {
+        background-color: #267abe; /* Green */
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        
+      }
+      
+      .button1 {background-color: #008CBA;} 
+      /* Blue */
+     
+      
+      .modal {
+        margin-top: 70px;
+        display: none;
+        position: fixed;
+        z-index: 8;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .modal-content {
+        margin: 50px auto;
+        border: 1px solid #999;
+        width: 60%;
+      }
+
+      h3{
+        text-align: left;
+        margin: 0 0 20px;
+        /* font-weight: 100; */
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+      } 
+      span {
+        text-align: left;
+        font-size: 20px;
+        color: #666;
+        display: block;
+        padding: 0 0 5px;
+      }
+      form {
+        padding: 25px;
+        margin: 25px;
+        box-shadow: 0 2px 5px #f5f5f5;
+        background: #eee;
+      }
+      input,
+      textarea {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #1c87c9;
+        outline: none;
+      }
+      .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #1c87c9;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+      }
+      button:hover {
+        background: #2371a0;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      button.button {
+        background: none;
+        border-top: none;
+        outline: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: #02274a 1px solid;
+        padding: 0 0 3px 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button.button:hover {
+        border-bottom: #a99567 1px solid;
+        color: #a99567;
+      }
+      /* jkfkd */
+      .btns > button{
+        background-color: #2371a0;
+        width: 100px;
+        height: 30px;
+      }
+
+      
+    
+      
+
+
+
+@media (min-width: 800px) {
+        
+    .container {
+        padding: 20px;
+        
+        
+        height: 82vh;
+    }
+
+    /* .containerN {
+        padding: 30px;
+        
+        
+        height: 82vh;
+        margin-left: 244px;
+    } */
+
+    .container >div{
+        
+        text-align: center;
+        font-size: 28px;
+        
+        padding: 40px;
+        color: #245bd1;
+        
+        font-weight: 600;
+    }
+    
+   
+    .open-img{
+        width: 194px;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+
+    .text{
+        font-weight: bold;
+        margin-top: 80px;
+    }
+    
+    .open-img{
+        visibility: hidden;
+    }
+
+
+    .date{
+        visibility: hidden;
+    }
+    .flex-container{
+        margin-top: 100px;
+        height : 71vh;
+        width: 94vw;
+        margin-left: 20px;
+    }
+    .content{
+        height:50vh;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+    .btns{
+        width : 50vw;
+        margin-left: 100px;
+        margin-top: -60px;
+    }
+    .button{
+        width: 90vw;
+        margin-left: -90px;
+        
+    }
+    .progress{
+        margin-top: 10px;
+    }
+
+    .btns > button{
+        background-color: #2371a0;
+        margin: 10px;
+      }
+    
+   
+
+    
+}
+    
+@media (max-width: 567px) {
+
+  
+    nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 60%;
+		right: 0;
+		top: 80px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(121, 121, 121, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+        background-color: rgb(255, 255, 255);
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+        background-color: #265397;
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+        background-color: #265397;
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+
+}
+@media (max-width: 420px){
+    .flex-container{
+        margin-left: 12px;
+        height:72vh;
+        
+    }
+    .content{
+        height: 54vh;
+    }
+    .btns{
+        width:70vw;
+        margin-left: 70px;
+        margin-top: -35px;
+    }
+    .button{
+        margin-top: 0px;
+        width:90vw;
+        margin-left: -60px;
+    }
+}
+@media (max-width: 320px){
+    .flex-container{
+        margin-left: 12px;
+        height:80vh;
+        
+    }
+    .content{
+        height: 50vh;
+    }
+    .btns{
+        width:70vw;
+        margin-left: 70px;
+        /* baaaaad */
+        margin-top: 5px;
+    }
+    .button{
+        margin-top: 0px;
+        width:90vw;
+        margin-left: -60px;
+     
+    }
+}
