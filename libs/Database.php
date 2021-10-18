@@ -14,14 +14,4 @@ class Database extends PDO {
 
         return $stmt->fetchAll();
     }
-
-    public function select($query){
-
-        $stmt = $this->prepare($query);
-
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-   
-    }
 }
