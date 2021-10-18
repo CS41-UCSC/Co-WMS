@@ -1,0 +1,149 @@
+
+:root{
+	--blue: #265397;
+	--orange: #DC950B;
+	--white: #fff;
+	--grey: #f5f5f5;
+	--black1: #222;
+	--black2: #999;
+	--blue2: #9ac3f8;
+}
+
+*{
+	box-sizing: border-box;
+	font-family: Arial;
+}
+
+header{
+	background: var(--blue);
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border: none;
+	display: flex;
+}
+
+header h2{
+	color: var(--white);
+	position: absolute;
+	right: 35%;
+	font-family: Roboto;
+}
+
+header img{
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.login_btn {
+	color: var(--white);
+	padding: 10px 50px;
+	background: var(--orange);
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: 1%;
+	margin-top: 10px;
+	font-size: 20px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.login_btn:hover {
+	color: var(--orange);
+	background: var(--white);
+}
+
+.welcome{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	font-size: 12px;
+}
+
+.container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 100px;
+}
+
+.container img{
+	width: 100%;
+	height: 100%;
+}
+
+.company {
+	background: var(--blue);
+	padding-bottom: 1px;
+	padding-top: 1px;
+	margin-top: 5px;
+}
+
+.company h3 , span{
+	font-family: Roboto;
+}
+
+.company span{
+	font-size: 18px;
+}
+
+.company a{
+	text-decoration: none;
+	color: var(--black);
+}
+
+footer {
+	background: var(--blue2);
+	position: fixed;
+	width: 100%;
+	height: 10%;
+	bottom: 0;
+}
+
+footer h3{
+	color: var(--blue);
+	text-align: center;
+	font-family: Roboto;
+	font-size: 14px;
+	margin-top: 1%;
+}
+
+@media (min-width: 800px){
+	.welcome{
+		visibility: hidden;
+	}
+}
+
+@media (max-width: 799px){
+	header h2{
+		visibility: hidden;
+	}
+	
+	.login_btn {
+		position: absolute;
+		padding: 5px 10px;
+	}
+	
+	.item1{ grid-area: one;}
+	.item2{ grid-area: two;}
+	.item3{ grid-area: three;}
+	
+	.container{
+		display: grid;
+		grid-template-areas: 'one' 'two' 'three';
+	}
+	
+	.company span{
+		font-size: 12px;
+	}
+	
+	footer {
+		visibility: hidden;
+	}
+}

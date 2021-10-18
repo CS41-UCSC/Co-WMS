@@ -10,9 +10,8 @@
         grid-template-areas:
         'one two two '  ;   
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 12px;
-        background: #eeeeee;
-        height: 100vh;
+        grid-gap: 12px 30px;
+        background: #ffffff;
     }
 
     .containerN {
@@ -21,17 +20,23 @@
         grid-template-areas:
         'one two two '   ;  
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 12px;
-        background-color: #eeeeee;
+        grid-gap: 12px 20px;
+        background-color: #ffffff;
         margin-left: 244px;
     }
 
     .container >div{
+        border-top-style: solid;
+        border-top-color: #2B65EC;
+        border-top-width: 3px;
         text-align: center;
         font-size: 18px;
         padding: 20px;
         font-weight: 500;
         background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #d3d2d2;
+        z-index: 4;
     }
 
     .item1, .item2{
@@ -59,18 +64,42 @@
 
     }
 
+    #sbtbtn{
+        position: relative;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: #2B65EC;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        cursor: pointer;
+    }
+
+    #sbtbtn:hover{
+        background-color:#2b65ecad ;
+    }
+
     #uploadBtn{
         position: relative;
         top: 20px;
         height: 25px;
-        width: 50px;
+        width: fit-content;
         padding: 10px;
         color: white;
-        background-color: teal;
+        background-color: #2B65EC;
         font-size: 11pt;
         font-family:Georgia, 'Times New Roman', Times, serif;
         cursor: pointer;
         border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    #uploadBtn:hover{
+        background-color:#2b65ecad ;
     }
 
     .data-form{
@@ -95,19 +124,26 @@
         border: 1px solid #c0bfbf;
     }
 
+    .input-fields:focus{
+        outline: none !important;
+    }
+
     .button{
-        position: absolute;
         margin-top: 50px;
         border-radius: 5px;
         padding: 5px;
         color: #ffffff;
-        background-color: teal;
+        background-color: #2B65EC;
         width: 120px;
         height: 35px;
         border: none;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 12pt;
-        justify-content: center;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        background-color:#2b65ecad ;
     }
 
 }
@@ -141,7 +177,7 @@
     }
 
     .item1{
-        height: 300px;
+        height: 320px;
     }
 
     .item2{
@@ -169,6 +205,21 @@
 
     }
 
+    #sbtbtn{
+        position: relative;
+        margin-top: 50px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: #2B65EC;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 11pt;
+        cursor: pointer;
+    }
+
     #uploadBtn{
         position: relative;
         top: 20px;
@@ -176,7 +227,7 @@
         width: 50px;
         padding: 10px;
         color: white;
-        background-color: teal;
+        background-color: #2B65EC;
         font-size: 11pt;
         font-family:Georgia, 'Times New Roman', Times, serif;
         cursor: pointer;
@@ -203,7 +254,12 @@
         font-family: 'Times New Roman', Times, serif;
         font-size: 11pt;  
         border-radius: 5px;
+        background-color: rgb(225, 229, 231);
         border: 1px solid #c0bfbf;
+    }
+
+    .input-fields:focus{
+        outline: none !important;
     }
 
     .button{
@@ -212,13 +268,14 @@
         border-radius: 5px;
         padding: 5px;
         color: #ffffff;
-        background-color: teal;
+        background-color: #2B65EC;
         width: 120px;
         height: 35px;
         border: none;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 12pt;
         justify-content: center;
+        cursor: pointer;
     }
     
     
@@ -249,7 +306,7 @@
     }
 
     .item1{
-        margin-top: 50px;
+        margin-top: 30px;
         height: 300px;
     }
     
@@ -279,6 +336,25 @@
 
     }
 
+    #sbtbtn{
+        position: relative;
+        margin-top: 40px;
+        border-radius: 5px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: #2B65EC;
+        width: 120px;
+        height: 35px;
+        border: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 11pt;
+        cursor: pointer;
+    }
+
+    #sbtbtn:hover{
+        background-color:#2b65ecad ;
+    }
+
     #uploadBtn{
         position: relative;
         top: 20px;
@@ -286,11 +362,15 @@
         width: 50px;
         padding: 10px;
         color: white;
-        background-color: teal;
+        background-color: #2B65EC;
         font-size: 11pt;
         font-family:Georgia, 'Times New Roman', Times, serif;
         cursor: pointer;
         border-radius: 5px;
+    }
+
+    #uploadBtn:hover{
+        background-color:#2b65ecad ;
     }
 
     .data-form{
@@ -317,21 +397,29 @@
         border: 1px solid #c0bfbf;
     }
 
+    .input-fields:focus{
+        outline: none !important;
+    }
+
     .button{
         position: relative;
         margin-top: 20px;
         border-radius: 5px;
         padding: 5px;
         color: #ffffff;
-        background-color: teal;
+        background-color: #2B65EC;
         width: 120px;
         height: 35px;
         border: none;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 12pt;
         justify-content: center;
+        cursor: pointer;
     }
     
+    .button:hover{
+        background-color:#2b65ecad ;
+    }
     
 }
     

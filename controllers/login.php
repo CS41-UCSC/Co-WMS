@@ -19,15 +19,17 @@ class login extends Controller{
     function run(){
         
         $res = $this->model->login();
-        
+        echo $_SESSION['msg'];
         
         if($res){
-            header('location: http://localhost/CO-WMS/depManager');
+            header('location: http://localhost/CO-WMS/landingpage');
         }
-        else if(!$res){
+
+        else {
             header('location: http://localhost/CO-WMS/login');
         }
 
+        
     }
 
 
