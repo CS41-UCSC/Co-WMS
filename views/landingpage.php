@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/depManager_style.css" type="text/css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/landingpage_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
+    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Document</title>
 </head>
 
-<body class="preload">
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -40,28 +41,55 @@
 
     </header>
 
-    <!--<footer class="footer">
-        <label for="" class="footer-data">© 2021, All rights reserved by CO - WMS <br>
-                        No: 23, Flower Avenue, Colombo 7, Sri Lanka.</label>
-    </footer>-->
     
     <nav class="nav">
+        
         <div class="nav-links">
 
-            <a href="depManager" class="nav-link nav-link-active">
-                <i class="fa fa-address-card-o fa-lg"><span>Department Progress</span></i>
+            <a href="#" class="nav-link " id="manage_access" >
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="myprofile" class="nav-link">
-                <i class="fa fa-user fa-lg"><span> My Profile</span></i>
+            <a href="" class="nav-link" id="dashboard" >
+                <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
             </a>
-            <a href="deptManageTask" class="nav-link">
-                <i class="fa fa-list fa-lg"><span>Manage Tasks</span></i>
+            <a href="landingpage" class="nav-link nav-link-active" id="d_progress">
+                <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
             </a>
-            <a href="manageLeave" class="nav-link">
-                <i class="fa fa-calendar-times-o fa-lg"><span>Department Leave</span></i>
+            <a href="myprofile" class="nav-link" id="my_profile">
+                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
             </a>
-            <a href="#" class="nav-link">
-                <i class="fa fa-sign-out fa-lg"><span>Logout</span></i>
+            <a href="#" class="nav-link" id="my_progress">
+                <i class="fa fa-user fa-lg"><span>My Progress</span></i>
+            </a>
+            <a href="#" class="nav-link" id="t_progress">
+                <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_progress">
+                <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
+            </a>
+            <a href="deptManageTask" class="nav-link" id="manage_task_dpt">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="#" class="nav-link" id="manage_task_leader">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="manageEmployee" class="nav-link" id="manage_emp">
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
+            </a>
+            <a href="#" class="nav-link" id="my_leave">
+                <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="t_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="d_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="logout">
+                <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
             </a>
 
         </div> 
