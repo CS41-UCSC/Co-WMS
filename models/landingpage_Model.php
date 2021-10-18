@@ -10,6 +10,10 @@ class landingpage_Model extends Model{
 
     function loadData(){
 
+        
 
     }
 }
+
+
+
