@@ -17,23 +17,28 @@ class myprofile extends Controller{
 
     function saveform(){
 
+        $pass = $_POST['pass'];
         $cpass = $_POST['cpass'];
         $npass = $_POST['npass'];
 
-        $hash = password_hash($npass, PASSWORD_DEFAULT);
+        if($pass == $_SESSION['password']){
 
-        if($cpass == $npass){
-            $pass = $this->model->setNewPassword($_SESSION['login_user'],$hash); 
-            if($pass == 1)
-                $_SESSION['pass']="yes";
-            else
+            $hash = password_hash($npass, PASSWORD_DEFAULT);
+
+            if($cpass == $npass){
+                $pass = $this->model->setNewPassword($_SESSION['login_user'],$hash); 
+                if($pass == 1)
+                    $_SESSION['pass']="yes";
+                else
+                    $_SESSION['pass']="no";
+            }
+            else{
                 $_SESSION['pass']="no";
-        }
-        else{
+            }
+        }else{
             $_SESSION['pass']="no";
         }
 
-        $this->view->users = $this->model->getData($_SESSION['login_user']);
         header('location: http://localhost/CO-WMS/myprofile');
 
     }
