@@ -162,9 +162,9 @@
                     <input type="text" name="empstatus" value="<?php echo $result[0]['EmpStatus'] ?>" readonly class="input-fields" ><br>
                     <h3>Reset Password</h3>
                     <label for="add">Current Password</label>
-                    <input type="password" name="pass" id="cpass" value="" class="input-fields"><br>
+                    <input type="password" name="pass" id="pass" value="" class="input-fields"><br>
                     <label for="add">New Password</label>
-                    <input type="password" name="cpass" id="npass" value="" class="input-fields" onkeyup="validationc();"><br>
+                    <input type="password" name="cpass" id="cpass" value="" class="input-fields" onkeyup="validationc();"><br>
                     <label for="add">Confirm Password</label>
                     <input type="password" name="npass" id="npass" value="" class="input-fields" onkeyup="validationn();"><br>
                     <input type="submit" value="Save Changes" class="button" onclick="saveform();">
