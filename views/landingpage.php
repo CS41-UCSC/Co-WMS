@@ -110,24 +110,27 @@
                 $c =0 ;
                 $d =0 ;
 
-                for($i = 0 ; $i < count($hours) ; $i++){
+                if($hours != NULL){
+                    for($i = 0 ; $i < count($hours) ; $i++){
 
-                    if($hours[$i][0] == "Approved")
-                        $a = $hours[$i][1];
-                    elseif($hours[$i][0] == "Completed")
-                        $b = $hours[$i][1];
-                    elseif($hours[$i][0] == "InProgress")
-                        $c = $hours[$i][1];
-                    elseif($hours[$i][0] == "Pending")
-                        $d = $hours[$i][1];
+                        if($hours[$i][0] == "Approved")
+                            $a = $hours[$i][1];
+                        elseif($hours[$i][0] == "Completed")
+                            $b = $hours[$i][1];
+                        elseif($hours[$i][0] == "InProgress")
+                            $c = $hours[$i][1];
+                        elseif($hours[$i][0] == "Pending")
+                            $d = $hours[$i][1];
+                    }
                 }
+                
                 
             ?>
 
-            <div class="item4"> Assigned Tasks <br> <span> <?php echo $result[0][0]; ?> </span> </div>
-            <div class="item5">Completed Tasks <br> <span> <?php echo $result[0][1]; ?> </span> </div>
-            <div class="item6">Approved Tasks  <br> <span> <?php echo $result[0][2]; ?> </span> </div>
-            <div class="item7">Pending Tasks <br> <span> <?php echo $result[0][3]; ?> </span> </div>
+            <div class="item4"> Assigned Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][0] : 0 ?> </span> </div>
+            <div class="item5">Completed Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][1] : 0 ?> </span> </div>
+            <div class="item6">Approved Tasks  <br> <span> <?php echo ($result != NULL)?  $result[0][2] : 0 ?> </span> </div>
+            <div class="item7">Pending Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][3] : 0 ?> </span> </div>
             <div class="item8">Total hours the month 160 hrs
                 <canvas id="pieChart" style="width:70%;max-width:400px;align-items:center;margin:auto"></canvas>
             </div>
