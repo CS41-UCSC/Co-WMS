@@ -99,10 +99,35 @@
 
     <main >
         <div class="container">
-            <div class="item4"> Assigned Tasks</div>
-            <div class="item5">Completed Tasks</div>
-            <div class="item6">Approved Tasks</div>
-            <div class="item7">Pending Tasks</div>
+
+            <?php
+
+                $result = $this->data;
+                $hours = $this->hours;
+
+                $a =0 ;
+                $b =0 ;
+                $c =0 ;
+                $d =0 ;
+
+                for($i = 0 ; $i < count($hours) ; $i++){
+
+                    if($hours[$i][0] == "Approved")
+                        $a = $hours[$i][1];
+                    elseif($hours[$i][0] == "Completed")
+                        $b = $hours[$i][1];
+                    elseif($hours[$i][0] == "InProgress")
+                        $c = $hours[$i][1];
+                    elseif($hours[$i][0] == "Pending")
+                        $d = $hours[$i][1];
+                }
+                
+            ?>
+
+            <div class="item4"> Assigned Tasks <br> <span> <?php echo $result[0][0]; ?> </span> </div>
+            <div class="item5">Completed Tasks <br> <span> <?php echo $result[0][1]; ?> </span> </div>
+            <div class="item6">Approved Tasks  <br> <span> <?php echo $result[0][2]; ?> </span> </div>
+            <div class="item7">Pending Tasks <br> <span> <?php echo $result[0][3]; ?> </span> </div>
             <div class="item8">Total hours the month 160 hrs
                 <canvas id="pieChart" style="width:70%;max-width:400px;align-items:center;margin:auto"></canvas>
             </div>
@@ -130,8 +155,13 @@
             });
         });
 
+        var ip = '<?php echo $c; ?>';
+        var cp = '<?php echo $b; ?>';
+        var ap = '<?php echo $a; ?>';
+        var pe = '<?php echo $d; ?>';
+
         var xValues = ["Assign Taks", "Completed Tasks", "Approved Tasks", "Pending Tasks" ];
-        var yValues = [25, 12, 10, 12];
+        var yValues = [pe, cp, ap, pe];
         var barColors = ["#407294", "#01786f", "#bd6c82", "#69a8a2",];
 
         new Chart("myChart", {
