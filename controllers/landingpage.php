@@ -10,6 +10,9 @@ class landingpage extends Controller{
 
     function index(){
         
+        $this->view->data = $this->model->loadData();
+        $this->view->hours = $this->model->loadHours();
+
         $this->view->render('landingpage');
 
     }
