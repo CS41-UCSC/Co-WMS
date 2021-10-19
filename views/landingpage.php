@@ -36,7 +36,7 @@
         </label>
         <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg" ></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
+        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if($_SESSION['user_img']) {echo $_SESSION['user_img'];} else {echo 'avator.jpg';} ?>" alt="">
         
 
     </header>
@@ -124,7 +124,6 @@
                     }
                 }
                 
-                
             ?>
 
             <div class="item4"> Assigned Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][0] : 0 ?> </span> </div>
@@ -196,8 +195,22 @@
     </script>
 
     <script>
+
+        var ip = '<?php echo $c; ?>';
+        var cp = '<?php echo $b; ?>';
+        var ap = '<?php echo $a; ?>';
+        var pe = '<?php echo $d; ?>';
+        var ov= 0;
+        var ashours = (ip+cp+ap);
+
+        if(ap > 160){
+            ov = 160 -ap;
+        }else{
+            ov=0;
+        }
+
         var pxValues = ["Assigned hours", "Overtime hours", "Covered hours"];
-        var pyValues = [55, 49, 44];
+        var pyValues = [ ashours , ov, ap];
         var pieColors = [
         "#2177a0",
         "#00aba9",
@@ -205,7 +218,7 @@
         ];
 
         new Chart("pieChart", {
-        type: "doughnut",
+        type: "pie",
         data: {
             labels: pxValues,
             datasets: [{
