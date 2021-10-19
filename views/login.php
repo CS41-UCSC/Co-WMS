@@ -3,8 +3,7 @@
     if (empty ($_SESSION['msg'])){
         $_SESSION['msg'] = "Hello";
     }
-
-    
+   
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +21,14 @@
         <div class="item1">
             <div class="form">
                 <h1>Get <span>Started</span></h1>
-                <div id="msg"><span><?php 
-                    echo $_SESSION['msg']; 
-                    if($_SESSION['msg']!="Hello"){echo '<script type="text/javascript">document.getElementById("msg").style.border="1px solid red";</script>';}
-                ?></span></div>
+                <div id="msg"><span>
+                    <?php  
+                    if(strcmp($_SESSION['msg'],"Hello") && strcmp($_SESSION['msg'],"valid") ){
+                        echo $_SESSION['msg'];
+                        echo '<script type="text/javascript">document.getElementById("msg").style.display="block";</script>';
+                    }
+                    ?>
+		</span></div>
                 <form name="myform" method="POST">
                     
                     <label for="username" >Username</label>

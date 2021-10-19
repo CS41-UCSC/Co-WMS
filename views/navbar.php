@@ -15,7 +15,7 @@
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
         </button>
-        <img src="../Asserts/logo.jpg" alt="" class="open-img">
+        <img src="../Co-WMS/Asserts/logo.jpg" alt="" class="open-img">
         <label for="" class="date"> <?php 
                                         $day;
                                         if(date("d") == 1){
@@ -34,9 +34,10 @@
         </label>
         <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg" "></i></a></div>
         <span class="user-login">UserName</span>
-        <img  class="img-rounded-circle" src="../Asserts/avator.jpg" alt="">
+        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
         
     </header>
+
     <nav class="nav">
         <div class="nav-links">
             <a href="#" class="nav-link nav-link-active">
