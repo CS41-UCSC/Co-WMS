@@ -14,7 +14,7 @@ class assignTasksTeam_Model extends Model{
 
         $dept_ID = $dept[0]['DeptID'];
 
-        $sql2 = " SELECT T.TeamID, T.TeamName, L.EmpID FROM team_leader L INNER JOIN team T ON T.TeamID = L.TeamID  WHERE t.DeptID = ('$dept_ID')  ; " ;
+        $sql2 = "SELECT T.TeamID, T.TeamName, L.EmpID, S.EmpName FROM team T INNER JOIN team_leader L ON T.TeamID = L.TeamID INNER JOIN systemuser S ON S.EmpID = L.EmpID WHERE T.DeptID = ('$dept_ID')  ; " ;
 
         return $this->db->runQuery($sql2);
 
