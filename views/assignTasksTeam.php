@@ -1,6 +1,3 @@
-<?php
-    require_once("../Co-WMS/views/navbar.php");
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Co-WMS/style/AssignTasksTeam_style.css" type="text/css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -50,10 +47,10 @@
     <nav class="nav">
         <div class="nav-links">
 
-        <a href="#" class="nav-link " id="manage_access" >
+            <a href="#" class="nav-link " id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="landingpage" class="nav-link nav-link-active" id="dashboard" >
+            <a href="landingpage" class="nav-link nav-link-active" id="dashboard">
                 <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
             </a>
             <a href="#" class="nav-link" id="d_progress">
@@ -111,23 +108,21 @@
             </a>
         </div>
 
+
         <div class="container" id="container">
-            <?php
-            $result = $this->users;
-            print_r($result);
-            ?>
+            <form  name="form1">
+                <div class="item2">
 
-            <div class="item2">
+                    <table id="mytable">
 
-                <table id="mytable">
+                        <col id="teamid">
+                        <col id="teamname">
+                        <col id="leader">
+                        <col id="leadername">
+                        <col id="add">
 
-                    <col id="teamid">
-                    <col id="teamname">
-                    <col id="leader">
-                    <col id="add">
-
-                    <thead>
-                        <!--<tr>
+                        <thead>
+                            <!--<tr>
                                     
                                     <th>Team ID</th>
                                     <th>Team Name</th>
@@ -135,35 +130,38 @@
                                     <th>Add</th>
                                     
                                 </tr >-->
-                    </thead>
-                    <tbody>
-                        <!--<tr id="1">
+                        </thead>
+                        <tbody>
+                            <!--<tr id="1">
 
                             <td class="row-data"></td>
                             <td class="row-data"></td>
                             <td class="row-data"></td>
-                            <td><a href="assignTasksMember" class="add"><i class="fa fa-plus fa-lg"></i></a></td>
+                            
+                            echo '<td><button type="button" class="add" onclick="show();"><i class="fa fa-plus-square fa-lg"></i></button></td>';
 
                         </tr>-->
-                        <?php
-                        $result = $this->users;
-                        foreach ($result as $row) {
-                            echo '<tr id= '. $row['0'] . '>';
-                            echo '<td>' . $row['0'] . '</td>';
-                            echo '<td>' . $row['1'] . '</td>';
-                            echo '<td>' . $row['2'] . '</td>';
-                            echo '<td><button type="button" class="add" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>';
-                            echo '</tr>';
-                        }
+                            <?php
+                            $result = $this->users;
                             
-                        ?>
+                            foreach ($result as $row) {
+                                echo '<tr id= ' . $row['0'] . '>';
+                                echo '<td>' . $row['0'] . '</td>';
+                                echo '<td>' . $row['1'] . '</td>';
+                                echo '<td>' . $row['2'] . '</td>';
+                                echo '<td>' . $row['3'] . '</td>';
+                                echo '<td><a href="assignTasksMember/load/' . $row["0"] . ' " class="add"><i class="fa fa-plus fa-lg"></i></a></td>';
+                                echo '</tr>';
+                            }
 
-                    </tbody>
+                            ?>
 
-                </table>
+                        </tbody>
 
-            </div>
+                    </table>
 
+                </div>
+            </form>
         </div>
 
     </main>
@@ -187,28 +185,21 @@
 
     <script>
 
-        function show(){
-            
+        function show() {
+
 
             var rowId = event.target.parentNode.parentNode.parentNode.id;
             alert(rowId);
+
             //this gives id of tr whose button was clicked
             var data = document.getElementById(rowId).querySelectorAll(".row-data");
 
-
-            /*returns array of all elements with 
-            "row-data" class within the row with given id*/
+            //returns array of all elements with "row-data" class within the row with given id
 
             var name = data[0].innerHTML;
             var title = data[1].innerHTML;
 
-            alert(name);
-
-            //alert("Name: " + name + "\nAge: " + title);
-
-            //document.getElementById("tname").value = name;
-
-            
+            //alert(name);
 
         }
 
