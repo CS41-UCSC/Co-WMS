@@ -2,6 +2,7 @@
 
 class assignTasksMember extends Controller{
 
+
     function __construct()
     {
         parent::__construct();
@@ -10,8 +11,20 @@ class assignTasksMember extends Controller{
 
     function index(){
 
-        $this->view->users = $this->model->getData($_SESSION['login_user']);
+        $this->view->users = $this->model->getData($_SESSION['teamID']);
+
         $this->view->render('assignTasksMember');
         
     }
+
+    function load($teamId){
+
+        $_SESSION['teamID'] = $teamId;
+
+        header('location: http://localhost/CO-WMS/assignTasksMember');
+        
+        
+    }
+
+    
 }

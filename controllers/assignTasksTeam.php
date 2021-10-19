@@ -16,4 +16,8 @@ class assignTasksTeam extends Controller{
         $this->view->render('assignTasksTeam');
 
     }
+
+    function load(){
+        
+    }
 }
