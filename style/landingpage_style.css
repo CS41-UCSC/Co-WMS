@@ -41,6 +41,7 @@
         font-size: 18px;
         box-shadow: 0 0 5px #d3d2d2;
         font-weight: 500;
+        line-height: 1.6;
     }
 
     .item4, .item5, .item6, .item7{
@@ -53,6 +54,13 @@
         border-radius: 5px;
         padding: 20px;
         transition: 0.9s;
+    }
+
+    .item4 span, .item5 span, .item6 span, .item7 span{
+        margin-top: 10px;
+        color: #2B65EC;
+        font-size: 28px;
+        font-weight: 600px;
     }
 
     .item4:hover, .item5:hover, .item6:hover, .item7:hover{

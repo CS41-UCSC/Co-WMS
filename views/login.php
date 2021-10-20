@@ -21,9 +21,9 @@
         <div class="item1">
             <div class="form">
                 <h1>Get <span>Started</span></h1>
-                <div id="msg"><span><?php 
+                <div id="msg"><span>
                     <?php  
-                    if($_SESSION['msg']!="Hello"){
+                    if(strcmp($_SESSION['msg'],"Hello") && strcmp($_SESSION['msg'],"valid") ){
                         echo $_SESSION['msg'];
                         echo '<script type="text/javascript">document.getElementById("msg").style.display="block";</script>';
                     }
