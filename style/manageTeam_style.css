@@ -1,171 +1,4 @@
-body{
-    --header-height : 50px;
-    --footer-height : 60px;
-    margin: var(--header-height) 0 0 var(--footer-height);
-    margin: auto;
-    font-family: sans-serif;
-}
 
-
-.preload *{
-    transition: none !important;
-}
-
-
-.header , .nav-bar{
-    margin: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    border: none;
-    display: flex;
-}
-
-.header{
-    background: #33628C;
-}
-
-.footer{
-    margin: auto;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: var(--footer-height);
-    border: none;
-    display: flex;
-    background: #C2D3E2;
-}
-
-.footer-data{
-    padding-top: 7px;
-    width: 100%;
-    text-align: center;
-    color: #716D6D;
-}
-
-.nav-bar{
-    background: #33628C;
-}
-
-.header-button{
-    width: var(--header-height);
-    height: var(--header-height);
-    flex-shrink: 0;
-    background: #33628C;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.date{
-    padding-top: 15px;
-    padding-left: 25px;
-    color: #000000;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 18px;
-}
-
-.notification {
-    position: absolute;
-    left: 80.56%;
-    right: 15.64%;
-    padding-top: 15px;
-}
-
-.notification i{
-    color: #575656;
-}
-
-.nav-links{
-    margin-top: 50px;
-    position: fixed;
-    top: 30px;
-    left: 0;
-    z-index: 2;
-    height: 100vh;
-    width: 244px;
-    background: #33628C;
-    transform: translateX(-244px);
-    transition: transform 0.3s;
-}
-
-
-.nav-links .nav-bar .nav-header-button{
-    width: var(--header-height);
-    height: var(--header-height);
-    flex-shrink: 0;
-    background: none;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.nav-links .nav-bar .close-img{
-    width: fit-content;
-    height: 50px;
-}
-
-.nav-open .nav-links{
-    transform: translateX(0);
-    /*box-shadow: 0 0 15px rgb(220, 221, 224);*/
-}
-
-.nav-link{
-    display: flex;
-    height: 30px;
-    align-items: center;
-    color: #ffffff;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 12px 15px;
-    background: transform 0.2s;
-}
-
-
-.nav-links > a i::before{
-    padding-right: 25px; 
-}
-
-.nav-links span{
-    font-size: 16px;
-}
-
-.nav-link-active{
-    color: white; 
-    background: #9ac3f8;  
-}
-
-.nav-link:hover{
-    background: #245bd1;
-}
-
-.nav-link-active:hover{
-    background: #9ac3f8;
-}
-
-.nav-overlay{
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100vh;
-    /*background: rgba(87, 87, 87, 0.5);
-    backdrop-filter: blur(1px);*/
-    visibility: hidden;
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-
-.nav-open .nav-overlay{
-    visibility: visible;
-    opacity: 1;
-}
 
 /*background: rgba(87, 87, 87, 0.5);
     backdrop-filter: blur(1px);*/
@@ -179,7 +12,8 @@ body{
         font-family: 'Montserrat', sans-serif;
         padding: 10 5%;
         height: 30px;
-        background-color: #33628C;
+        background-color: #ffffff;
+        /* visibility: hidden; */
     }
     
     nav .links {
@@ -198,11 +32,13 @@ body{
     nav .links a {
         display: block;
         padding: 1em;
-        font-size: 16px;
-        
-        color: #fff;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
         text-decoration: none;
     }
+    /* nav .links a :hover{
+        color: rgb(0, 255, 106);
+    } */
     #nav-toggle {
         position: absolute;
         top: -100px;
@@ -213,14 +49,16 @@ body{
         right: 5%;
         top: 50%;
         transform: translateY(-50%);
+        margin-top: 5px;
     }
     nav .icon-burger .line {
         width: 30px;
         height: 5px;
-        background-color: #fff;
+        background-color: #265397;
         margin: 5px;
         border-radius: 3px;
         transition: all .3s ease-in-out;
+        
     }
 
     
@@ -231,7 +69,7 @@ body{
 
     .flex-container {
         display: flex;
-        margin-top: -100px;
+        margin-top: -50px;
         margin-left: 2%;
         margin-right: 2%;
         flex-wrap: wrap;
@@ -241,7 +79,8 @@ body{
       }
       .flex-container1 {
         display: flex;
-        margin-top: 50px;
+        margin-top: 30px;
+        height: 10%;
         margin-left: 2%;
         margin-right: 2%;
         flex-direction: row;
@@ -255,6 +94,8 @@ body{
         background-color: #ffffff;
         width: 100%;
         margin: 15px;
+        /* sjdsj */
+        margin-top: -10px;
         text-align: center;
         line-height: 60px;
         font-size: 30px;
@@ -282,7 +123,6 @@ body{
         display: inline-block;
         border: 1px solid #ccc;
         border-radius: 12px;
-        
       }
 
       
@@ -310,7 +150,7 @@ body{
       
       
       .table{
-        margin-top: 40px;
+        margin-top: 0px;
         width: 100%;
         border-collapse: collapse;
     }
@@ -342,8 +182,7 @@ body{
 
 @media (min-width: 800px) {
 
-    
-        
+       
     .container {
         padding: 20px;
         
@@ -351,13 +190,13 @@ body{
         height: 82vh;
     }
 
-    .containerN {
+    /* .containerN {
         padding: 30px;
         
         
         height: 82vh;
         margin-left: 244px;
-    }
+    } */
 
     .container >div{
         
@@ -464,6 +303,10 @@ body{
     .date{
         visibility: hidden;
     }
+
+    .table{
+        margin-left: -23px;
+    }
    
 
     
@@ -521,7 +364,7 @@ body{
 		height: auto;
 		flex-direction: column;
 		justify-content: space-evenly;
-		background-color: rgba(0,0,0,.8);
+		background-color: rgba(121, 121, 121, 0.8);
 		overflow: hidden;
 		box-sizing: border-box;
 		transition: all .5s ease-in-out;
@@ -533,12 +376,15 @@ body{
 		bottom: 0;
 	}
 	nav .icon-burger {
+        background-color: rgb(255, 255, 255);
 		display: block;
 	}
 	nav :checked ~ .icon-burger .line:nth-child(1) {
+        background-color: #265397;
 		transform: translateY(10px) rotate(225deg);
 	}
 	nav :checked ~ .icon-burger .line:nth-child(3) {
+        background-color: #265397;
 		transform: translateY(-10px) rotate(-225deg);
 	}
 	nav :checked ~ .icon-burger .line:nth-child(2) {
@@ -574,6 +420,10 @@ body{
 		text-align: left;
 	}
 
+    .table{
+        margin-left: -23px;
+    }
+
 }
 
 @media (max-width: 530px) {
@@ -583,7 +433,7 @@ body{
         margin-top: 100px;
         margin-left: 2%;
         margin-right: 2%;
-        flex-direction: column;
+        flex-direction: row;
         background-color: #ffffff;
     
         
