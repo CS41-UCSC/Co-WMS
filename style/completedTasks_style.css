@@ -1,0 +1,348 @@
+
+
+/*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    nav {
+        position: fixed;
+        z-index: 10;
+        left : 245px;
+        right: 0;
+        top: 50px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 10 5%;
+        height: 30px;
+        background-color: #ffffff;
+       
+    }
+    
+    nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 600px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .links li {
+        list-style: none;
+    }
+    nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        
+        color: #000000;
+        text-decoration: none;
+    }
+    nav .links a:hover{
+        color:#c0780c;
+    }
+    #nav-toggle {
+        position: absolute;
+        top: -100px;
+    }
+    nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #fff;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .3s ease-in-out;
+    }
+
+    
+    /*background: rgba(87, 87, 87, 0.5);
+    backdrop-filter: blur(1px);*/
+
+    .flex-container {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 2px;
+        margin-right: 2px;
+        
+        height:64vh;
+        flex-wrap: wrap;
+        background-color:#ffffff;
+        
+        
+        
+      }
+      .container{
+        margin:20px;
+    }
+    .row{
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+    
+    .ui-name{
+        background: #ffffff;
+        position:relative;
+        flex: 1;
+        max-width: 4600px;
+        height:50px;
+        margin:10px;
+        margin-top: -30px;
+        
+    }
+    h2{
+        font-size: 20pt;
+        margin-top: -40px;
+        color:#1d5687;
+        font-weight: 600;
+        
+        
+    }
+    
+    
+    
+    .table{
+        background: #ffffff;
+        position:relative;
+        flex: 1;
+        max-width: 4600px;
+        height:450px;
+        margin:10px;
+        margin-top: -40px;
+        
+       
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid rgb(8, 77, 129);
+        color:black;
+      }
+      th {
+        text-align: left;
+        padding: 8px;
+        font-size: 15pt;
+        background-color: #47a2ec;
+      }
+      
+       td {
+        text-align: left;
+        padding: 8px;
+        font-size: 10pt;
+      }
+      
+      tr:nth-child(even){background-color: #f2f2f2}
+      tr:nth-child(odd){background-color: #f2f2f2}
+@media (max-width: 1024px){
+    .table{
+        margin-top: -440px;
+       
+    }
+    
+}     
+@media (min-width: 800px) {
+        
+    .container {
+        padding: 20px;
+        
+        
+        height: 82vh;
+    }
+/* 
+    .containerN {
+        padding: 30px;
+        
+        
+        height: 82vh;
+        margin-left: 244px;
+    } */
+
+    .container >div{
+        
+        text-align: center;
+        font-size: 28px;
+        
+        padding: 40px;
+        color: #245bd1;
+        
+        font-weight: 600;
+    }
+    
+   
+    .open-img{
+        width: 194px;
+    }
+    h2{
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+
+    .text{
+        font-weight: bold;
+        margin-top: 80px;
+    }
+    
+    .open-img{
+        visibility: hidden;
+    }
+    .ui-name{
+        margin-top: 40px;
+        
+    }
+    h2{
+        text-align: center;
+    }
+
+
+    .date{
+        visibility: hidden;
+    }
+    .table{
+        margin-top: -150px;
+        margin-left: -20px;
+    }
+
+   
+
+    
+}
+
+    
+@media (max-width: 567px) {
+
+  
+    nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 60%;
+		right: 0;
+		top: 80px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+        
+	}
+	nav .links a {
+		font-size: 20px;
+        color: #ffffff;
+        
+        
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+        background-color: #265397;
+        margin-top: -40px;
+       
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+        background-color: #000000;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+        background-color: #000000;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+       
+	}
+    .table{
+        margin-left: -60px;
+        margin-top: -80px;
+        
+        
+    }
+    h2{
+        margin-top: -70px;
+        margin-right: 60px;
+       
+    }
+    
+    
+
+}
+
+    
+
+
+}
+@media (max-width: 420px){
+    .table{
+        margin-top: 0px;
+    }
+    
+}
+@media (max-width: 380px){
+    .table{
+        
+        position:relative;
+        flex: 1;
+        max-width: 3600px;
+        height:-150px;
+        margin:10px;
+        margin-top: -8px;
+        margin-bottom: 0px;
+        margin-left: -70px;
+        margin-top: -90px;
+       
+    }
+    table {
+    
+        width: 100vw;
+        
+        
+      }
+      th {
+        text-align: center;
+        padding: 4px;
+        font-size: 10pt;
+        
+      }
+      
+       td {
+        text-align: center;
+        padding: 2px;
+        font-size: 10pt;
+      }
+      h2{
+          text-align: center;
+      }
+      .table{
+        margin-left: -60px;
+    }
+
+}
+@media (max-width: 320px){
+    .table{
+        height:270px;
+    }
+    h2{
+        text-align: center;
+        font-size: 19pt;
+    }
+    .table{
+        margin-top: -150px;
+    }
+}
