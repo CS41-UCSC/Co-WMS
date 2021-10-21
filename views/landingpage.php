@@ -201,7 +201,7 @@
         var ap = '<?php echo $a; ?>';
         var pe = '<?php echo $d; ?>';
         var ov= 0;
-        var ashours = (ip+cp+ap);
+        var ashours = (Number(ip)+Number(cp)+Number(ap));
 
         if(ap > 160){
             ov = 160 -ap;

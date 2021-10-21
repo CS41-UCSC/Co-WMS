@@ -6,14 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Co-WMS/style/deptManageTask_style.css" type="text/css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Document</title>
 </head>
 
 <body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
+
+    <?php
+
+    $result = $this->task;
+
+    if (!empty($_SESSION['addTask'])) {
+
+        if ($_SESSION['addTask'] == "yes") {
+            echo '<script>swal("Success!","New task created successfully", "success")</script>';
+            $_SESSION['addTask'] = NULL;
+        } else if ($_SESSION['addTask'] == "no") {
+            echo '<script>swal("Failed!", "Try Again!" ,"error")</script>';
+            $_SESSION['addTask'] = NULL;
+        }
+    }
+
+
+    ?>
+
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -157,14 +177,14 @@
                                 </tr>-->
 
                             <?php
-                            $result = $this->task;
+
                             foreach ($result as $row) {
                                 echo '<tr id= ' . $row['0'] . '>';
                                 echo '<td class="row-data" >' . $row['0'] . '</td>';
                                 echo '<td class="row-data" >' . $row['1'] . '</td>';
                                 echo '<td class="row-data" >' . $row['2'] . '</td>';
-                                echo '<td><button type="button" class="minus" onclick="show();"><i class="fa fa-minus-circle fa-lg"></i></button></td>';
-                                echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>';
+                                echo '<td><button type="button" class="minus" onclick="deleteshow();"><i class="fa fa-minus-circle fa-lg"></i></button></td>';
+                                echo '<td><button type="button" class="pen" onclick="editshow();"><i class="fa fa-pencil fa-lg"></i></button></td>';
                                 echo '</tr>';
                             }
 
@@ -179,15 +199,22 @@
             </div>
 
             <div class="item3">
+
+
                 <h3>Add new task</h3>
-                <form action="" class="data-form" id="data-form">
+                <form method="POST" class="data-form" id="data-form" name="addform">
 
                     <label for="dep">Team ID </label>
-                    <input type="text" name="tname" id="tname" value=""><br>
+                    <input type="text" name="tid" id="tid" value=""><br>
                     <label for="task">Task title</label>
-                    <input type="text" name="tasktitle" value=""><br>
+                    <input type="text" name="tname" value=""><br>
+                    <h4>Sub Tasks</h4>
+                    <label for=""></label><input type="text" name="sub1" value=""><br>
+                    <label for=""></label><input type="text" name="sub2" value=""><br>
+                    <label for=""></label><input type="text" name="sub3" value=""><br>
+                    <label for=""></label><input type="text" name="sub4" value=""><br>
 
-                    <div class="btn"><input type="submit" value="Save Changes" class="button"></div>
+                    <div class="btn"><input type="submit" value="Save Changes" class="button" onclick="addtask()"></div>
 
                 </form>
             </div>
@@ -197,12 +224,12 @@
 
     </main>
 
-    <div class="popup" id="myForm">
+    <div class="popup" id="editForm">
 
-        <form action="" class="form-popup" id="form-popup">
+        <form action="" class="form-popup" id="form-popup" name="editdata">
 
             <label for="dep">Team ID</label>
-            <input type="text" name="tid" id="tid" value=""><br>
+            <input type="text" name="tid" id="ttid" value=""><br>
             <label for="dep">Team </label>
             <input type="text" name="tname" id="tteam" value=""><br>
             <label for="task">Task title</label>
@@ -210,6 +237,21 @@
 
             <div class="btn"><input type="submit" value="Save Changes" class="button">
                 <button type="button" class="button" onclick="closeForm()">Close</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="popup" id="deleteForm">
+
+        <form action="" class="form-popup" id="form-popup" name="editdata">
+
+            <h4> Do you want to delete?</h4>
+
+            <div class="btnd">
+                <input type="submit" value="Yes" class="yes">
+                <button type="button" class="no" value="" onclick="closedelete()">No</button>
             </div>
 
         </form>
@@ -237,15 +279,13 @@
     </script>
 
     <script>
-        function show() {
-            
+        function editshow() {
 
             var rowId = event.target.parentNode.parentNode.parentNode.id;
-            
+
             //this gives id of tr whose button was clicked
             var data = document.getElementById(rowId).querySelectorAll(".row-data");
 
-            
             /*returns array of all elements with 
             "row-data" class within the row with given id*/
 
@@ -253,22 +293,42 @@
             var name = data[1].innerHTML;
             var title = data[2].innerHTML;
 
-            document.getElementById("tid").value = id;
+            document.getElementById("ttid").value = id;
             document.getElementById("tteam").value = name;
             document.getElementById("ttitle").value = title;
 
-            document.getElementById("myForm").style.display = "block";
+            document.getElementById("editForm").style.display = "block";
             document.getElementById("container").style.filter = "grayscale(100%)";
-            /*document.getElementById("item1").style.filter = "grayscale(100%)";
-            document.getElementById("main").style.opacity = "0.3";*/
+
+
+        }
+
+        function deleteshow() {
+
+            document.getElementById("deleteForm").style.display = "block";
+            document.getElementById("container").style.filter = "grayscale(100%)";
+
 
         }
 
         function closeForm() {
-            document.getElementById("myForm").style.display = "none";
+            document.getElementById("editForm").style.display = "none";
             document.getElementById("container").style.filter = "none";
-            /* document.getElementById("item1").style.filter = "none";
-            document.getElementById("main").style.opacity = "1";*/
+
+        }
+
+        function closedelete() {
+            document.getElementById("deleteForm").style.display = "none";
+            document.getElementById("container").style.filter = "none";
+
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        function addtask() {
+
+            document.addform.action = "deptManageTask/addTask";
 
         }
     </script>
