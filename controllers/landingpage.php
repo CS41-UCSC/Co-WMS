@@ -1,6 +1,6 @@
 <?php
 
-class depManager extends Controller{
+class landingpage extends Controller{
 
     function __construct()
     {
@@ -10,7 +10,10 @@ class depManager extends Controller{
 
     function index(){
         
-        $this->view->render('depManager');
+        $this->view->data = $this->model->loadData();
+        $this->view->hours = $this->model->loadHours();
+
+        $this->view->render('landingpage');
 
     }
 

@@ -1,17 +1,10 @@
-:root{
-	--blue: #265397;
-	--orange: #DC950B;
-	--white: #fff;
-	--grey: #f5f5f5;
-	--black1: #222;
-	--black2: #999;
-	--blue2: #9ac3f8;
-	--header-height : 50px;
-    --footer-height : 70px;
+main{
+	margin-top: 0px;
+	padding-bottom: var(--footer-height);
 }
 
-main{
-	padding: 100px;
+.back_arrow{
+	margin-top: 0px;
 }
 
 .back_arrow i{
@@ -41,7 +34,7 @@ main{
 	padding: 1%;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
-	border: transparent;
+	border: 1px solid white;
 	outline: none;
 	background: var(--grey);
 }
@@ -80,11 +73,7 @@ main{
 	color: var(--blue);
 }
 
-#emp_table tr {
-	
-}
-
-#emp_table tr:hover {
+#emp_table tr:hover{
 	background-color: var(--blue);
 	color: white;
 }
@@ -112,12 +101,30 @@ main{
 	background-color: #AAAAFF;
 }
 
+.submit_btn {
+	width: 15%;
+	margin-top: 25px;
+	font-size: 20px;
+	border-radius: 10px;
+	color: var(--blue);
+	background-color: var(--orange);
+	border: transparent;
+}
+
+.submit_btn:hover{
+	color: var(--orange);
+	background-color: var(--blue);
+	cursor: pointer;
+}
+
 .container{
 	display: grid;
 	grid-template-areas: 'one' 'two' 'three';
+	margin-top: 0px;
 }
 
 .page{
+	padding-top: var(--header-height);
 	padding-bottom: var(--footer-height);
 }
 
@@ -142,5 +149,11 @@ main{
 	
 	#access_table{
 		font-size: 14px;
+	}
+	
+	.submit_btn {
+		width: 50%;
+		font-size: 16px;
+		border-radius: 10px;
 	}
 }

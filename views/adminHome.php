@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/adminHome.css?<?php echo time(); ?>" type="text/css">
+	<link rel="stylesheet" href="../Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script language="javascript" src="../Co-WMS/views/navigation.js" >
 	</script>
@@ -34,7 +35,17 @@
                                         
                                     ?>
         </label>
-        <div class="notification" ><a href="#" ><i class="fa fa-bell fa-lg" > </i> </a> </div>
+        <div class="notification" >
+			<button class="icon"><i class="fa fa-bell fa-lg" ></i>
+				<span class="badge">3</span>
+			</button>
+			<div class="list" >
+				<a href="#">HR-DM-001 has been Assigned as HR Manager</a>
+				<a href="#">IT-TH-012 has been Terminated</a>
+				<a href="#">Revoke all access from </a>
+				<a href="#">10 Hours Pending to Complete</a>
+			</div>
+		</div>
         <div class="user-login"> <!--<?php echo $_SESSION['login_user']; ?>--> Hello Admin </div>
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
@@ -118,7 +129,7 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
+            <a href="myleaveApproved" class="nav-link" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="t_leave">

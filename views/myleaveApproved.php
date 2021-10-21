@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../Co-WMS/style/myleave.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
+	<link rel="stylesheet" href="../Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script language="javascript" src="../Co-WMS/views/navigation.js">
 	</script>
@@ -41,7 +42,18 @@
                                         
                                     ?>
         </label>
-        <div class="notification" ><a href="#" ><i class="fa fa-bell fa-lg" > </i> </a> </div>
+        <div class="notification" >
+			<button class="icon"><i class="fa fa-bell fa-lg" ></i>
+				<span class="badge">5</span>
+			</button>
+			<div class="list" >
+				<a href="#">TaskID 101 has been Approved</a>
+				<a href="#">TaskID 121 has been Assigned</a>
+				<a href="#">TaskID 102 is Overdue</a>
+				<a href="#">LeaveRq 100 has been Approved</a>
+				<a href="#">10 Hours Pending to Complete</a>
+			</div>
+		</div>
         <div class="user-login"> <!--<?php echo $_SESSION['login_user']; ?>--> Hello Admin </div>
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
@@ -95,7 +107,7 @@
         </div>-->
 		<nav class="nav">
         <div class="nav-links">
-			<a href="#" class="nav-link" id="manage_access">
+			<a href="adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
             <a href="#" class="nav-link" id="dashboard">
@@ -157,25 +169,7 @@
 			</div>
 			<div class="item2">
 				<form class="date-filter" method="POST" action="#">
-					<select name="month" class="filter" id="mfilter">
-						<option value="JAN">JAN</option>
-						<option value="FEB">FEB</option>
-						<option value="MAR">MAR</option>
-						<option value="ARP">APR</option>
-						<option value="MAY">MAY</option>
-						<option value="JUN">JUN</option>
-						<option value="JUL">JUL</option>
-						<option value="AUG">AUG</option>
-						<option value="SEP">SEP</option>
-						<option value="OCT" selected>OCT</option>
-						<option value="NOV">NOV</option>
-						<option value="DEC">DEC</option>
-					</select>
-					<select name="year" class="filter" id="yfilter">
-						<option value="2020">2020</option>
-						<option value="2021" selected>2021</option>
-						<option value="2022">2022</option>
-					</select>
+					<input type="month" name="month" class="filter" id="mfilter" />
 				</form>
 			</div>
 			<div class="item3">
@@ -225,11 +219,11 @@
 		
 	</script>
 	<script>
-		var xValues = ["Approved","Total"];
-		var y1Values = [3,14];
-		var y2Values = [1,7];
-		var y3Values = [2,10];
-		var barColors = ["#265397","#265397"];
+		var xValues = ["Approved","Remaining"];
+		var y1Values = [3,11];
+		var y2Values = [1,6];
+		var y3Values = [2,8];
+		var barColors = ["#DC950B","#265397"];
 		
 		new Chart("annual",{
 			type: "doughnut", data: {
