@@ -14,9 +14,10 @@
 }
 
 body {
-    margin: var(--header-height) 0 0 var(--footer-height);
-    margin: auto;
-    font-family: Roboto;
+    /*margin: var(--header-height) 0 var(--footer-height) 0;
+    */margin: auto;
+	font-family: Roboto;
+	padding-top: 50px;
 }
 
 .preload *{
