@@ -16,7 +16,13 @@ class deptManageTask extends Controller{
 
     }
 
-   
+    function addTask(){
+        
+        $this->model->insertData();
+
+       /* header('location: http://localhost/CO-WMS/deptManageTask');*/
+
+    }
 
 }
 
