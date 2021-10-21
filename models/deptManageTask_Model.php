@@ -22,4 +22,44 @@ class deptManageTask_Model extends Model{
         return $this->db->runQuery($sql);
 
     }
+
+    function insertData(){
+
+        $id = $_POST['tid'];
+        $name = $_POST['tname'];
+
+        $sql = "INSERT INTO task (TeamID, TaskName) VALUES ('$id', '$name')" ;
+
+        if ($this->db->query($sql) == TRUE) {
+            $_SESSION['addTask'] = "yes";
+          } else {
+            $_SESSION['addTask'] = "no";
+        }
+
+        $a = array();
+        $sub1 = $_POST['sub1'];
+        $sub2 = $_POST['sub2'];
+        $sub3 = $_POST['sub3'];
+        $sub4 = $_POST['sub4'];
+        array_push($a,$sub1,$sub2,$sub3,$sub4);
+        
+        $i=0;
+        
+        while($a[$i]){
+
+            echo $a[$i];
+
+            $sql = "INSERT INTO subtask (TaskID, SubTaskName) VALUES ('$id', '$a[$i]')" ;
+
+            if ($this->db->query($sql) == TRUE) {
+                $_SESSION['addTask'] = "yes";
+              } else {
+                $_SESSION['addTask'] = "no";
+            }
+            $i = $i+1;
+
+        }
+                
+    }
+
 }
