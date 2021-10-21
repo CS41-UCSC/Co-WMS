@@ -1,0 +1,133 @@
+table{ 
+    border-collapse:separate; 
+    border-spacing: 0 15px; 
+}
+
+th,td{ 
+    border-top-style: solid;
+    border-top-color: #2B65EC;
+    border-top-width: 3px;
+    padding-left: 15px;
+}
+
+tr{
+    box-shadow: 0 0 5px #d3d2d2;
+    border-radius: 2px;
+    height: 60px;
+}
+
+#add{
+    width: 50px;
+}
+
+.add{
+    border: none;
+    background-color: transparent;
+}
+
+.add i{
+    color: rgb(167, 167, 168);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (min-width: 800px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    table{
+        width: 85%;
+    }
+
+    .item2 { grid-area: left; }
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+    }
+
+    .containerN {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+        margin-left: 244px;
+    }
+
+    .item2{
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+        width: 90%;
+        border: #d3d2d2;
+        box-shadow: 1px solid #d3d2d2;
+        
+    }
+
+    progress{
+        width: 90%;
+    }
+
+    details > summary {
+        padding: 20px;
+        width: 90%;
+        background-color: #eeeeee;
+        border: none;
+        box-shadow: 1px 1px 2px #bbbbbb;
+        cursor: pointer;
+      }
+      
+      details > p {
+        width: 90%;
+        background-color: #eeeeee;
+        padding: 20px;
+        margin: 0;
+        box-shadow: 1px 1px 2px #bbbbbb;
+      }
+    
+}
+
+@media (max-width: 799px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    table{
+        margin: auto;
+        width: 600px;
+    }
+
+    .item2{
+        overflow-x: auto;
+    }
+
+    .item2 { grid-area: left; }
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+    }
+
+    .item2{
+        width: 100%;
+        margin: auto;
+    }
+
+    
+}

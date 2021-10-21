@@ -277,25 +277,25 @@ tr{
 
     .btnd .yes{
         width: 80px;
-        border: 2px solid #2bec4b;
+        border: 2px solid #19c536;
         cursor: pointer;
     }
 
     .btnd .yes:hover{
-        background-color:#2bec4b ;
+        background-color:#19c536 ;
         color: #ffffff;
     }
 
     .btnd .no{
         height: 30px;
         width: 80px;
-        border: 2px solid #d11e1e;
+        border: 2px solid #db3737;
         border-radius: 5px;
         cursor: pointer;
     }
 
     .btnd .no:hover{
-        background-color:#d11e1e;
+        background-color:#db3737;
         color: #ffffff;
     }
     

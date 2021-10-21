@@ -61,7 +61,7 @@
             <a href="#" class="nav-link" id="my_progress">
                 <i class="fa fa-user fa-lg"><span>My Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="t_progress">
+            <a href="teamProgress" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
             </a>
             <a href="#" class="nav-link" id="emp_progress">

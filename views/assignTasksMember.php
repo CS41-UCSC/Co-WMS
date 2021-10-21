@@ -161,6 +161,7 @@
                                 <?php
 
                                 $result = $this->users;
+                                $st=50;
                                
                                 foreach ($result as $row) {
                                     echo '<tr id= ' . $row['1'] . '>';
@@ -171,10 +172,10 @@
                                     echo '<td class="row-data" style="display:none" >' . $row['4'] . '</td>';
                                     echo '<td class="row-data">' . $row['5'] . '</td>';
                                     echo '<td class="row-data">' . $row['6'] . '</td>';
-                                    echo '<td class="row-data">' . $row['7'] . '</td>';
+                                    echo '<td class="row-data">' . $st. '</td>';
                                     echo '<td class="row-data" style="display:none" >' . $row['8'] . '</td>';
                                     echo '<td class="row-data" style="display:none" >' . $row['9'] . '</td>';
-                                    echo '<td class="row-data" style="display:none" >' . $row['10'] . '</td>';
+                                    echo '<td class="row-data" style="display:none" >10</td>';
                                     echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-eye fa-lg"></i></button></td>';
                                     echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>';
                                     echo '</tr>';
@@ -212,7 +213,8 @@
                 <label for="task">Due Date</label>
                 <input type="text" name="ddate" id="ddate" value=""><br>
                 <label for="">Status</label>
-                <input type="text" name="status" id="stts" value=""><br>
+                <progress id="file" value="32" max="100"></progress>
+                <!--<input type="range" name="status" id="stts" value=""><br>-->
                 <label for="">Accepted Date</label>
                 <input type="text" name="acdate" id="acdate" value="" readonly><br>
                 <label for="">Completed Date</label>
@@ -286,7 +288,7 @@
                 document.getElementById("aby").value = aby
                 document.getElementById("rtime").value = rtime;
                 document.getElementById("ddate").value = ddate;
-                document.getElementById("stts").value = status;
+                /*document.getElementById("stts").value = status;*/
                 document.getElementById("acdate").value = acdate;
                 document.getElementById("cdate").value = cdate;
                 document.getElementById("apdate").value = apdate;
@@ -304,6 +306,7 @@
 
 
             }
+
         </script>
 
 </body>
