@@ -144,7 +144,7 @@ tr{
         padding-top: 20px;
         border-radius: 5px;
         box-shadow: 0 0 5px #d3d2d2;
-        z-index: 4;
+        /*z-index: 4;*/
     }
 
     .item2{
@@ -267,6 +267,36 @@ tr{
     .popup .button:hover{
         background-color: #2B65EC;
         color: white;
+    }
+
+    .btnd{
+        width: 250px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .btnd .yes{
+        width: 80px;
+        border: 2px solid #2bec4b;
+        cursor: pointer;
+    }
+
+    .btnd .yes:hover{
+        background-color:#2bec4b ;
+        color: #ffffff;
+    }
+
+    .btnd .no{
+        height: 30px;
+        width: 80px;
+        border: 2px solid #d11e1e;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btnd .no:hover{
+        background-color:#d11e1e;
+        color: #ffffff;
     }
     
 }
