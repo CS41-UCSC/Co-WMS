@@ -85,7 +85,7 @@
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
         </div>
-		<nav class="nav nav-open">
+		<nav class="nav">
         <div class="nav-links">
 			<a href="#" class="nav-link nav-link-active" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
@@ -137,7 +137,7 @@
 		</nav>
 
     <main>
-        <div class="container containerN">
+        <div class="container">
         </div>        
     </main>
 	</div>
