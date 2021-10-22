@@ -7,10 +7,27 @@ class manageTeamAdd_Model extends Model{
         parent::__construct();
     }
 
-    function getData(){
+    function insertTeam($teamName,$DeptId){
 
-        $sql = "SELECT * FROM team";
-        return $this->db->runQuery($sql);
+        $sql = "INSERT INTO `team`( `TeamName`, `DeptID`) VALUES ('$teamName','$DeptId') " ;
+
+
+        if($this->db->query($sql) == true){
+                $_SESSION['add-team'] = "yes";
+        }else{
+                $_SESSION['add-team'] = "no";
+        }
+
+    
+        // try{
+        //     $this->db->exec($sql);
+        //         $_SESSION['error-msg'] = "New record created successfully";
+        //     }
+        // catch(PDOException $e)
+        // {
+
+    	//     $_SESSION['error-msg'] = $e->getMessage();
+        // }
 
     }
 }
