@@ -249,13 +249,22 @@
         font-size: 30px;
         color: rgb(0, 0, 0);
       } 
-      span {
+      /* span {
+        text-align: left;
+        font-size: 20px;
+        color: #666;
+        display: block;
+        padding: 0 0 5px;
+      } */
+
+      .message{
         text-align: left;
         font-size: 20px;
         color: #666;
         display: block;
         padding: 0 0 5px;
       }
+
       form {
         padding: 25px;
         margin: 25px;
