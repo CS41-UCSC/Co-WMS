@@ -12,7 +12,7 @@ class manageTeam extends Controller{
 
     function index(){
         
-        // $this->view->users =  $this->model->getData();
+        $this->view->users =  $this->model->getData();
         $this->view->render('manageTeam');
 
 
