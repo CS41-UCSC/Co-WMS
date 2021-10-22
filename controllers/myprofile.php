@@ -59,7 +59,6 @@ class myprofile extends Controller{
             
         }
 
-        $this->view->users = $this->model->getData($_SESSION['login_user']);
         header('location: http://localhost/CO-WMS/myprofile');
         
     }
