@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../Co-WMS/style/manageDepartmentAdd_style.css">
     <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -57,7 +59,7 @@
 			<a href="#" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
-            <a href="myprofile" class="nav-link" id="my_profile">
+            <a href="#" class="nav-link" id="my_profile">
                 <i class="fa fa-user fa-lg" ><span>My Profile</span></i>
             </a>
 			<a href="#" class="nav-link" id="my_progress">
@@ -66,7 +68,7 @@
 			<a href="#" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
             </a>
-			<a href="employeeWorkProgress" class="nav-link" id="emp_progress">
+			<a href="#" class="nav-link" id="emp_progress">
                 <i class="fa fa-users fa-lg" ><span>Employee Progress</span></i>
             </a>
             <a href="#" class="nav-link" id="manage_task_dpt">
@@ -75,7 +77,7 @@
 			<a href="#" class="nav-link" id="manage_task_leader">
                 <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
-            <a href="manageEmployee" class="nav-link" id="manage_emp">
+            <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
             <a href="#" class="nav-link" id="my_leave">
@@ -90,7 +92,7 @@
 			<a href="#" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
-			<a href="homepage" class="nav-link" id="logout">
+			<a href="#" class="nav-link" id="logout">
                 <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
             </a>
         </div> 
@@ -110,10 +112,24 @@
             <div class="line"></div>
         </label>
     </nav>
-    
+    <?php
+    $result = $this->department;
+    if (!empty($_SESSION['add-department'])) {
+        if ($_SESSION['add-department'] == "yes") {
+            echo '<script>swal("Success!", "Department added!", "success")</script>';
+            $_SESSION['add-department'] = null;
+        } else if ($_SESSION['add-department'] == "no") {
+            echo '<script>swal("Failed!", "Try Again!","error")</script>';
+            $_SESSION['add-department'] = null;
+        }
+    }
+
+
+    ?>
+
     <main>
         <div class="container">
-            <form action="" method="post">
+            <form action="manageDepartmentAdd/setData" method="post">
                 <div class="flex-container1">
                     <div>Add New Department</div>
                    
@@ -136,18 +152,17 @@
                         <div></div>
                         
                         <div>
-                            <form action="POST">
-                                <input type="submit" value="Back" class="rectan">
-                            </form>
+                            
+                                <input type="submit" value="Cancel" class="rectan">
+                            
                         </div>
                         <div>
-                            <form action="POST">
-                                <input type="submit" value="Submit" class="rectan">
-                            </form>
+                           
+                                <input type="submit" value="Add" class="rectan">
+                            
                         </div>
                 </div>
             </form>
-           
         </div>
     </main>
 
