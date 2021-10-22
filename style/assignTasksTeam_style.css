@@ -1,0 +1,154 @@
+table{ 
+    border-collapse:separate; 
+    border-spacing: 0 15px; 
+}
+
+th,td{ 
+    border-top-style: solid;
+    border-top-color: #2B65EC;
+    border-top-width: 3px;
+    padding-left: 15px;
+}
+
+tr{
+    box-shadow: 0 0 5px #d3d2d2;
+    border-radius: 2px;
+    height: 60px;
+}
+
+#add{
+    width: 50px;
+}
+
+.add{
+    border: none;
+    background-color: transparent;
+}
+
+.add i{
+    color: rgb(167, 167, 168);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (min-width: 800px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    table{
+        width: 85%;
+    }
+
+    .item2 { grid-area: left; }
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+    }
+
+    .containerN {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        background-color: #ffffff;
+        margin-left: 244px;
+    }
+
+    .item1{
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+    .item1 a{
+        padding-right: 50px;
+        text-decoration: none;
+    }
+
+    .item1 span{
+        font-weight: 500;
+        font-size: 15pt;
+        color: #2B65EC;
+        font-family:sans-serif;
+    }
+
+    .activelink span{
+        font-weight: 550;
+    }
+
+    .item2{
+        display: flex;
+        justify-content: center;
+        margin: 0 15px 0 15px;
+        background-color: rgb(255, 255, 255);
+        
+    }
+
+    
+}
+
+@media (max-width: 799px) {
+
+    main{
+        margin-top: 75px;  
+    }
+
+    table{
+        margin: auto;
+        width: 600px;
+    }
+
+    .item2{
+        overflow-x: auto;
+    }
+
+    .item2 { grid-area: left; }
+
+    .container {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas:
+        'left';
+    }
+
+    .item1{
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+        display: flex;
+    }
+
+    .item1 a{
+        text-decoration: none;
+    }
+
+    .item1 span{
+        font-family:sans-serif;
+        font-weight: 400;
+        font-size: 11pt;
+        color: #2B65EC;
+        font-family:sans-serif;
+    }
+
+    .activelink span{
+        font-weight: 550;
+    }
+
+    .item2{
+        width: 100%;
+        margin: auto;
+    }
+
+    
+}

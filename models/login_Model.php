@@ -63,6 +63,8 @@ class login_Model extends Model{
 
                 $_SESSION['login_user'] = $user_name;
                 $_SESSION['password'] = $password;
+                $_SESSION['emprole'] = $result1[0][4];
+                $_SESSION['user_img'] = $result1[0][0];
                 $_SESSION['num_login_fail']=0;
                 $msg = "valid";
                 $_SESSION['msg'] = $msg ;

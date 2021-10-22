@@ -18,6 +18,7 @@ class myprofile_Model extends Model{
         $sql = ("UPDATE systemuser SET Userimg = '$Empimg' WHERE EmpID = ('$empID') ;");
 
         if (($this->db->query($sql)) == TRUE) {
+            $_SESSION['user_img'] = $Empimg;
             $_SESSION['photo']="yes";
         } else {
             $_SESSION['photo']="no";
