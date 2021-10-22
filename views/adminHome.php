@@ -13,7 +13,7 @@
     <title>Co-WMS</title>
 </head>
 
-<body class="preload" onload='setbutton()'>
+<body class="preload" onload='setbutton($_SESSION["login"])'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>

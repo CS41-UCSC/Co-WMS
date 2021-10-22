@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../Co-WMS/style/myleave.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
-	<link rel="stylesheet" href="../Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script language="javascript" src="../Co-WMS/views/navigation.js" >
 	</script>
@@ -40,18 +39,7 @@
                                         
                                     ?>
         </label>
-        <div class="notification" >
-			<button class="icon"><i class="fa fa-bell fa-lg" ></i>
-				<span class="badge">5</span>
-			</button>
-			<div class="list" >
-				<a href="#">TaskID 101 has been Approved</a>
-				<a href="#">TaskID 121 has been Assigned</a>
-				<a href="#">TaskID 102 is Overdue</a>
-				<a href="#">LeaveRq 100 has been Approved</a>
-				<a href="#">10 Hours Pending to Complete</a>
-			</div>
-		</div>
+        <div class="notification" ><a href="#" ><i class="fa fa-bell fa-lg" > </i> </a> </div>
         <div class="user-login"> <!--<?php echo $_SESSION['login_user']; ?>--> Hello Admin </div>
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
@@ -87,13 +75,13 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ></i>
             </a>
-            <a href="#" class="nav-link  nav-link-active" id="my_leave">
+            <a href="#" class="nav-link" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
 			<a href="#" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
-			<a href="#" class="nav-link" id="d_leave">
+			<a href="#" class="nav-link nav-link-active" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ></i>
             </a>
 			<a href="#" class="nav-link" id="emp_leave">
@@ -135,13 +123,13 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link  nav-link-active" id="my_leave">
+            <a href="#" class="nav-link" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="d_leave">
+			<a href="#" class="nav-link nav-link-active" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="emp_leave">
@@ -159,20 +147,19 @@
 			<div class="item1">
 				<div class="toplinkbar">
 				<center>
-					<a href="myleaveApproved" class="toplink" id="toplink1" ><span>Approved</span></a>
-					<a href="#" class="toplink toplink-active" id="toplink2"><span>Pending</span>
-					<a href="myleaveRequest" class="toplink" id="toplink3"><span>Leave Request</span></a>
+					<a href="dptleaveApproved" class="toplink" id="toplink1" ><span>Approved</span></a>
+					<a href="#" class="toplink toplink-active" id="toplink2"><span>Pending</span></a>
 				</center>
 				</div>
 			</div>
 			<div class="item2">
 				<form class="date-filter" method="POST" action="#">
-					<input type="month" name="month" class="filter" id="mfilter" />
+					<input type="month" name="month" class="filter" id="mfilter">
 				</form>
 			</div>
 			<div class="item4">
 				<table>
-					<tr><td>Annual Leave</td><td>15/12/2021 - 16/12/2021</td><td>Pending</td></tr>
+					<tr><td>EmpID</td><td>Annual Leave</td><td>15/12/2021 - 16/12/2021</td><td>Pending</td><td><button href="#" name="viewbtn" class="viewbtn" >View</button></td></tr>
 				</table>
 			</div>
         </div>        
