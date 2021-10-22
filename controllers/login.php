@@ -22,7 +22,12 @@ class login extends Controller{
         echo $_SESSION['msg'];
         
         if($res){
-            header('location: http://localhost/CO-WMS/landingpage');
+            if($_SESSION['emprole']== "Admin"){
+                header('location: http://localhost/CO-WMS/adminHome');
+            }else{
+                header('location: http://localhost/CO-WMS/landingpage');
+            }
+            
         }
 
         else {
