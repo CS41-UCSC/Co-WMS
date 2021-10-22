@@ -23,7 +23,7 @@ class teamProgress_Model extends Model{
 
     function getTask(){
 
-        $sql = "SELECT * FROM task_assign";
+        $sql = "SELECT task.TaskName, task_assign.RequiredTime, task_assign.DueDate, task_assign.TaskStatus FROM task_assign INNER JOIN task ON task_assign.TaskID = task.TaskID ";
 
         return $this->db->runQuery($sql);
 

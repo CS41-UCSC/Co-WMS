@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +9,7 @@
     <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Document</title>
 </head>
@@ -101,7 +101,7 @@
 
 
         <div class="container" id="container">
-            <form  name="form1">
+            <form name="form1">
                 <div class="item2">
 
                     <table id="mytable">
@@ -123,12 +123,11 @@
 
                             <?php
                             $result = $this->users;
-                            $task = $this->task;
 
                             foreach ($result as $row) {
 
-                                echo '<details> <summary> '. $row['0'] .'<br> <progress id="file" value='. $row['1'] . ' max="160">' . $row['1'] . '</progress>
-                                </summary><p></p></details>';
+                                echo '<details> <summary> ' . $row['0'] . '<br> <progress id="file" value=' . $row['1'] . ' max="160">' . $row['1'] . '</progress>
+                                </summary><p id="' . $row['0'] . '"><input type="button" id="btnGet" value="show more" onclick="return getTask()"><div id="results"></div></p></details>';
                             }
 
                             ?>
@@ -160,24 +159,33 @@
         });
     </script>
 
-    <script>
+    <script type="text/javascript">
 
-        function show() {
+        function getTask() {
 
+            var data = new FormData();
+            
+            var empid = event.target.parentNode.id;
+            data.append("empid", empid);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "teamProgress/getTask");
 
-            var rowId = event.target.parentNode.parentNode.parentNode.id;
-            alert(rowId);
+            xhr.onload = function() {
+                
+                let results = document.getElementById("results");
+                
+                let search = JSON.parse(this.response);
+            
+                results.innerHTML = "";
+                if (search != null) {
+                    for (let s of search) {
+                        results.innerHTML += `<div>${s.TaskName}</div>`;
+                    }
+                }
+            };
 
-            //this gives id of tr whose button was clicked
-            var data = document.getElementById(rowId).querySelectorAll(".row-data");
-
-            //returns array of all elements with "row-data" class within the row with given id
-
-            var name = data[0].innerHTML;
-            var title = data[1].innerHTML;
-
-            //alert(name);
-
+            xhr.send(data);
+            return false;
         }
 
     </script>
