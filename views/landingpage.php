@@ -36,7 +36,7 @@
         </label>
         <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg" ></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if($_SESSION['user_img']) {echo $_SESSION['user_img'];} else {echo 'avator.jpg';} ?>" alt="">
+        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
         
 
     </header>
@@ -61,7 +61,7 @@
             <a href="#" class="nav-link" id="my_progress">
                 <i class="fa fa-user fa-lg"><span>My Progress</span></i>
             </a>
-            <a href="teamProgress" class="nav-link" id="t_progress">
+            <a href="#" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
             </a>
             <a href="#" class="nav-link" id="emp_progress">
@@ -110,26 +110,24 @@
                 $c =0 ;
                 $d =0 ;
 
-                if($hours != NULL){
-                    for($i = 0 ; $i < count($hours) ; $i++){
+                for($i = 0 ; $i < count($hours) ; $i++){
 
-                        if($hours[$i][0] == "Approved")
-                            $a = $hours[$i][1];
-                        elseif($hours[$i][0] == "Completed")
-                            $b = $hours[$i][1];
-                        elseif($hours[$i][0] == "InProgress")
-                            $c = $hours[$i][1];
-                        elseif($hours[$i][0] == "Pending")
-                            $d = $hours[$i][1];
-                    }
+                    if($hours[$i][0] == "Approved")
+                        $a = $hours[$i][1];
+                    elseif($hours[$i][0] == "Completed")
+                        $b = $hours[$i][1];
+                    elseif($hours[$i][0] == "InProgress")
+                        $c = $hours[$i][1];
+                    elseif($hours[$i][0] == "Pending")
+                        $d = $hours[$i][1];
                 }
                 
             ?>
 
-            <div class="item4"> Assigned Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][0] : 0 ?> </span> </div>
-            <div class="item5">Completed Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][1] : 0 ?> </span> </div>
-            <div class="item6">Approved Tasks  <br> <span> <?php echo ($result != NULL)?  $result[0][2] : 0 ?> </span> </div>
-            <div class="item7">Pending Tasks <br> <span> <?php echo ($result != NULL)?  $result[0][3] : 0 ?> </span> </div>
+            <div class="item4"> Assigned Tasks <br> <span> <?php echo $result[0][0]; ?> </span> </div>
+            <div class="item5">Completed Tasks <br> <span> <?php echo $result[0][1]; ?> </span> </div>
+            <div class="item6">Approved Tasks  <br> <span> <?php echo $result[0][2]; ?> </span> </div>
+            <div class="item7">Pending Tasks <br> <span> <?php echo $result[0][3]; ?> </span> </div>
             <div class="item8">Total hours the month 160 hrs
                 <canvas id="pieChart" style="width:70%;max-width:400px;align-items:center;margin:auto"></canvas>
             </div>
@@ -195,22 +193,8 @@
     </script>
 
     <script>
-
-        var ip = '<?php echo $c; ?>';
-        var cp = '<?php echo $b; ?>';
-        var ap = '<?php echo $a; ?>';
-        var pe = '<?php echo $d; ?>';
-        var ov= 0;
-        var ashours = (Number(ip)+Number(cp)+Number(ap));
-
-        if(ap > 160){
-            ov = 160 -ap;
-        }else{
-            ov=0;
-        }
-
         var pxValues = ["Assigned hours", "Overtime hours", "Covered hours"];
-        var pyValues = [ ashours , ov, ap];
+        var pyValues = [55, 49, 44];
         var pieColors = [
         "#2177a0",
         "#00aba9",
@@ -218,7 +202,7 @@
         ];
 
         new Chart("pieChart", {
-        type: "pie",
+        type: "doughnut",
         data: {
             labels: pxValues,
             datasets: [{
