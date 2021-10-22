@@ -141,7 +141,7 @@
 			<a href="empLeave" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="logout">
+			<a href="home" class="nav-link" id="logout">
                 <i class="fa fa-sign-out fa-lg" ><span>Logout</span></i>
             </a>
         </div>
