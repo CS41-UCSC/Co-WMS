@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Co-WMS/style/employeeWorkProgress_style.css">
-    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css">
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
+    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 
-<body class="preload">
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -33,6 +34,8 @@
                                     ?>
         </label>
         <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg "></i></a></div>
+        <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
+        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if($result[0]['Userimg']) {echo $result[0]['Userimg'];} else {echo 'avator.jpg';} ?>" alt="">
 
     
 
@@ -49,13 +52,13 @@
             <a href="#" class="nav-link nav-link-active" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="#" class="nav-link" id="dashboard">
+            <a href="landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
 			<a href="#" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_profile">
+            <a href="myprofile" class="nav-link" id="my_profile">
                 <i class="fa fa-user fa-lg" ><span>My Profile</span></i>
             </a>
 			<a href="#" class="nav-link" id="my_progress">
@@ -129,13 +132,26 @@
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                         </tr>
 
+                        
                         <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
+                            <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
+                            <td data-label="Employee">0001111</td>
+                            <td data-label="Employee Id">Navod Kamilka</td>
+                            <td data-label="Team"></td>
+                            <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                         </tr>
+
+                       
+                        <tr>
+                            <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
+                            <td data-label="Employee">0001111</td>
+                            <td data-label="Employee Id">Navod Kamilka</td>
+                            <td data-label="Team"></td>
+                            <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
+                        </tr>
+
+                        
+        
                         <tr>
                             <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                             <td data-label="Employee">0001111</td>
@@ -145,13 +161,6 @@
                         </tr>
 
                         <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
-                        </tr>
-                        <tr>
                             <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                             <td data-label="Employee">0001111</td>
                             <td data-label="Employee Id">Navod Kamilka</td>
@@ -159,58 +168,15 @@
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                         </tr>
 
-                        <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
                         </tr>
                         <tr>
                             <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                             <td data-label="Employee">0001111</td>
                             <td data-label="Employee Id">Navod Kamilka</td>
-                            <td data-label="Team"></td>
+                            <td data-label="Team">5</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
                         </tr>
 
-                        <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Employee">0001111</td>
-                            <td data-label="Employee Id">Navod Kamilka</td>
-                            <td data-label="Team"></td>
-                            <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Profile"><a href="#"><i class="fa fa-user fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Employee">0001111</td>
-                            <td data-label="Employee Id">Navod Kamilka</td>
-                            <td data-label="Team"></td>
-                            <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                        </tr>
-
-                        <tr>
-                            <td data-label="Profile">2</td>
-                            <td data-label="Employee Id">Kamal</td>
-                            <td data-label="Employee Name">23</td>
-                            <td data-label="Edit">70%</td>
-                            <td data-label="Terminate">Passed</td>
-                        </tr>
 
                     </tbody>
                 </table>
