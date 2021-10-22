@@ -140,13 +140,13 @@
             <a href="#" class="nav-link  nav-link-active" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="t_leave">
+			<a href="teamLeave" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="d_leave">
+			<a href="dptleaveApproved" class="nav-link" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="emp_leave">
+			<a href="empLeave" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="logout">

@@ -95,7 +95,7 @@
         </div>-->
 		<nav class="nav">
         <div class="nav-links">
-			<a href="#" class="nav-link" id="manage_access">
+			<a href="adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
             <a href="#" class="nav-link" id="dashboard">
@@ -125,16 +125,16 @@
             <a href="#" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
+            <a href="myleaveApproved" class="nav-link" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="t_leave">
+			<a href="teamLeave" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
 			<a href="#" class="nav-link nav-link-active" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="emp_leave">
+			<a href="empLeave" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
 			<a href="#" class="nav-link" id="logout">
