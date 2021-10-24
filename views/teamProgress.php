@@ -104,43 +104,52 @@
             <form name="form1">
                 <div class="item2">
 
-                    <table id="mytable">
+                    <?php
+                    $result = $this->users;
 
-                        <col id="empid">
-                        <col id="comtime">
+                    foreach ($result as $row) {
 
-                        <thead>
-                            <!--<tr>
-                                    
-                                    <th>Team ID</th>
-                                    <th>Team Name</th>
-                                    <th>Team Leader</th>
-                                    <th>Add</th>
-                                    
-                                </tr >-->
-                        </thead>
-                        <tbody>
+                        echo '<div class="member">
+                        <div id="eid" value=' . $row['0'] . '>' . $row['0'] . '</div>
+                        <div><progress id="file" value=' . $row['1'] . ' max="160">' . $row['1'] . '</progress></div>
+                        <div id=' . $row['0'] . '><input type="button" class="view"  onclick="loadTask()" ></div>
+                        </div>';
+                    }
 
-                            <?php
-                            $result = $this->users;
-
-                            foreach ($result as $row) {
-
-                                echo '<details> <summary> ' . $row['0'] . '<br> <progress id="file" value=' . $row['1'] . ' max="160">' . $row['1'] . '</progress>
-                                </summary><p id="' . $row['0'] . '"><input type="button" id="btnGet" value="show more" onclick="return getTask()"><div id="results"></div></p></details>';
-                            }
-
-                            ?>
-
-                        </tbody>
-
-                    </table>
+                    ?>
 
                 </div>
             </form>
         </div>
 
     </main>
+
+    <div class="popup" id="myForm">
+
+        <form class="form-popup" id="form-popup">
+
+            <div class="btn">
+                <button type="button" class="button" onclick="closeForm()"></button>
+            </div>
+
+            <table id="mytable">
+
+                <col id="taskname">
+                <col id="retime">
+                <col id="duedate">
+                <col id="status">
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+        </form>
+
+    </div>
+
+
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -160,34 +169,48 @@
     </script>
 
     <script type="text/javascript">
-
-        function getTask() {
-
-            var data = new FormData();
+        function loadTask() {
             
-            var empid = event.target.parentNode.id;
-            data.append("empid", empid);
+            var data = new FormData();
+            var b = event.target.parentNode.id;
+           
+            data.append("empid", b);
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "teamProgress/getTask");
 
             xhr.onload = function() {
-                
-                let results = document.getElementById("results");
-                
+
                 let search = JSON.parse(this.response);
-            
-                results.innerHTML = "";
-                if (search != null) {
-                    for (let s of search) {
-                        results.innerHTML += `<div>${s.TaskName}</div>`;
+
+                let mytable = document.getElementById("mytable");
+                mytable.innerHTML=`<table id="mytable"><thead><tr><th>Task Name</th><th>Required Time</th><th>Due Date</th><th>Task Status</th></tr></table>`;
+                    
+                if (search !== null){
+                    for(let s of search){
+                   
+                            mytable.innerHTML += `<table id="mytable"><thead><tr><td>${s.TaskName}</td><td>${s.RequiredTime}</td><td>${s.DueDate}</td><td id="${s.TaskStatus}">${s.TaskStatus}</td></tr></table>`;
+                        
                     }
                 }
             };
 
             xhr.send(data);
+
+            document.getElementById("myForm").style.display = "block";
+            document.getElementById("container").style.filter = "grayscale(100%)";
+
+            
             return false;
+
+            
         }
 
+        function closeForm() {
+
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("container").style.filter = "none";
+
+        }
     </script>
 
 

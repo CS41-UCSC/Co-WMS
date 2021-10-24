@@ -17,7 +17,6 @@ class manageEmployeeAdd extends Controller{
     }
         
     function setData(){
-
         
         $empid = $_POST['epmId'];
         $empname= $_POST['Ename'];
@@ -25,18 +24,12 @@ class manageEmployeeAdd extends Controller{
         $emprole = $_POST['role'];
         $password = $_POST['password'];
         $Cpassword = $_POST['Cpassword'];
-        $empstatus = "";
-
-        if (isset($_POST['click'])) {
-
-            $empstatus =  $_POST['click'];
-        }
 
        if($password == $Cpassword){
 
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $res = $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash,$empstatus);
+            $res = $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash);
 
             if($res){
                 $to = '$empemail';
@@ -62,9 +55,8 @@ class manageEmployeeAdd extends Controller{
         }
         
         else{
-            $_SESSION['add-emp-msg'] = "Fialed to add New Employee";
+            $_SESSION['add-emp-msg'] = "Fialed to add New Employee password";
         }
-
         
         header('location: http://localhost/CO-WMS/manageEmployeeAdd');
 

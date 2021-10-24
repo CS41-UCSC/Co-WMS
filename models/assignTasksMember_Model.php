@@ -9,7 +9,7 @@ class assignTasksMember_Model extends Model{
 
     function getData($teamid){
 
-        $sql="SELECT  T.TaskName , TA.* FROM Task_Assign TA INNER JOIN Task T ON TA.TaskID = T.TaskID WHERE T.TeamID = $teamid; ";
+        $sql="SELECT T.TaskName,  T.TaskID,  TA.* FROM Task T LEFT JOIN Task_Assign TA ON TA.TaskID = T.TaskID WHERE T.TeamID = $teamid; ";
 
         return $this->db->runQuery($sql);
     }

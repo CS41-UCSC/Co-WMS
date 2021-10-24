@@ -14,7 +14,9 @@
 </head>
 
 <body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
-    <<header class="header">
+
+    <header class="header">
+
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
         </button>
@@ -39,275 +41,315 @@
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
         <img class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
 
+    </header>
 
-        </header>
+    <nav class="nav">
+        <div class="nav-links">
 
-        <nav class="nav">
-            <div class="nav-links">
+            <a href="#" class="nav-link " id="manage_access">
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
+            </a>
+            <a href="landingpage" class="nav-link nav-link-active" id="dashboard">
+                <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
+            </a>
+            <a href="#" class="nav-link" id="d_progress">
+                <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
+            </a>
+            <a href="myprofile" class="nav-link" id="my_profile">
+                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
+            </a>
+            <a href="#" class="nav-link" id="my_progress">
+                <i class="fa fa-user fa-lg"><span>My Progress</span></i>
+            </a>
+            <a href="#" class="nav-link" id="t_progress">
+                <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_progress">
+                <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
+            </a>
+            <a href="deptManageTask" class="nav-link nav-link-active" id="manage_task_dpt">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="#" class="nav-link" id="manage_task_leader">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            </a>
+            <a href="#" class="nav-link" id="manage_emp">
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
+            </a>
+            <a href="#" class="nav-link" id="my_leave">
+                <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="t_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="d_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="emp_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
+            </a>
+            <a href="#" class="nav-link" id="logout">
+                <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
+            </a>
+        </div>
 
-                <a href="#" class="nav-link " id="manage_access">
-                    <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
-                </a>
-                <a href="landingpage" class="nav-link nav-link-active" id="dashboard">
-                    <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
-                </a>
-                <a href="#" class="nav-link" id="d_progress">
-                    <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
-                </a>
-                <a href="myprofile" class="nav-link" id="my_profile" onclick="toggleColor(this)">
-                    <i class="fa fa-user fa-lg"><span>My Profile</span></i>
-                </a>
-                <a href="#" class="nav-link" id="my_progress">
-                    <i class="fa fa-user fa-lg"><span>My Progress</span></i>
-                </a>
-                <a href="#" class="nav-link" id="t_progress">
-                    <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
-                </a>
-                <a href="#" class="nav-link" id="emp_progress">
-                    <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
-                </a>
-                <a href="deptManageTask" class="nav-link nav-link-active" id="manage_task_dpt">
-                    <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
-                </a>
-                <a href="#" class="nav-link" id="manage_task_leader">
-                    <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
-                </a>
-                <a href="#" class="nav-link" id="manage_emp">
-                    <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
-                </a>
-                <a href="#" class="nav-link" id="my_leave">
-                    <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
-                </a>
-                <a href="#" class="nav-link" id="t_leave">
-                    <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
-                </a>
-                <a href="#" class="nav-link" id="d_leave">
-                    <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
-                </a>
-                <a href="#" class="nav-link" id="emp_leave">
-                    <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
-                </a>
-                <a href="#" class="nav-link" id="logout">
-                    <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
-                </a>
-            </div>
-            <div class="nav-overlay"></div>
-        </nav>
+        <div class="nav-overlay"></div>
+    </nav>
+    <main>
 
-        <main>
+        <div class="item1" id="item1">
+            <a href="deptManageTask">
+                <span>Add Task</span>
+            </a>
+            <a href="assignTasksTeam" class="activelink">
+                <span>Assign Task</span>
+            </a>
+            <a href="assignTasksTeam">
+                <span>Back</span>
+            </a>
+        </div>
 
-            <div class="item1" id="item1">
-                <a href="deptManageTask">
-                    <span>Add Task</span>
-                </a>
-                <a href="assignTasksTeam" class="activelink">
-                    <span>Assign Task</span>
-                </a>
-                <a href="assignTasksTeam">
-                    <span>Back</span>
-                </a>
-            </div>
+        <div class="container" id="container">
 
-            <div class="container" id="container">
-
-                <div class="item2">
-                    <!--<div class="searching">
+            <div class="item2">
+                <!--<div class="searching">
                                    
                     <input type="text" name="search" id="search" class="search">
                     <input type="submit" value="Search" class="button">
 
                 </div>-->
-                    <form>
-                        <input type="date" id="date" name="bdaymonth" class="search">
-                        <input type="submit" class="button" value="Submit" onclick="getsearch();">
-                    </form>
+                <form>
+                    <input type="date" id="date" name="bdaymonth" class="search">
+                    <input type="submit" class="button" value="Submit" onclick="getsearch();">
+                </form>
 
-                </div>
+            </div>
 
-                <div class="item3">
+            <div class="item3">
 
-                    <div class="result" id="result" style="overflow-x:auto;">
+                <div class="result" id="result" style="overflow-x:auto;">
 
-                        <table id="mytable">
+                    <table id="mytable">
+
+                        <col id="taskid">
+                        <col id="taskname">
+                        <col id="asstime">
+                        <col id="assto">
+                        <col id="retime">
+                        <col id="duedate">
+                        <col id="status">
+                        <col id="view">
+                        <col id="edit">
+
+                        <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Task Name</th>
+                                <th>Assigned Time</th>
+                                <th>Assigned To</th>
+                                <th>Required Time</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>view</th>
+                                <th>Edit</th>
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <?php
+
+                            $result = $this->users;
+
+
+                            foreach ($result as $row) {
+                                echo '<tr id= ' . $row['1'] . '>';
+                                echo '<td class="row-data">' . $row['1'] . '</td>';
+                                echo '<td class="row-data">' . $row['0'] . '</td>';
+                                echo '<td class="row-data">' . $row['3'] . '</td>';
+                                echo '<td class="row-data">' . $row['4'] . '</td>';
+                                echo '<td class="row-data" style="display:none" >' . $row['5'] . '</td>';
+                                echo '<td class="row-data">' . $row['6'] . '</td>';
+                                echo '<td class="row-data">' . $row['7'] . '</td>';
+                                echo '<td class="row-data" id=' . $row['8'] . ' >' . $row['8'] . '</td>';
+                                echo '<td class="row-data" style="display:none" >' . $row['9'] . '</td>';
+                                echo '<td class="row-data" style="display:none" >' . $row['10'] . '</td>';
+                                echo '<td class="row-data" style="display:none" >' . $row['11'] . '</td>';
+                                echo '<td><button type="button" class="pen" onclick="viewshow();"><i class="fa fa-eye fa-lg"></i></button></td>';
+                                echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>';
+                                echo '</tr>';
+                            }
+
+                            ?>
+
+                        </tbody>
+
+                        <style>
                             
-                            <col id="taskid">
-                            <col id="taskname">
-                            <col id="asstime">
-                            <col id="assto">
-                            <col id="retime">
-                            <col id="duedate">
-                            <col id="status">
-                            <col id="view">
-                            <col id="edit">
+                        </style>
 
-                            <thead>
-                                <tr>
-                                    <th>Task ID</th>
-                                    <th>Task Name</th>
-                                    <th>Assigned Time</th>
-                                    <th>Assigned To</th>
-                                    <th>Required Time</th>
-                                    <th>Due Date</th>
-                                    <th>Status</th>
-                                    <th>view</th>
-                                    <th>Edit</th>
-
-
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <?php
-
-                                $result = $this->users;
-                                $st=50;
-                               
-                                foreach ($result as $row) {
-                                    echo '<tr id= ' . $row['1'] . '>';
-                                    echo '<td class="row-data">' . $row['1'] . '</td>';
-                                    echo '<td class="row-data">' . $row['0'] . '</td>';
-                                    echo '<td class="row-data">' . $row['2'] . '</td>';
-                                    echo '<td class="row-data">' . $row['3'] . '</td>';
-                                    echo '<td class="row-data" style="display:none" >' . $row['4'] . '</td>';
-                                    echo '<td class="row-data">' . $row['5'] . '</td>';
-                                    echo '<td class="row-data">' . $row['6'] . '</td>';
-                                    echo '<td class="row-data">' . $st. '</td>';
-                                    echo '<td class="row-data" style="display:none" >' . $row['8'] . '</td>';
-                                    echo '<td class="row-data" style="display:none" >' . $row['9'] . '</td>';
-                                    echo '<td class="row-data" style="display:none" >10</td>';
-                                    echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-eye fa-lg"></i></button></td>';
-                                    echo '<td><button type="button" class="pen" onclick="show();"><i class="fa fa-pencil fa-lg"></i></button></td>';
-                                    echo '</tr>';
-                                }
-
-                                ?>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-
+                    </table>
                 </div>
 
             </div>
 
-        </main>
-
-        <div class="popup" id="myForm">
-
-            <form action="" class="form-popup" id="form-popup">
-
-                <label for="dep">Task ID</label>
-                <input type="text" name="tid" id="tid" value="" readonly><br>
-                <label for="">Task Name</label>
-                <input type="text" name="tname" id="tname" value=""><br>
-                <label for="task">Assigned Time</label>
-                <input type="text" name="atime" id="atime" value="" readonly><br>
-                <label for="task">Assigned To</label>
-                <input type="text" name="ato" id="ato" value=""><br>
-                <label for="task">Assigned By</label>
-                <input type="text" name="aby" id="aby" value=""><br>
-                <label for="task">Required Time</label>
-                <input type="text" name="rtime" id="rtime" value=""><br>
-                <label for="task">Due Date</label>
-                <input type="text" name="ddate" id="ddate" value=""><br>
-                <label for="">Status</label>
-                <progress id="file" value="32" max="100"></progress>
-                <!--<input type="range" name="status" id="stts" value=""><br>-->
-                <label for="">Accepted Date</label>
-                <input type="text" name="acdate" id="acdate" value="" readonly><br>
-                <label for="">Completed Date</label>
-                <input type="text" name="cdate" id="cdate" value="" readonly><br>
-                <label for="">Approved Date</label>
-                <input type="text" name="apdate" id="apdate" value="" readonly><br>
-
-                <div class="btn">
-                    <input type="submit" value="Save Changes" class="button">
-                    <button type="button" class="button" onclick="closeForm()">Close</button>
-                </div>
-
-            </form>
-
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const nav = document.querySelector(".nav");
-                const con = document.querySelector(".container");
+    </main>
 
-                document.querySelector("#btnNav").addEventListener("click", () => {
-                    nav.classList.add("nav-open");
-                    con.classList.add("containerN");
-                });
+    <div class="popup" id="myForm">
 
-                document.querySelector(".nav-overlay").addEventListener("click", () => {
-                    nav.classList.remove("nav-open");
-                    con.classList.remove("containerN");
-                });
+        <form action="" class="form-popup" id="form-popup">
+
+            <label for="dep" id="ltid">Task ID</label>
+            <input type="text" name="tid" id="tid" value="" readonly><br>
+            <label for="" id="ltname">Task Name</label>
+            <input type="text" name="tname" id="tname" value=""><br>
+            <label for="task" id="latime">Assigned Time</label>
+            <input type="text" name="atime" id="atime" value="" readonly><br>
+            <label for="task" id="lato">Assigned To</label>
+            <input type="text" name="ato" id="ato" value=""><br>
+            <label for="task" id="laby">Assigned By</label>
+            <input type="text" name="aby" id="aby" value=""><br>
+            <label for="task" id="lrtime">Required Time</label>
+            <input type="text" name="rtime" id="rtime" value=""><br>
+            <label for="task" id="lddate">Due Date</label>
+            <input type="text" name="ddate" id="ddate" value=""><br>
+            <label for="" name="lstts">Status</label>
+            <input type="text" name="stts" id="stts" value=""><br>
+            <progress id="file" value="32" max="100"></progress><br>
+            <label for="" id="lacdate">Accepted Date</label>
+            <input type="text" name="acdate" id="acdate" value="" readonly><br>
+            <label for="" id="lcdate">Completed Date</label>
+            <input type="text" name="cdate" id="cdate" value="" readonly><br>
+            <label for="" id="lapdate">Approved Date</label>
+            <input type="text" name="apdate" id="apdate" value="" readonly><br>
+
+            <div class="btn">
+                <input type="submit" value="Save Changes" class="button">
+                <button type="button" class="button" onclick="closeForm()">Close</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="viewdata" id="viewForm">
+        <div class="data">
+            <h3>Sub Task Progress</h3>
+            <progress id="file" value="32" max="100"></progress><br>
+            <div id="details"></div>
+            <div class="btn">
+                <button type="button" class="button" onclick="closeviewForm()">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.querySelector(".nav");
+            const con = document.querySelector(".container");
+
+            document.querySelector("#btnNav").addEventListener("click", () => {
+                nav.classList.add("nav-open");
+                con.classList.add("containerN");
             });
-        </script>
 
-        <script>
-            function getsearch() {
+            document.querySelector(".nav-overlay").addEventListener("click", () => {
+                nav.classList.remove("nav-open");
+                con.classList.remove("containerN");
+            });
+        });
+    </script>
 
-                
-            }
-        </script>
-
-
-        <script>
-
-            function show() {
-
-                var rowId = event.target.parentNode.parentNode.parentNode.id;
-
-                //this gives id of tr whose button was clicked
-                var data = document.getElementById(rowId).querySelectorAll(".row-data");
+    <script>
+        function getsearch() {
 
 
-                /*returns array of all elements with 
-                "row-data" class within the row with given id*/
-
-                var id = data[0].innerHTML;
-                var name = data[1].innerHTML;
-                var atime = data[2].innerHTML;
-                var ato = data[3].innerHTML;
-                var aby = data[4].innerHTML;
-                var rtime = data[5].innerHTML;
-                var ddate = data[6].innerHTML;
-                var status = data[7].innerHTML;
-                var acdate = data[8].innerHTML;
-                var cdate = data[9].innerHTML;
-                var apdate = data[10].innerHTML;
-
-                document.getElementById("tid").value = id;
-                document.getElementById("tname").value = name;
-                document.getElementById("atime").value = atime;
-                document.getElementById("ato").value = ato;
-                document.getElementById("aby").value = aby
-                document.getElementById("rtime").value = rtime;
-                document.getElementById("ddate").value = ddate;
-                /*document.getElementById("stts").value = status;*/
-                document.getElementById("acdate").value = acdate;
-                document.getElementById("cdate").value = cdate;
-                document.getElementById("apdate").value = apdate;
+        }
+    </script>
 
 
-                document.getElementById("myForm").style.display = "block";
-                document.getElementById("container").style.filter = "grayscale(100%)";
+    <script>
+        function viewshow() {
 
-            }
+            var rowId = event.target.parentNode.parentNode.parentNode.id;
 
-            function closeForm() {
+            var data = document.getElementById(rowId).querySelectorAll(".row-data");
 
-                document.getElementById("myForm").style.display = "none";
-                document.getElementById("container").style.filter = "none";
+            var acdate = data[8].innerHTML;
+            var cdate = data[9].innerHTML;
+            var apdate = data[10].innerHTML;
 
+            document.getElementById("details").innerHTML ="";
 
-            }
+            document.getElementById("details").innerHTML += '<br> Accepted Date<br>' + acdate + '<br>';
+            document.getElementById("details").innerHTML += '<br> Completed Date<br>' + cdate + '<br>';
+            document.getElementById("details").innerHTML += '<br> Approved Date<br>' + apdate + '<br>';
+            document.getElementById("details").innerHTML += '<br>';
 
-        </script>
+            document.getElementById("viewForm").style.display = "block";
+            document.getElementById("container").style.filter = "grayscale(100%)";
+
+        }
+
+        function show() {
+
+            var rowId = event.target.parentNode.parentNode.parentNode.id;
+
+            //this gives id of tr whose button was clicked
+            var data = document.getElementById(rowId).querySelectorAll(".row-data");
+
+            /*returns array of all elements with 
+            "row-data" class within the row with given id*/
+
+            var id = data[0].innerHTML;
+            var name = data[1].innerHTML;
+            var atime = data[2].innerHTML;
+            var ato = data[3].innerHTML;
+            var aby = data[4].innerHTML;
+            var rtime = data[5].innerHTML;
+            var ddate = data[6].innerHTML;
+            var status = data[7].innerHTML;
+            var acdate = data[8].innerHTML;
+            var cdate = data[9].innerHTML;
+            var apdate = data[10].innerHTML;
+
+            document.getElementById("tid").value = id;
+            document.getElementById("tname").value = name;
+            document.getElementById("atime").value = atime;
+            document.getElementById("ato").value = ato;
+            document.getElementById("aby").value = aby
+            document.getElementById("rtime").value = rtime;
+            document.getElementById("ddate").value = ddate;
+            document.getElementById("stts").value = status;
+            document.getElementById("file").style.display = "none";
+            document.getElementById("acdate").value = acdate;
+            document.getElementById("cdate").value = cdate;
+            document.getElementById("apdate").value = apdate;
+
+            document.getElementById("myForm").style.display = "block";
+            document.getElementById("container").style.filter = "grayscale(100%)";
+
+        }
+
+        function closeviewForm() {
+
+            document.getElementById("viewForm").style.display = "none";
+            document.getElementById("container").style.filter = "none";
+
+        }
+
+        function closeForm() {
+
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("container").style.filter = "none";
+
+        }
+    </script>
 
 </body>
 

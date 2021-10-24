@@ -194,12 +194,12 @@ body {
     text-align: center;
 }
 
-.notification {
+/*.notification {
     position: absolute;
     right: 20%;
     padding-top: 15px;
 	display: block;
- }
+ }*/
     
 .notification i{
     color: #000000;
@@ -216,6 +216,15 @@ body {
 }
 
 @media (min-width: 800px) {
+
+    .notification {
+        position: absolute;
+        right: 25%;
+        padding-top: 15px;
+        margin-right: 10px;
+    }
+    
+
     .open-img{
 		width: cover;
 		border-bottom-right-radius: 10px;
@@ -249,6 +258,12 @@ body {
 
     .date{
         visibility: hidden;
+    }
+
+    .notification {
+        position: absolute;
+        right: 70%;
+        padding-top: 15px;
     }
 
     .user-login{

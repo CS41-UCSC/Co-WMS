@@ -31,6 +31,42 @@ tr{
     cursor: pointer;
 }
 
+#Pending {
+    background: #777676;
+    text-align: center;
+    color: white;
+}
+
+#InProgress {
+    background: #1b80df;
+    text-align: center;
+    color: white;
+}
+
+#Completed {
+    background: #f5e721;
+    text-align: center;
+    color: white;
+}
+
+#Approved {
+    background: #1ab841;
+    text-align: center;
+    color: white;
+}
+
+#Reasigned {
+    background: #d3660d;
+    text-align: center;
+    color: white;
+}
+
+#Overdue {
+    background: #cc3131;
+    text-align: center;
+    color: white;
+}
+
 @media (min-width: 800px) {
 
     main{
@@ -124,7 +160,6 @@ tr{
     .item3{
         margin: 0 20px 0 20px;
         box-shadow: 0 0 5px #d3d2d2;
-        z-index: 2;
     }
 
     table{
@@ -135,7 +170,7 @@ tr{
         width: 100%;
     }
 
-    .popup {
+    .popup, .viewdata {
         display: none;
         width: 100%;
         height: 100%;
@@ -145,7 +180,7 @@ tr{
         background-color: rgba(50, 50, 50, 0.808);
     }
 
-    .form-popup {
+    .form-popup{
         position: absolute;
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
@@ -154,7 +189,29 @@ tr{
         width: max-content;
         margin: 20px;
         left: 40%;
+        top: 2%;
+    }
+
+    .data {
+        position: absolute;
+        background-color: #f5f5f5;
+        border: 3px solid #f1f1f1;
+        border-radius: 5px;
+        padding: 30px;
+        width: 500px;
+        height: fit-content;
+        margin: 20px;
+        left: 40%;
         top: 20%;
+    }
+
+    .data .btn{
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .data progress{
+        width: 400px;
     }
 
     .popup label{
@@ -204,7 +261,7 @@ tr{
 @media (max-width: 799px) {
 
     main{
-        margin-top: 75px;  
+        margin-top: 40px;  
     }
 
     .item2 { grid-area: top; }
@@ -242,13 +299,15 @@ tr{
     .item2{
         display: flex;
         justify-content: center;
+        margin-bottom: 10px;
     }
 
     table{
-        border-collapse: separate;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: auto;
         padding: 0;
-        width: 100%;
-        border-spacing: 0 10px;
+        width: 150%;
     }
 
     .button{
@@ -285,8 +344,7 @@ tr{
         justify-content: space-evenly;
     }
 
-
-    .popup {
+    .popup, .viewdata {
         display: none;
         width: 100%;
         height: 100%;
@@ -294,18 +352,22 @@ tr{
         left: 0;
         position: fixed;
         background-color: rgba(50, 50, 50, 0.808);
+        margin-top: 50px;
     }
 
-    .form-popup {
-        position: absolute;
+    .form-popup, .data {
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
         width: max-content;
         padding: 5px;
-        top: 20%;
-        left: 2px;
-        right: 0;
+        margin: auto;
+    }
+
+    .popup label{
+        text-align: left;
+        width: 170px;
+        display: inline-block;
     }
 
     .popup input{
@@ -317,23 +379,30 @@ tr{
         margin-bottom: 20px;
     }
 
-    .popup .btn{
-        text-align: right;
+    .popup input:focus{
+        outline: none !important;
+    }
+
+     .popup .btn{
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .popup .button{
         margin-top: 30px;
-        margin-right: 10px;
-        border-radius: 5px;
+        border-radius: 20px;
         padding: 5px;
+        color: #000000;
         border: 2px solid #2B65EC;
-        background-color: #ffffff;
         width: 120px;
         height: 35px;
-        border: none;
         font-family: sans-serif;
         font-size: 12pt;
         cursor: pointer;
     }
 
+    .popup .button:hover{
+        background-color: #2B65EC;
+        color: white;
+    }
 }

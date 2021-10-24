@@ -65,7 +65,7 @@
             <a href="#" class="nav-link " id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="deptManager" class="nav-link" id="dashboard">
+            <a href="landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
             </a>
             <a href="#" class="nav-link" id="d_progress">
@@ -80,7 +80,7 @@
             <a href="#" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="emp_progress">
+            <a href="employeeWorkProgress" class="nav-link" id="emp_progress">
                 <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
             </a>
             <a href="#" class="nav-link" id="manage_task_dpt">
@@ -89,7 +89,7 @@
             <a href="#" class="nav-link" id="manage_task_leader">
                 <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
             </a>
-            <a href="#" class="nav-link" id="manage_emp">
+            <a href="manageEmployee" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
             </a>
             <a href="#" class="nav-link" id="my_leave">
@@ -104,7 +104,7 @@
             <a href="#" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
             </a>
-            <a href="#" class="nav-link" id="logout">
+            <a href="homepage" class="nav-link" id="logout">
                 <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
             </a>
         </div>
@@ -181,23 +181,16 @@
                         <input type="password" id="npass" name="Cpassword" placeholder="Confirm Password" required onkeyup="validationn();"><br>
                     </div>
 
-                    <div>
+                    <!-- <div>
                         <label for="Estatus">Employee Status:</label><br>
                         <input type="radio" id="click" name="click" value="active"> Active
                         <input type="radio" id="click" name="click" value="inactive"> Inactive<br>
+                    </div>-->
+                    <div>
+                        <a href="manageEmployee" class="back" style="color: grey;"><span><i class="fa fa-arrow-left"></i>Back</span></a>
                     </div>
                     <div>
-
-                    </div>
-                    <div>
-
-                        <a href="manageEmployee" class="back"><span><i class="fa fa-arrow-left"></i>Back</span></a>
-
-                    </div>
-                    <div>
-
                         <input type="submit" value="Submit" class="rectan" onclick="saveform();">
-
                     </div>
 
                 </div>
@@ -293,4 +286,3 @@
 </body>
 
 </html>
-

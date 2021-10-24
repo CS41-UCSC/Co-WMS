@@ -23,8 +23,9 @@ class teamProgress extends Controller{
 
     function getTask (){
 
-        $task = $this->model->getTask();
-
+        $eid = $_POST['empid'];
+        $task = $this->model->getTask($eid);
+        
         echo json_encode(count($task)==0 ? null : $task);
         
 

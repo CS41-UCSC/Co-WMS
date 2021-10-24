@@ -136,11 +136,11 @@
                             <th>Employee Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         <?php
                         $result = $this->users;
@@ -151,14 +151,14 @@
                             echo '<td>' . $row['EmpName'] . '</td>';
                             echo '<td>' . $row['EmpEmail'] . '</td>';
                             echo '<td>' . $row['EmpRole'] . '</td>';
-                            echo '<td>' . $row['EmpStatus'] . '</td>';
-                            echo '<td data-label="Edit"><a href="#"><i class="fa fa-pencil fa-lg" style="color:black;" aria-hidden="true"></i></a></td>';
+                            echo '<td data-label="Edit"><a href="manageEmployeeEditDelete"><i class="fa fa-pencil fa-lg" style="color:black;" aria-hidden="true"></i></a></td>';
                             echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:black;" aria-hidden="true"></i></a></td>';
                             echo '</tr>';
                         }
 
                         ?>
                     </tbody>
+
                 </table>
 
             </div>

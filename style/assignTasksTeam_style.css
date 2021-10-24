@@ -31,11 +31,14 @@ tr{
     cursor: pointer;
 }
 
+#Pending{
+    color: #f5e721;
+}
 
 @media (min-width: 800px) {
 
     main{
-        margin-top: 75px;  
+        margin-top: 40px;  
     }
 
     table{

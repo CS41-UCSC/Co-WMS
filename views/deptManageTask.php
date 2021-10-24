@@ -135,11 +135,11 @@
 
                 <div class="searching">
 
-                    <datalist id="suggestions">
+                    <!--<datalist id="suggestions">
                         <option>Team A</option>
                         <option>Team B</option>
                         <option>Team C</option>
-                    </datalist>
+                    </datalist>-->
                     <input autoComplete="on" list="suggestions" class="searchbar">
                     <div class="btn"><input type="submit" value="Search" class="button"></div>
 
@@ -245,7 +245,7 @@
 
     <div class="popup" id="deleteForm">
 
-        <form action="" class="form-popup" id="form-popup" name="editdata">
+        <form action="" class="form-popup" id="form-popup" name="deltedata">
 
             <h4> Do you want to delete?</h4>
 

@@ -17,7 +17,9 @@ class deptManageTask_Model extends Model{
 
         $dept_ID = $dept[0]['DeptID'];
 
-        $sql = "SELECT tk.TeamID, tm.TeamName, tk.TaskName FROM Team tm INNER JOIN Task tk ON tk.TeamID = tm.TeamID  WHERE tm.DeptID = ('$dept_ID')  ; " ;
+        //$sql = "SELECT tk.TeamID, tm.TeamName, tk.TaskName FROM Team tm INNER JOIN Task tk ON tk.TeamID = tm.TeamID  WHERE tm.DeptID = ('$dept_ID')  ; " ;
+        $sql = "SELECT tk.TeamID, tm.TeamName, tk.TaskName, tk.TaskID FROM Team tm INNER JOIN Task tk ON tk.TeamID = tm.TeamID  
+        WHERE tm.DeptID = ('$dept_ID') AND NOT EXISTS  (select 1 FROM task_assign ts WHERE ts.TaskID = tk.TaskID) ; " ;
 
         return $this->db->runQuery($sql);
 
@@ -43,20 +45,23 @@ class deptManageTask_Model extends Model{
         $sub4 = $_POST['sub4'];
         array_push($a,$sub1,$sub2,$sub3,$sub4);
         
-        $i=0;
         
-        while($a[$i]){
+        for ($i = 0; $i <4; $i++){
 
-            echo $a[$i];
+            if($a[$i]){
+                
+                echo $a[$i];
 
-            $sql = "INSERT INTO subtask (TaskID, SubTaskName) VALUES ('$id', '$a[$i]')" ;
-
-            if ($this->db->query($sql) == TRUE) {
-                $_SESSION['addTask'] = "yes";
-              } else {
-                $_SESSION['addTask'] = "no";
+                $sql = "INSERT INTO subtask (TaskID, SubTaskName) VALUES ('$id', '$a[$i]')" ;
+    
+                if ($this->db->query($sql) == TRUE) {
+                    $_SESSION['addTask'] = "yes";
+                  } else {
+                    $_SESSION['addTask'] = "no";
+                }
+                
             }
-            $i = $i+1;
+            
 
         }
                 

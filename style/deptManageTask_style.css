@@ -75,6 +75,10 @@ tr{
 }
 
 
+.btnd .no:hover{
+    background-color:#db3737;
+    color: #ffffff;
+}
 
 @media (min-width: 800px) {
 
@@ -87,7 +91,7 @@ tr{
     }
 
     main{
-        margin-top: 75px;  
+        margin-top: 40px;  
     }
 
     .item1{
@@ -376,18 +380,16 @@ tr{
         left: 0;
         position: fixed;
         background-color: rgba(50, 50, 50, 0.808);
+        padding-top: 50px;
     }
 
     .form-popup {
-        position: absolute;
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
         width: max-content;
         padding: 5px;
-        top: 20%;
-        left: 2px;
-        right: 0;
+        margin: auto;
     }
 
     .item3 label{
@@ -459,5 +461,32 @@ tr{
     .item2{
         overflow-x: auto;
     }
+
+
+    .btnd{
+        width: 250px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .btnd .yes{
+        width: 80px;
+        border: 2px solid #19c536;
+        cursor: pointer;
+    }
+    
+    .btnd .yes:hover{
+        background-color:#19c536 ;
+        color: #ffffff;
+    }
+    
+    .btnd .no{
+        height: 30px;
+        width: 80px;
+        border: 2px solid #db3737;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
 }
 
