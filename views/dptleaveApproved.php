@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../Co-WMS/style/myleave.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
-	<script language="javascript" src="../Co-WMS/views/navigation.js">
+	<script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 	</script>
@@ -42,7 +42,7 @@
                                     ?>
         </label>
         <div class="notification" ><a href="#" ><i class="fa fa-bell fa-lg" > </i> </a> </div>
-        <div class="user-login"> <!--<?php echo $_SESSION['login_user']; ?>--> Hello Admin </div>
+        <div class="user-login"> <?php echo $_SESSION['login_user']; ?> </div>
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
 	<div class="page">

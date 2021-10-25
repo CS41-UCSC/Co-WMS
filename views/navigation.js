@@ -23,7 +23,7 @@ function f1(MemberAccess){
 		//none display will remove the div
 		document.getElementById("dashboard").style.display="none"; 
 		document.getElementById("my_progress").style.display="none";
-		//document.getElementById("t_dashboard").style.display="none";
+		document.getElementById("t_progress").style.display="none";
 		document.getElementById("my_leave").style.display="none";
 	}
 }

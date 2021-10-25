@@ -8,12 +8,12 @@
 	<link rel="stylesheet" href="../Co-WMS/style/adminHome.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
-	<script language="javascript" src="../Co-WMS/views/navigation.js" >
+	<script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>" >
 	</script>
     <title>Co-WMS</title>
 </head>
 
-<body class="preload" onload='setbutton($_SESSION["login"])'>
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -46,7 +46,7 @@
 				<a href="#">10 Hours Pending to Complete</a>
 			</div>
 		</div>
-        <div class="user-login"> <!--<?php echo $_SESSION['login_user']; ?>--> Hello Admin </div>
+        <div class="user-login"> <?php echo $_SESSION['login_user']; ?> </div>
         <img  class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
 	<div class="page">

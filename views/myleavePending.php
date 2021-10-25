@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="../Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
-	<script language="javascript" src="../Co-WMS/views/navigation.js" >
+	<script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>" >
 	</script>
 	<style>
 	.item4{
