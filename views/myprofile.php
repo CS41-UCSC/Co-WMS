@@ -173,8 +173,6 @@
                     <input type="text" name="empemail" value="<?php echo $result[0]['EmpEmail'] ?>" readonly class="input-fields"><br>
                     <label for="emprole">Employee Role</label>
                     <input type="text" name="emprole" value="<?php echo $result[0]['EmpRole'] ?>" readonly class="input-fields"><br>
-                    <label for="empstatus">Employee Status</label>
-                    <input type="text" name="empstatus" value="<?php echo $result[0]['EmpStatus'] ?>" readonly class="input-fields"><br>
                     <h3>Reset Password</h3>
                     <label for="add">Current Password</label>
                     <input type="password" name="pass" id="pass" value="" class="input-fields"><br>

@@ -36,9 +36,12 @@
       color: rgb(0, 0, 0);
       text-decoration: none;
   }
-  /* nav .links a :hover{
-      color: rgb(0, 255, 106);
-  } */
+
+  nav .links a :hover{
+      /*color: rgb(0, 255, 106);*/
+      border-bottom: 3px solid #7cb3f1;
+  }
+
   #nav-toggle {
       position: absolute;
       top: -100px;
@@ -162,6 +165,10 @@
         border-radius: 4px;
         box-sizing: border-box;
       } */
+
+      input:focus{
+        outline: none !important;
+      }
 
       .rectan{
 

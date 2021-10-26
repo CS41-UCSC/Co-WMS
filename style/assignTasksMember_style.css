@@ -181,28 +181,22 @@ tr{
     }
 
     .form-popup{
-        position: absolute;
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
-        padding: 10px;
+        padding: 20px;
         width: max-content;
-        margin: 20px;
-        left: 40%;
-        top: 2%;
+        margin: auto;
     }
 
     .data {
-        position: absolute;
-        background-color: #f5f5f5;
+        background-color: #e4e3e3;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
         padding: 30px;
         width: 500px;
         height: fit-content;
-        margin: 20px;
-        left: 40%;
-        top: 20%;
+        margin: 100px auto;
     }
 
     .data .btn{
@@ -220,7 +214,7 @@ tr{
         display: inline-block;
     }
 
-    .popup input{
+    .popup input, .popup select{
         width: 210px;
         height: 30px; 
         border: 1px solid #2B65EC;
@@ -229,7 +223,7 @@ tr{
         border-radius: 5px;
     }
 
-    .popup input:focus{
+    .popup input:focus, .popup select:focus{
         outline: none !important;
     }
 

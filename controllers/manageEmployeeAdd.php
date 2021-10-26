@@ -29,10 +29,10 @@ class manageEmployeeAdd extends Controller{
 
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $res = $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash);
+            $res = $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash,$password);
 
             if($res){
-                $to = '$empemail';
+                /*$to = '$empemail';
                 $mail_subject = 'Message from Co-WMS website';
                 $email_body = "Hello {$empname},Welcome to the Co-WMS Company \n" ;
                 $email_body .= "Your User Id : {$empid} \n";
@@ -46,7 +46,8 @@ class manageEmployeeAdd extends Controller{
                     $_SESSION['add-emp-msg'] = "New record created successfully and Email sent";
                 }else{
                     $_SESSION['add-emp-msg'] = "New record created successfully and Email was not sent";
-                }
+                }*/
+                $_SESSION['add-emp-msg'] = "New record created successfully";
 
             }else{
                 $_SESSION['add-emp-msg'] = "Fialed to add New Employee";
@@ -58,6 +59,8 @@ class manageEmployeeAdd extends Controller{
             $_SESSION['add-emp-msg'] = "Fialed to add New Employee password";
         }
         
+        echo $_SESSION['add-emp-msg'];
+
         header('location: http://localhost/CO-WMS/manageEmployeeAdd');
 
     }

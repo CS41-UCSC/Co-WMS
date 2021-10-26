@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/deptManageTask_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/deptManageTask_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

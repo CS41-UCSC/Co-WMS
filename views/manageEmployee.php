@@ -37,7 +37,11 @@
         </label>
         <div class="notification"><a href="#"><i class="fa fa-bell fa-lg"></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {
+                                                                    echo $_SESSION['user_img'];
+                                                                } else {
+                                                                    echo 'avator.jpg';
+                                                                } ?>" alt="">
 
     </header>
 
@@ -151,8 +155,8 @@
                             echo '<td>' . $row['EmpName'] . '</td>';
                             echo '<td>' . $row['EmpEmail'] . '</td>';
                             echo '<td>' . $row['EmpRole'] . '</td>';
-                            echo '<td data-label="Edit"><a href="manageEmployeeEditDelete"><i class="fa fa-pencil fa-lg" style="color:black;" aria-hidden="true"></i></a></td>';
-                            echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:black;" aria-hidden="true"></i></a></td>';
+                            echo '<td data-label="Edit"><a href="manageEmployeeEditDelete"><i class="fa fa-pencil fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
+                            echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
                             echo '</tr>';
                         }
 

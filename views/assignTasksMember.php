@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/AssignTasksMember_style.css" type="text/css">
-    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/AssignTasksMember_style.css?<?php echo time(); ?>" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
     <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -187,7 +187,7 @@
                         </tbody>
 
                         <style>
-                            
+
                         </style>
 
                     </table>
@@ -203,29 +203,33 @@
 
         <form action="" class="form-popup" id="form-popup">
 
-            <label for="dep" id="ltid">Task ID</label>
-            <input type="text" name="tid" id="tid" value="" readonly><br>
+            <!--<label for="dep" id="ltid">Task ID</label>
+            <input type="text" name="tid" id="tid" value="" readonly><br>-->
             <label for="" id="ltname">Task Name</label>
             <input type="text" name="tname" id="tname" value=""><br>
             <label for="task" id="latime">Assigned Time</label>
             <input type="text" name="atime" id="atime" value="" readonly><br>
             <label for="task" id="lato">Assigned To</label>
             <input type="text" name="ato" id="ato" value=""><br>
-            <label for="task" id="laby">Assigned By</label>
-            <input type="text" name="aby" id="aby" value=""><br>
+            <!--<label for="task" id="laby">Assigned By</label>
+            <input type="text" name="aby" id="aby" value=""><br>-->
             <label for="task" id="lrtime">Required Time</label>
             <input type="text" name="rtime" id="rtime" value=""><br>
             <label for="task" id="lddate">Due Date</label>
             <input type="text" name="ddate" id="ddate" value=""><br>
             <label for="" name="lstts">Status</label>
-            <input type="text" name="stts" id="stts" value=""><br>
+            <!--<input type="text" name="stts" id="stts" value=""><br>-->
+            <select name="stts" id="stts">
+                <option value="volvo">Aproved</option>
+                <option value="saab">ReAssigned</option>
+            </select>
             <progress id="file" value="32" max="100"></progress><br>
             <label for="" id="lacdate">Accepted Date</label>
-            <input type="text" name="acdate" id="acdate" value="" readonly><br>
+            <input type="date" name="acdate" id="acdate" value="" readonly><br>
             <label for="" id="lcdate">Completed Date</label>
-            <input type="text" name="cdate" id="cdate" value="" readonly><br>
+            <input type="date" name="cdate" id="cdate" value="" readonly><br>
             <label for="" id="lapdate">Approved Date</label>
-            <input type="text" name="apdate" id="apdate" value="" readonly><br>
+            <input type="date" name="apdate" id="apdate" value="" readonly><br>
 
             <div class="btn">
                 <input type="submit" value="Save Changes" class="button">
@@ -284,7 +288,7 @@
             var cdate = data[9].innerHTML;
             var apdate = data[10].innerHTML;
 
-            document.getElementById("details").innerHTML ="";
+            document.getElementById("details").innerHTML = "";
 
             document.getElementById("details").innerHTML += '<br> Accepted Date<br>' + acdate + '<br>';
             document.getElementById("details").innerHTML += '<br> Completed Date<br>' + cdate + '<br>';
@@ -306,11 +310,11 @@
             /*returns array of all elements with 
             "row-data" class within the row with given id*/
 
-            var id = data[0].innerHTML;
+            /*var id = data[0].innerHTML;*/
             var name = data[1].innerHTML;
             var atime = data[2].innerHTML;
             var ato = data[3].innerHTML;
-            var aby = data[4].innerHTML;
+            /*var aby = data[4].innerHTML;*/
             var rtime = data[5].innerHTML;
             var ddate = data[6].innerHTML;
             var status = data[7].innerHTML;
@@ -318,11 +322,11 @@
             var cdate = data[9].innerHTML;
             var apdate = data[10].innerHTML;
 
-            document.getElementById("tid").value = id;
+            /*document.getElementById("tid").value = id;*/
             document.getElementById("tname").value = name;
             document.getElementById("atime").value = atime;
             document.getElementById("ato").value = ato;
-            document.getElementById("aby").value = aby
+            /*document.getElementById("aby").value = aby*/
             document.getElementById("rtime").value = rtime;
             document.getElementById("ddate").value = ddate;
             document.getElementById("stts").value = status;

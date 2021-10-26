@@ -92,9 +92,10 @@ tr{
     background-size:cover;
     width: 25px;
     height: 25px;
-    background-image: url('../Asserts/viewmem.png');
+    background-image: url('../Asserts/avator.jpg');
     cursor:pointer;
     border: none;
+    border-radius: 10px;
 }
 
 @media (min-width: 800px) {
@@ -151,15 +152,12 @@ tr{
     }
 
     .form-popup {
-        position: absolute;
-        margin: auto;
+        margin:100px auto;
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
         padding: 10px;
         width: 600px;
-        left: 20%;
-        top: 5%;
     }
     
     .popup .button{
@@ -167,9 +165,15 @@ tr{
         background-size:cover;
         width: 25px;
         height: 25px;
-        background-image: url('../Asserts/close.jpg');
+        /*background-image: url('../Asserts/close.jpg');*/
         cursor:pointer;
         border: none;
+        background-color: transparent;
+    }
+
+    .popup .button span{
+        font-size: 18pt;
+        color: gray;
     }
 }
 
@@ -215,15 +219,12 @@ tr{
     }
 
     .form-popup {
-        position: absolute;
         background-color: #f5f5f5;
         border: 3px solid #f1f1f1;
         border-radius: 5px;
-        width: max-content;
+        width: fit-content;
         padding: 5px;
-        top: 20%;
-        left: 2px;
-        right: 0;
+        margin: 100px auto;
     }
     
     .popup .button{
@@ -231,9 +232,15 @@ tr{
         background-size:cover;
         width: 25px;
         height: 25px;
-        background-image: url('../Asserts/close.jpg');
+        /*background-image: url('../Asserts/close.jpg');*/
         cursor:pointer;
         border: none;
+        background-color: transparent;
+    }
+
+    .popup .button span{
+        font-size: 18pt;
+        color: gray;
     }
 
 }

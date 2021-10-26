@@ -18,11 +18,11 @@
     <?php
 
     if (!empty($_SESSION['add-emp-msg'])) {
-        if ($_SESSION['add-emp-msg'] == "New record created successfully and Email sent") {
+        if ($_SESSION['add-emp-msg'] == "New record created successfully") {
             echo '<script>swal("Success!", "New record created successfully and Email sent", "success")</script>';
             $_SESSION['add-emp-msg'] = null;
-        } else if ($_SESSION['add-emp-msg'] == "New record created successfully and Email was not sent") {
-            echo '<script>swal("Failed!", "New record created successfully and Email was not sent","error")</script>';
+        } else if ($_SESSION['add-emp-msg'] == "Fialed to add New Employee password") {
+            echo '<script>swal("Failed!", "Failed Passwords Verification","error")</script>';
             $_SESSION['add-emp-msg'] = null;
         } else if ($_SESSION['add-emp-msg'] == "Fialed to add New Employee") {
             echo '<script>swal("Failed!", "Fialed to add New Employee","error")</script>';

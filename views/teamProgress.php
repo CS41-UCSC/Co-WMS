@@ -129,7 +129,7 @@
         <form class="form-popup" id="form-popup">
 
             <div class="btn">
-                <button type="button" class="button" onclick="closeForm()"></button>
+                <button type="button" class="button" onclick="closeForm()"><span>X</span></button>
             </div>
 
             <table id="mytable">
