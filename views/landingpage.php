@@ -37,7 +37,11 @@
         </label>
         <div class="notification"><a href="#"><i class="fa fa-bell fa-lg"></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {
+                                                                    echo $_SESSION['user_img'];
+                                                                } else {
+                                                                    echo 'avator.jpg';
+                                                                } ?>" alt="">
 
 
     </header>
