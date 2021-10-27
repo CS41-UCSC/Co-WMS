@@ -37,7 +37,7 @@
                     <input type="password" class="input-fields" placeholder="Password" id="password" name="password">
                     <input type="submit" value="Login" class="button" onclick="submitf()">
                     <div class="link">
-                        <a href="">Forgot Password?</a><br>
+                        <a href="login/showpage_forgotpassword">Forgot Password?</a><br>
                     </div>
             </form>
             </div> 
