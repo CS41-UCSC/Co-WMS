@@ -1,6 +1,7 @@
 <?php
 
-class login extends Controller{
+class login extends Controller
+{
 
     public $msg;
 
@@ -10,33 +11,80 @@ class login extends Controller{
         session_start();
     }
 
-    function index(){
-        
-        $this->view->render('login');
+    function index()
+    {
 
+        $this->view->render('login');
     }
 
-    function run(){
-        
+    function showpage_forgotpassword()
+    {
+
+        $this->view->render('forgotPassword');
+    }
+
+    function showpage_resetpassword()
+    {
+
+        $this->view->render('resetPassword');
+    }
+
+    function run()
+    {
+
         $res = $this->model->login();
         echo $_SESSION['msg'];
-        
-        if($res){
-            if($_SESSION['emprole']== "Admin"){
+
+        if ($res) {
+            if ($_SESSION['emprole'] == "Admin") {
                 header('location: http://localhost/CO-WMS/adminHome');
-            }else{
+            } else {
                 header('location: http://localhost/CO-WMS/landingpage');
             }
-            
-        }
-
-        else {
+        } else {
             header('location: http://localhost/CO-WMS/login');
         }
-
-        
     }
 
+    function sendOTP()
+    {
 
-    
+        $user_name = $_POST['username'];
+        $email = $_POST['email'];
+
+        $model = new login_Model();
+        $res = $model->doOTP($user_name, $email);
+
+        if ($res) {
+            echo '<script>alert("Sent Your OPT code")</script>';
+            $this->view->render('resetPassword');
+        } else {
+            echo '<script>alert("We cannot identify You! Check Again!");</script>';
+            $this->view->render('forgotPassword');
+        }
+    }
+
+    function resetPassword()
+    {
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $otpcode = trim($_POST['otpcode']);
+            $npassword = $_POST['npassword'];
+
+
+            echo $_POST['otpcode'];
+
+            $hash = password_hash($npassword, PASSWORD_DEFAULT);
+
+            $res = $this->model->resetPassword($otpcode, $hash);
+
+            if ($res) {
+                echo '<script>alert("Success")</script>';
+                header('location: http://localhost/CO-WMS/login');
+            } else {
+                echo '<script>alert("Failed !")</script>';
+                $this->view->render('forgotPassword');
+            }
+        }
+    }
 }
