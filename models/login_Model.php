@@ -113,6 +113,52 @@ class login_Model extends Model{
         }   
     }
 
-    
+    function doOTP($user_name, $email){
+
+
+        $sql = "SELECT * FROM systemuser WHERE EmpID = ('$user_name') AND EmpEmail = ('$email') ; ";
+        $res = $this->db->runQuery($sql);
+
+        $otp = mt_rand(10000000, 99999999);
+        $_SESSION['otpcode'] = $otp;
+        $_SESSION['user'] = $user_name;
+        
+        if(count($res) > 0){
+
+            $mail_subject = 'Message from Co-WMS website';
+            $email_body = "Hello {$user_name}\n" ;
+            $email_body .= "Your OPT code : {$otp} \n";
+            $email_body .= "Thank you.";
+            $from = 'From: cowmsofficial@gmail.com';
+
+            $send_mail_result = mail($email, $mail_subject, $email_body, $from);
+
+            if($send_mail_result){
+                return true;
+            }else{
+               return false;
+            }
+        }else{
+            return false;
+        }
+
+    }
+
+    function resetPassword($otpcode , $password){
+
+        if($_SESSION['otpcode'] == $otpcode ){
+
+            $empid = $_SESSION['user'];
+            $sql = ("UPDATE systemuser SET PASSWORD = '$password' WHERE EmpID = '$empid' ;");
+
+            if (($this->db->query($sql)) == TRUE) {
+                return true;
+            } else {
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
     
 }
