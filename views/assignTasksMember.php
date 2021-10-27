@@ -68,10 +68,10 @@
 			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link nav-link-active" id="emp_progress">
+			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link " id="emp_progress">
                 <i class="fa fa-users fa-lg" ><span>Employee Progress</span></i>
             </a>
-            <a href="http://localhost/Co-WMS/deptManageTask" class="nav-link" id="manage_task_dpt">
+            <a href="http://localhost/Co-WMS/deptManageTask" class="nav-link nav-link-active" id="manage_task_dpt">
                 <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
 			<a href="http://localhost/Co-WMS/leaderManageTask" class="nav-link" id="manage_task_leader">

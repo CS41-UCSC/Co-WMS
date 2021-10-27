@@ -66,7 +66,7 @@
 			<a href="http://localhost/Co-WMS/myProgressAccepted" class="nav-link" id="my_progress">
                 <i class="fa fa-user fa-lg" ><span>My Progress</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
+			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link nav-link-active" id="t_progress">
                 <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
             </a>
 			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link nav-link-active" id="emp_progress">
