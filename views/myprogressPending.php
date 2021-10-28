@@ -37,7 +37,7 @@
         </label>
         <div class="notification"><a href="#" ><i class="fa fa-bell fa-lg "></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img  class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if($result[0]['Userimg']) {echo $result[0]['Userimg'];} else {echo 'avator.jpg';} ?>" alt="">
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {echo $_SESSION['user_img'];} else {echo 'avator.jpg';} ?>" alt="">
 
     
 
@@ -51,49 +51,52 @@
                 <img src="../Asserts/logo.jpg" alt="" class="close-img">
             </div>-->
 
-            <a href="#" class="nav-link nav-link-active" id="manage_access">
+            <a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="landingpage" class="nav-link" id="dashboard">
+            <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
-			<a href="#" class="nav-link" id="d_progress">
+			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_dashboard">
+                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
+            </a>
+			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
-            <a href="myprofile" class="nav-link" id="my_profile">
+            <a href="http://localhost/Co-WMS/myprofile" class="nav-link" id="my_profile">
                 <i class="fa fa-user fa-lg" ><span>My Profile</span></i>
             </a>
-			<a href="myprogressAccepted" class="nav-link" id="my_progress">
+			<a href="http://localhost/Co-WMS/myProgressAccepted" class="nav-link nav-link-active" id="my_progress">
                 <i class="fa fa-user fa-lg" ><span>My Progress</span></i>
             </a>
-			<a href="teamWorkProgress" class="nav-link" id="t_progress">
+			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
                 <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
             </a>
-			<a href="#" class="nav-link" id="emp_progress">
+			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link " id="emp_progress">
                 <i class="fa fa-users fa-lg" ><span>Employee Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="manage_task_dpt">
+            <a href="http://localhost/Co-WMS/deptManageTask" class="nav-link" id="manage_task_dpt">
                 <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
-			<a href="#" class="nav-link" id="manage_task_leader">
+			<a href="http://localhost/Co-WMS/leaderManageTask" class="nav-link" id="manage_task_leader">
                 <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
-            <a href="#" class="nav-link" id="manage_emp">
+            <a href="http://localhost/Co-WMS/manageEmployee" class="nav-link" id="manage_emp">
                 <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
+            <a href="http://localhost/Co-WMS/leave/myleaveApproved" class="nav-link" id="my_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="t_leave">
+			<a href="http://localhost/Co-WMS/leave/teamLeave" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="d_leave">
+			<a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
-			<a href="#" class="nav-link" id="emp_leave">
+			<a href="http://localhost/Co-WMS/leave/empLeave" class="nav-link" id="emp_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
-			<a href="homepage" class="nav-link" id="logout">
+			<a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
                 <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
             </a>
         </div> 
@@ -139,75 +142,86 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
                         <tr>
-                            <td data-label="Task Id">003</td>
+                            <td data-label="Task Id">3</td>
                             <td data-label="Task Name">Collect verify the all the customer details</td>
                             <td data-label="Assigned On">10/07/2021</td>
-                            <td data-label="Due On">10/07/2021</td>
+                            <td data-label="Due On">12/07/2021</td>
                             <td data-label="Required Time">5 hrs</td>
                             <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
                             <td data-label="View">
-                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></button>
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
                             </td>
-                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x" style="color:black;" aria-hidden="true"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Task Id">003</td>
-                            <td data-label="Task Name">Collect verify the all the customer details</td>
-                            <td data-label="Assigned On">10/07/2021</td>
-                            <td data-label="Due On">10/07/2021</td>
-                            <td data-label="Required Time">5 hrs</td>
-                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
-                            <td data-label="View">
-                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></button>
-                            </td>
-                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x" style="color:black;" aria-hidden="true"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Task Id">003</td>
-                            <td data-label="Task Name">Collect verify the all the customer details</td>
-                            <td data-label="Assigned On">10/07/2021</td>
-                            <td data-label="Due On">10/07/2021</td>
-                            <td data-label="Required Time">5 hrs</td>
-                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
-                            <td data-label="View">
-                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></button>
-                            </td>
-                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x" style="color:black;" aria-hidden="true"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Task Id">003</td>
-                            <td data-label="Task Name">Collect verify the all the customer details</td>
-                            <td data-label="Assigned On">10/07/2021</td>
-                            <td data-label="Due On">10/07/2021</td>
-                            <td data-label="Required Time">5 hrs</td>
-                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
-                            <td data-label="View">
-                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></button>
-                            </td>
-                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:black;" aria-hidden="true"></i></a></td>
-                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x" style="color:black;" aria-hidden="true"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Task Id">003</td>
-                            <td data-label="Task Name">Collect verify the all the customer details</td>
-                            <td data-label="Assigned On">10/07/2021</td>
-                            <td data-label="Due On">10/07/2021</td>
-                            <td data-label="Required Time">5 hrs</td>
-                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
-                            <td data-label="View">
-                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></button>
-                            </td>
-                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x"  aria-hidden="true"></i></a></td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
                             <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
 
-
-
-
+                        <tr>
+                            <td data-label="Task Id">5</td>
+                            <td data-label="Task Name">Order prerequisite software</td>
+                            <td data-label="Assigned On">10/09/2021</td>
+                            <td data-label="Due On">12/09/2021</td>
+                            <td data-label="Required Time">7 hrs</td>
+                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
+                            <td data-label="View">
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
+                            </td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Task Id">6</td>
+                            <td data-label="Task Name">Implement distributed data feeds in the production environment</td>
+                            <td data-label="Assigned On">12/08/2021</td>
+                            <td data-label="Due On">21/08/2021</td>
+                            <td data-label="Required Time">21 hrs</td>
+                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
+                            <td data-label="View">
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
+                            </td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Task Id">8</td>
+                            <td data-label="Task Name">Process documentation</td>
+                            <td data-label="Assigned On">10/02/2021</td>
+                            <td data-label="Due On">12/02/2021</td>
+                            <td data-label="Required Time">3 hrs</td>
+                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
+                            <td data-label="View">
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
+                            </td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Task Id">10</td>
+                            <td data-label="Task Name">Troubleshoot network issues</td>
+                            <td data-label="Assigned On">10/11/2021</td>
+                            <td data-label="Due On">20/11/2021</td>
+                            <td data-label="Required Time">17 hrs</td>
+                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
+                            <td data-label="View">
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
+                            </td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Task Id">11</td>
+                            <td data-label="Task Name">organize a client meeting with ZOOM and collect details</td>
+                            <td data-label="Assigned On">01/05/2021</td>
+                            <td data-label="Due On">04/05/2021</td>
+                            <td data-label="Required Time">3 hrs</td>
+                            <!-- <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:black;" aria-hidden="true"></i></a></td> -->
+                            <td data-label="View">
+                                <button class="button" data-modal="modalOne1"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></button>
+                            </td>
+                            <td data-label="Accept"><a href="#"><i class="fa fa-check-circle-o fa-2x" style="color:gray;"  aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
+                        </tr>
 
                     
                     </tbody>
@@ -233,7 +247,15 @@
                     <div class="modal-content1">
                         
                             <a class="close">&times;</a>
-                            <p>jbdsdbsnbnsbdnsbdnmsbdnsbdnmsbdnmsb <br> dnsbdnmbsmndbn</p>
+                            <p>Task Id : 3 <br>Collect verify the all the customer details
+                            <br>Assigned on : 10/07/2021 <br>
+                            Due On : 12/07/2021 <br>
+                            Required Time : 5 hrs <br><br>
+                            Sub Tasks : <br>
+                            Sub Task 1 : <br>
+                            Sub Task 2 : <br>
+                            Sub Task 3 : <br>
+                            </p>
                         
                     </div>
                 </div>
