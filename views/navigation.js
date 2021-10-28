@@ -38,7 +38,8 @@ function f2(MyProfile){
 	
 function f3(ManagerAccess){
 	if(ManagerAccess==0){
-	
+		
+		document.getElementById("dashboard").style.display="none"; 
 		document.getElementById("d_progress").style.display="none";
 		document.getElementById("manage_task_dpt").style.display="none";
 		document.getElementById("d_leave").style.display="none";
