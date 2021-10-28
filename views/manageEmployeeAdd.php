@@ -56,56 +56,58 @@
         </label>
         <div class="notification"><a href="#"><i class="fa fa-bell fa-lg"></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img class="img-rounded-circle" src="../Co-WMS/Asserts/avator.jpg" alt="">
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {echo $_SESSION['user_img'];} else {echo 'avator.jpg';} ?>" alt="">
 
     </header>
 
     <nav class="nav">
         <div class="nav-links">
-            <a href="#" class="nav-link " id="manage_access">
+        <a href="admin/adminHome" class="nav-link nav-link-active" id="manage_access">
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
+                <a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
-            <a href="landingpage" class="nav-link" id="dashboard">
-                <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
+            <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
+                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
-            <a href="#" class="nav-link" id="d_progress">
-                <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
+			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
+                <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
-            <a href="myprofile" class="nav-link" id="my_profile" onclick="toggleColor(this)">
-                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
+            <a href="http://localhost/Co-WMS/myprofile" class="nav-link" id="my_profile">
+                <i class="fa fa-user fa-lg" ><span>My Profile</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_progress">
-                <i class="fa fa-user fa-lg"><span>My Progress</span></i>
+			<a href="http://localhost/Co-WMS/myProgressAccepted" class="nav-link" id="my_progress">
+                <i class="fa fa-user fa-lg" ><span>My Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="t_progress">
-                <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
+			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
+                <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
             </a>
-            <a href="employeeWorkProgress" class="nav-link" id="emp_progress">
-                <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
+			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link" id="emp_progress">
+                <i class="fa fa-users fa-lg" ><span>Employee Progress</span></i>
             </a>
-            <a href="#" class="nav-link" id="manage_task_dpt">
-                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+            <a href="http://localhost/Co-WMS/deptManageTask" class="nav-link" id="manage_task_dpt">
+                <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
-            <a href="#" class="nav-link" id="manage_task_leader">
-                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
+			<a href="http://localhost/Co-WMS/leaderManageTask" class="nav-link" id="manage_task_leader">
+                <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
             </a>
-            <a href="manageEmployee" class="nav-link" id="manage_emp">
-                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
+            <a href="http://localhost/Co-WMS/manageEmployee" class="nav-link nav-link-active" id="manage_emp">
+                <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
             </a>
-            <a href="#" class="nav-link" id="my_leave">
-                <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
+            <a href="http://localhost/Co-WMS/leave/myleaveApproved" class="nav-link" id="my_leave">
+                <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
             </a>
-            <a href="#" class="nav-link" id="t_leave">
-                <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
+			<a href="http://localhost/Co-WMS/leave/teamLeave" class="nav-link" id="t_leave">
+                <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
-            <a href="#" class="nav-link" id="d_leave">
-                <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
+			<a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link" id="d_leave">
+                <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
-            <a href="#" class="nav-link" id="emp_leave">
-                <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
+			<a href="http://localhost/Co-WMS/leave/empLeave" class="nav-link" id="emp_leave">
+                <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
-            <a href="homepage" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
+			<a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
+                <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
             </a>
         </div>
         <div class="nav-overlay"></div>
@@ -114,9 +116,9 @@
     <nav>
         <input id="nav-toggle" type="checkbox">
         <ul class="links">
-            <li><a href="#Employees">Employees</a></li>
-            <li><a href="#Departments">Departments</a></li>
-            <li><a href="#Teams">Teams</a></li>
+            <li><a href="manageEmployee">Employees</a></li>
+            <li><a href="manageDepartment">Departments</a></li>
+            <li><a href="manageTeam">Teams</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -161,6 +163,26 @@
                     <div>
                         <label for="mail">Employee Email :</label><br>
                         <input type="email" id="email" name="email" placeholder="Email Address" required onkeyup="email_validation();"><br>
+                    </div>
+                    <div>
+                        <label for="Dname">Department Name :</label><br>
+                        <!-- <input type="text" id="Dname" name="Dname" placeholder="Department Name" required><br> -->
+                        <select name="role" id="role">
+                            <option value="Department 1">Department 1</option>
+                            <option value="Department 2">Department 2</option>
+                            <option value="Department 3">Department 3</option>
+                            <option value="Department 4">Department 4</option>
+                        </select><br>
+                    </div>
+                    <div>
+                        <label for="Tname">Team Name :</label><br>
+                        <!-- <input type="text" id="Tname" name="Tname" placeholder="Team Name" required><br> -->
+                        <select name="role" id="role">
+                        <option value="Team 1">Team 1</option>
+                            <option value="Team 2">Team 2</option>
+                            <option value="Team 3">Team 3</option>
+                            <option value="Team 4">Team 4</option>
+                        </select><br>
                     </div>
 
                     <div>
