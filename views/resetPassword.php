@@ -13,16 +13,17 @@
         <div class="left">
             <div class="form">
                 <h1>Change <span>Password</span></h1>
-                <form action=POST>
+
+                <form method="POST" action="resetPassword">
                     <div class="box">
-                        <label for="Email" class="new_pass">New Password</label><br>
-                        <input type="password" class="input"><br>
-                        <label for="Email" class="confirm_pass">Confirm New Password</label><br>
-                        <input type="password" class="input"><br>
+                        <label for="Email" class="verifi" >Verification Code</label><br>
+                        <input type="text" class="input" name="otpcode"><br>
+                        <label for="Email" class="new_pass" >New Password</label><br>
+                        <input type="password" class="input" name="npassword"><br>
+                        <label for="Email" class="confirm_pass" >Confirm New Password</label><br>
+                        <input type="password" class="input" name="cpassword"><br>
                     </div>
                    
-                    
-
                     <input type="submit" value="Change My Password" class="button">
                     
                 </form>
