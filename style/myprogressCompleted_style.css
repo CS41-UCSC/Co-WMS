@@ -7,11 +7,13 @@
         position: fixed;
         z-index: 10;
         left : 245px;
+        /*width: 100%;*/
         right: 0;
         top: 50px;
         font-family: 'Montserrat', sans-serif;
         padding: 10 5%;
-        height: 30px;
+        padding-top: 20px;
+        height: 40px;
         background-color: #ffffff;
         /* visibility: hidden; */
     }
@@ -31,14 +33,18 @@
     }
     nav .links a {
         display: block;
-        padding: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
         font-size: 20px;
-        color: rgb(0, 0, 0);
+        color: #2B65EC;
         text-decoration: none;
     }
-    /* nav .links a :hover{
-        color: rgb(0, 255, 106);
-    } */
+    
+    nav .links a:hover{
+      /*color: rgb(0, 255, 106);*/
+      border-bottom: 3px solid #7cb3f1;
+    }
+
     #nav-toggle {
         position: absolute;
         top: -100px;
@@ -60,6 +66,7 @@
         transition: all .3s ease-in-out;
         
     }
+
     
     /*background: rgba(87, 87, 87, 0.5);
     backdrop-filter: blur(1px);*/
@@ -81,6 +88,13 @@
         display: flex;
         flex-wrap: nowrap;
         background-color: #ffffff;
+      }
+
+      .flex-container1 .text{
+        color: #5a5858;
+        font-size: 25px;
+        font-weight: 400;
+
       }
       
       .flex-container1 > div {
@@ -114,7 +128,7 @@
         width: 200px;
         height: 38px;
         cursor: pointer;
-        background: #265397;
+        background: #5093eb;
         border-radius: 100px;
         border: none;
         
@@ -128,32 +142,38 @@
       }
 
       .rectan:hover{
-        background: #5a91e4;
+        background-color: #9ac3f8;
       }
+
+
+      /* .rectan:hover{
+        background: #5a91e4;
+      } */
 
       
       .table{
-        margin-top: 40px;
+        margin-top: 20px;
         width: 100%;
         border-collapse: collapse;
+        font-weight: normal;
     }
     
     .table td,.table th{
       padding:12px 15px;
-      border:1px solid rgb(0, 0, 0);
+      border:1px solid rgb(253, 253, 253);
       text-align: center;	
       font-size:16px;
     }
     
     .table th{
-        background-color: #265397;
-        color:#ffffff;
+        background-color: #9ac3f8;
+        color:#5a5858;
+        font-weight: normal;
     }
     
     .table tbody tr:nth-child(even){
         background-color: #f5f5f5;
     }
-    
     
       
 

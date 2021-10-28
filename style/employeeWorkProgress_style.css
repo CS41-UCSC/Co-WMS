@@ -28,6 +28,13 @@
         
       }
 
+      .flex-container1 .text{
+        color: #5a5858;
+        font-size: 25px;
+        font-weight: 400;
+
+      }
+
      
       .flex-container1 > div {
         background-color: #ffffff;
@@ -72,21 +79,23 @@
       
       
       .table{
-        margin-top: 0px;
+        margin-top: -30px;
         width: 100%;
         border-collapse: collapse;
+        font-weight: normal;
     }
     
     .table td,.table th{
       padding:12px 15px;
-      border:1px solid rgb(0, 0, 0);
+      border:1px solid rgb(253, 253, 253);
       text-align: center;	
       font-size:16px;
     }
     
     .table th{
-        background-color: #265397;
-        color:#ffffff;
+        background-color: #9ac3f8;
+        color:#5a5858;
+        font-weight: normal;
     }
     
     .table tbody tr:nth-child(even){

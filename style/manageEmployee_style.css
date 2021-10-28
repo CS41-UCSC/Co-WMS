@@ -76,16 +76,18 @@
 
     .flex-container {
         display: flex;
+        /* display: block; */
         margin-top: -50px;
         margin-left: 2%;
         margin-right: 2%;
         flex-wrap: wrap;
         background-color: #ffffff;
-    
+        /* position: absolute; */
         
       }
       .flex-container1 {
         display: flex;
+        /* display: inline-block; */
         margin-top: 30px;
         height: 10%;
         margin-left: 2%;
@@ -145,7 +147,7 @@
         width: 230px;
         height: 42px;
         cursor: pointer;
-        background: #9ac3f8;
+        background: #5093eb;
         border-radius: 100px;
         border: none;
         
@@ -157,16 +159,22 @@
         color: #FFFFFF;
         
       }
+      
+      .rectan:hover{
+        background-color: #9ac3f8;
+      }
 
 
 
       
       
       .table{
-        margin-top: -30px;
+        /* margin-top: -30px; */
+        top: 0;
         width: 100%;
         border-collapse: collapse;
         font-weight: normal;
+        /* position: relative; */
     }
     
     .table td,.table th{
