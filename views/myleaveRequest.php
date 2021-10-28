@@ -19,7 +19,7 @@
     <title>CO-WMS</title>
 </head>
 
-<body class="preload" onload='setbutton()'>
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -112,7 +112,10 @@
             <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
+            <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_dashboard">
+                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
+            </a>
+            <a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
             <a href="http://localhost/Co-WMS/myprofile" class="nav-link" id="my_profile">
