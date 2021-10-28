@@ -16,6 +16,7 @@
 <body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
 
     <?php
+    
 
     if (!empty($_SESSION['add-emp-msg'])) {
         if ($_SESSION['add-emp-msg'] == "New record created successfully") {
@@ -29,7 +30,6 @@
             $_SESSION['add-emp-msg'] = null;
         }
     }
-
 
     ?>
 
@@ -56,58 +56,61 @@
         </label>
         <div class="notification"><a href="#"><i class="fa fa-bell fa-lg"></i></a></div>
         <span class="user-login"><?php echo $_SESSION['login_user'] ?></span>
-        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {echo $_SESSION['user_img'];} else {echo 'avator.jpg';} ?>" alt="">
+        <img class="img-rounded-circle" src="../Co-WMS/Asserts/<?php if ($_SESSION['user_img']) {
+                                                                    echo $_SESSION['user_img'];
+                                                                } else {
+                                                                    echo 'avator.jpg';
+                                                                } ?>" alt="">
 
     </header>
 
     <nav class="nav">
         <div class="nav-links">
-        <a href="admin/adminHome" class="nav-link nav-link-active" id="manage_access">
-                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
-                <a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link" id="manage_access">
+
+            <a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
             <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
-                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
+                <i class="fa fa-tachometer fa-lg"><span>Dashboard</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
-                <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
+            <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
+                <i class="fa fa-tachometer fa-lg"><span>Department Progress</span></i>
             </a>
             <a href="http://localhost/Co-WMS/myprofile" class="nav-link" id="my_profile">
-                <i class="fa fa-user fa-lg" ><span>My Profile</span></i>
+                <i class="fa fa-user fa-lg"><span>My Profile</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/myProgressAccepted" class="nav-link" id="my_progress">
-                <i class="fa fa-user fa-lg" ><span>My Progress</span></i>
+            <a href="http://localhost/Co-WMS/myProgressAccepted" class="nav-link" id="my_progress">
+                <i class="fa fa-user fa-lg"><span>My Progress</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
-                <i class="fa fa-users fa-lg" ><span>Team Progress</span></i>
+            <a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="t_progress">
+                <i class="fa fa-users fa-lg"><span>Team Progress</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link" id="emp_progress">
-                <i class="fa fa-users fa-lg" ><span>Employee Progress</span></i>
+            <a href="http://localhost/Co-WMS/employeeWorkProgress" class="nav-link" id="emp_progress">
+                <i class="fa fa-users fa-lg"><span>Employee Progress</span></i>
             </a>
             <a href="http://localhost/Co-WMS/deptManageTask" class="nav-link" id="manage_task_dpt">
-                <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/leaderManageTask" class="nav-link" id="manage_task_leader">
-                <i class="fa fa-tasks fa-lg" ><span>Manage Tasks</span></i>
+            <a href="http://localhost/Co-WMS/leaderManageTask" class="nav-link" id="manage_task_leader">
+                <i class="fa fa-tasks fa-lg"><span>Manage Tasks</span></i>
             </a>
             <a href="http://localhost/Co-WMS/manageEmployee" class="nav-link nav-link-active" id="manage_emp">
-                <i class="fa fa-pencil-square-o fa-lg" ><span>Manage Employee</span></i>
+                <i class="fa fa-pencil-square-o fa-lg"><span>Manage Employee</span></i>
             </a>
             <a href="http://localhost/Co-WMS/leave/myleaveApproved" class="nav-link" id="my_leave">
-                <i class="fa fa-list-alt fa-lg" ><span>My Leave</span></i>
+                <i class="fa fa-list-alt fa-lg"><span>My Leave</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/leave/teamLeave" class="nav-link" id="t_leave">
-                <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
+            <a href="http://localhost/Co-WMS/leave/teamLeave" class="nav-link" id="t_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Team Leave</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link" id="d_leave">
-                <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
+            <a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link" id="d_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Department Leave</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/leave/empLeave" class="nav-link" id="emp_leave">
-                <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
+            <a href="http://localhost/Co-WMS/leave/empLeave" class="nav-link" id="emp_leave">
+                <i class="fa fa-list-alt fa-lg"><span>Employee Leave</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
+            <a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
+                <i class="fa fa-list-alt fa-lg"><span>Logout</span></i>
             </a>
         </div>
         <div class="nav-overlay"></div>
@@ -127,20 +130,7 @@
         </label>
     </nav>
 
-    <?php
 
-    if (!empty($_SESSION['error-msg'])) {
-        if ($_SESSION['error-msg'] == "yes") {
-            echo '<script>swal("Success!", "Photo added!", "success")</script>';
-            $_SESSION['error-msg'] = null;
-        } else if ($_SESSION['error-msg'] == "no") {
-            echo '<script>swal("Failed!", "Try Again!","error")</script>';
-            $_SESSION['error-msg'] = null;
-        }
-    }
-
-
-    ?>
     <main>
 
         <div class="container">
@@ -165,23 +155,18 @@
                         <input type="email" id="email" name="email" placeholder="Email Address" required onkeyup="email_validation();"><br>
                     </div>
                     <div>
-                        <label for="Dname">Department Name :</label><br>
-                        <!-- <input type="text" id="Dname" name="Dname" placeholder="Department Name" required><br> -->
-                        <select name="role" id="role">
-                            <option value="Department 1">Department 1</option>
-                            <option value="Department 2">Department 2</option>
-                            <option value="Department 3">Department 3</option>
-                            <option value="Department 4">Department 4</option>
-                        </select><br>
-                    </div>
-                    <div>
+                        <?php
+                        $res = $this->teams;
+                        ?>
                         <label for="Tname">Team Name :</label><br>
-                        <!-- <input type="text" id="Tname" name="Tname" placeholder="Team Name" required><br> -->
-                        <select name="role" id="role">
-                        <option value="Team 1">Team 1</option>
-                            <option value="Team 2">Team 2</option>
-                            <option value="Team 3">Team 3</option>
-                            <option value="Team 4">Team 4</option>
+                        <select name="team" id="role">
+                            <?php
+                            $i=0;
+                            foreach ($res as $row) {
+                                echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                $i=$i+1;
+                            } ?>
+
                         </select><br>
                     </div>
 
@@ -194,6 +179,7 @@
                             <option value="Dept_Manager">Dept_Manager</option>
                         </select><br>
                     </div>
+                    <div></div>
                     <div>
                         <label for="password">Password :</label><br>
                         <input type="password" id="cpass" name="password" placeholder="Password" required onkeyup="validationc();"><br>

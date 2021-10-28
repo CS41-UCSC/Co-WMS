@@ -1,5 +1,8 @@
 <?php
 
+include_once('controllers/team.php');
+
+
 class manageEmployeeAdd extends Controller{
 
     public $msg;
@@ -7,20 +10,25 @@ class manageEmployeeAdd extends Controller{
     function __construct()
     {
         parent::__construct();
-        session_start();
+        //session_start();
     }
 
     function index(){
 
+        $team = new Team();
+        $this->view->teams = $team->getTeams(); 
         $this->view->render('manageEmployeeAdd');
 
     }
         
     function setData(){
         
+        session_start();
+        
         $empid = $_POST['epmId'];
         $empname= $_POST['Ename'];
         $empemail = $_POST['email'];
+        $team = $_POST['team'];
         $emprole = $_POST['role'];
         $password = $_POST['password'];
         $Cpassword = $_POST['Cpassword'];
@@ -29,7 +37,7 @@ class manageEmployeeAdd extends Controller{
 
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $res = $this->model->insertEmployee($empid,$empname,$empemail,$emprole,$hash,$password);
+            $res = $this->model->insertEmployee($empid,$empname,$empemail,$team,$emprole,$hash,$password);
 
             if($res){
                 /*$to = '$empemail';

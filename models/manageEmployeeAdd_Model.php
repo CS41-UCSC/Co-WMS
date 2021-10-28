@@ -7,14 +7,19 @@ class manageEmployeeAdd_Model extends Model{
         parent::__construct();
     }
 
-    function insertEmployee($empid,$empname,$empemail,$emprole,$hash,$password){
+    function insertEmployee($empid,$empname,$empemail,$team,$emprole,$hash,$password){
 
         try{
             $this->db->beginTransaction();
         
-            $sql = "INSERT INTO systemuser (`EmpID`, `EmpName`, `EmpEmail`, `EmpRole`, `PASSWORD`) VALUES ('$empid','$empname','$empemail','$emprole','$hash') " ;
-            $insert = $this->db->query($sql);
-    
+            $sql1 = "INSERT INTO systemuser (`EmpID`, `EmpName`, `EmpEmail`, `EmpRole`, `PASSWORD`) VALUES ('$empid','$empname','$empemail','$emprole','$hash') " ;
+            $insert = $this->db->query($sql1);
+
+            $date = date('Y-m-d');
+            $sql3 ="INSERT INTO team_member (`EmpID`, `TeamID`, `StartDate` ,`EndDate` ) VALUES ('$empid','$team',null , null)";
+
+            $this->db->query($sql3);
+
             $mail_subject = 'Message from Co-WMS website';
             $email_body = "Hello {$empname},Welcome to the Co-WMS Company \n" ;
             $email_body .= "Your User Id : {$empid} \n";
