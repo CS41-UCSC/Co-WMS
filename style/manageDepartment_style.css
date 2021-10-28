@@ -7,11 +7,13 @@
       position: fixed;
       z-index: 10;
       left : 245px;
+      /*width: 100%;*/
       right: 0;
       top: 50px;
       font-family: 'Montserrat', sans-serif;
       padding: 10 5%;
-      height: 30px;
+      padding-top: 20px;
+      height: 40px;
       background-color: #ffffff;
       /* visibility: hidden; */
   }
@@ -31,14 +33,18 @@
   }
   nav .links a {
       display: block;
-      padding: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
       font-size: 20px;
-      color: rgb(0, 0, 0);
+      color: #2B65EC;
       text-decoration: none;
   }
-  /* nav .links a :hover{
-      color: rgb(0, 255, 106);
-  } */
+  
+  nav .links a:hover{
+    /*color: rgb(0, 255, 106);*/
+    border-bottom: 3px solid #7cb3f1;
+  }
+
   #nav-toggle {
       position: absolute;
       top: -100px;
@@ -88,6 +94,12 @@
   
       
     }
+    .flex-container1 .text{
+      color: #5a5858;
+      font-size: 25px;
+      font-weight: 400;
+
+    }
 
    
     .flex-container1 > div {
@@ -95,14 +107,13 @@
       width: 100%;
       margin: 15px;
       /* sjdsj */
-      margin-top: -10px;
+      margin-top: 20px;
       text-align: center;
       line-height: 60px;
       font-size: 30px;
       border-radius: 18px;
       
     }
-
     .flex-container1>*:first-child {
   
       text-align: left;
@@ -129,20 +140,24 @@
 
     .flex-container1 .rectan{
   
-      width: 230px;
-      height: 42px;
-      cursor: pointer;
-      background: #265397;
-      border-radius: 100px;
-      border: none;
+        width: 230px;
+        height: 42px;
+        cursor: pointer;
+        background: #5093eb
+        ;
+        border-radius: 100px;
+        border: none;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-size: 20px;
+        
+        
+        color: #FFFFFF;
       
-      font-family: Roboto;
-      font-style: normal;
-      font-size: 24px;
-      
-      
-      color: #FFFFFF;
-      
+    }
+    .rectan:hover{
+      background-color:#9ac3f8;
     }
 
 
@@ -150,21 +165,23 @@
     
     
     .table{
-      margin-top: 0px;
+      margin-top: -30px;
       width: 100%;
       border-collapse: collapse;
+      font-weight: normal;
   }
   
   .table td,.table th{
     padding:12px 15px;
-    border:1px solid rgb(0, 0, 0);
+    border:1px solid rgb(253, 253, 253);
     text-align: center;	
     font-size:16px;
   }
   
   .table th{
-      background-color: #265397;
-      color:#ffffff;
+      background-color: #9ac3f8;
+      color:#5a5858;
+      font-weight: normal;
   }
   
   .table tbody tr:nth-child(even){
@@ -173,7 +190,9 @@
   
   /*background: rgba(87, 87, 87, 0.5);
   backdrop-filter: blur(1px);*/
-
+  .activelink span{
+    font-weight: 550;
+}
 
   
 
