@@ -23,6 +23,7 @@ class leave extends Controller{
 		if(isset($_POST['request_submit'])){
 			if((!empty($_POST["start"]))&&(!empty($_POST["end"]))&&(!empty($_POST["leavetype"]))){
 				$this->model->insert($_POST["start"],$_POST["end"],$_POST["leavetype"]);
+				echo "<script>alert('Requested Succefully')</script>";
 			}
 			else{
 				echo "<script>alert('Empty Fields')</script>";
