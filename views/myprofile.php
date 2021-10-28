@@ -100,7 +100,10 @@
             <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
+			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_dashboard">
+                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
+            </a>
+			<a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
             <a href="http://localhost/Co-WMS/myprofile" class="nav-link nav-link-active" id="my_profile">

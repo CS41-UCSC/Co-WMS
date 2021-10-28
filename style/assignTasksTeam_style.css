@@ -73,11 +73,14 @@ tr{
     .item1{
         text-align: right;
         margin-bottom: 30px;
+        padding-right: 50px;
     }
 
     .item1 a{
-        padding-right: 50px;
+        display: inline-block;
+        width: 150px;
         text-decoration: none;
+        text-align: center;
     }
 
     .item1 span{
@@ -89,6 +92,11 @@ tr{
 
     .activelink span{
         font-weight: 550;
+    }
+
+    
+    .item1 a:hover{
+        border-bottom:3px solid #7cb3f1;
     }
 
     .item2{
