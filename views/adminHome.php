@@ -145,7 +145,7 @@
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
 			<a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
+                <i class="fa fa-sign-out fa-lg" ><span>Logout</span></i>
             </a>
         </div>
 		<div class="nav-overlay"></div>

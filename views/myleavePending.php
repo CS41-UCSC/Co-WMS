@@ -151,7 +151,7 @@
                 <i class="fa fa-list-alt fa-lg" ><span>Employee Leave</span></i>
             </a>
 			<a href="http://localhost/Co-WMS/logout" class="nav-link" id="logout">
-                <i class="fa fa-list-alt fa-lg" ><span>Logout</span></i>
+                <i class="fa fa-sign-out fa-lg" ><span>Logout</span></i>
             </a>
         </div>
 		<div class="nav-overlay"></div>
@@ -173,7 +173,7 @@
 			</div>
 			<div class="item4">
 				<table>
-					<tr><td>Annual Leave</td><td>15/12/2021 - 16/12/2021</td><td>Pending</td></tr>
+					<tr><td>Annual Leave</td><td>15/12/2021 - 16/12/2021</td><td>Pending</td><td><a href="#" class="fabtn" ><i class="fa fa-times fa-lg" ></i></a></td></tr>
 				</table>
 			</div>
         </div>        
