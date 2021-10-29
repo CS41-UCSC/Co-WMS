@@ -37,7 +37,7 @@ class login extends Controller
 
         if ($res) {
             if ($_SESSION['emprole'] == "Admin") {
-                header('location: http://localhost/CO-WMS/adminHome');
+                header('location: http://localhost/CO-WMS/admin/adminHome');
             } else {
                 header('location: http://localhost/CO-WMS/landingpage');
             }
