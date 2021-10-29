@@ -8,8 +8,14 @@ class manageDepartmentAdd_Model extends Model{
     }
     
     function insertDepartment($dName,$dId,$dManagerId){
-
-        $sql = "INSERT INTO `dept`( `DeptID`, `DeptName`,`Dept_Manager`) VALUES ('$dId','$dName','$dManagerId') " ;
+		
+		$sql="";
+		if($ManagerId == NULL){
+			$sql = "INSERT INTO `dept`( `DeptID`, `DeptName`) VALUES ('$dId','$dName')";
+		}
+        else{
+			$sql = "INSERT INTO `dept`( `DeptID`, `DeptName`,`Dept_Manager`) VALUES ('$dId','$dName','$dManagerId')";
+		}
 
 
         if($this->db->query($sql) == true){

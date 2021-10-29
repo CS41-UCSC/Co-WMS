@@ -22,9 +22,17 @@ class manageDepartmentAdd extends Controller{
     function setData(){
         $dName = $_POST['dname'];
         $dId = $_POST['dId'];
-        $dManagerId = $_POST['dMId'];
+		$dManagerId = NULL;
+		
+        if(!empty($_POST['dMId'])){
+			$dManagerId = $_POST['dMId'];
+		}
+		else{
+			$dManagerId = NULL;
+		}
+		echo $dManagerId;
         $this->model->insertDepartment($dName,$dId,$dManagerId);
-
+		
         header('location: http://localhost/CO-WMS/manageDepartmentAdd');
 
     }
