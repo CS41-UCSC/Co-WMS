@@ -95,7 +95,7 @@
         </div>-->
 		<nav class="nav">
         <div class="nav-links nav-link-icons">
-			<a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link nav-link-active" id="manage_access">
+			<a href="http://localhost/Co-WMS/admin/adminHome" class="nav-link" id="manage_access">
                 <i class="fa fa-pencil-square-o fa-lg"><span>Manage Access</span></i>
             </a>
             <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
@@ -134,7 +134,7 @@
 			<a href="http://localhost/Co-WMS/leave/teamLeave" class="nav-link" id="t_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Team Leave</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link" id="d_leave">
+			<a href="http://localhost/Co-WMS/leave/dptleaveApproved" class="nav-link nav-link-active" id="d_leave">
                 <i class="fa fa-list-alt fa-lg" ><span>Department Leave</span></i>
             </a>
 			<a href="http://localhost/Co-WMS/leave/empLeave" class="nav-link" id="emp_leave">
