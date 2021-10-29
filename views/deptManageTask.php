@@ -183,15 +183,17 @@
                                 </tr>-->
 
                             <?php
-
+                            $i=0;
                             foreach ($result as $row) {
-                                echo '<tr id= ' . $row['0'] . '>';
+                                echo '<tr id= ' . $i . '>';
                                 echo '<td class="row-data" >' . $row['0'] . '</td>';
                                 echo '<td class="row-data" >' . $row['1'] . '</td>';
                                 echo '<td class="row-data" >' . $row['2'] . '</td>';
                                 echo '<td><button type="button" class="minus" onclick="deleteshow();"><i class="fa fa-minus-circle fa-lg"></i></button></td>';
                                 echo '<td><button type="button" class="pen" onclick="editshow();"><i class="fa fa-pencil fa-lg"></i></button></td>';
                                 echo '</tr>';
+
+                                $i=$i+1;
                             }
 
                             ?>
