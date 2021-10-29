@@ -163,7 +163,7 @@
 				<tr><td>Duration : </td><td> 15/12/2021 - 16/12/2021 </td></tr>
 				<tr><td>Pending Tasks : </td><td> None </td></tr>
 				<tr><td>Ongoing Tasks : </td><td> 5 </td></tr>
-				<tr><td colspan="2"><a href="#"> More Task Details </a></td></tr>
+				<tr><td colspan="2"><a href="http://localhost/Co-WMS/teamProgress"> More Task Details </a></td></tr>
 				</table>
 				<button href="#" name="approvebtn" id="approvebtn" class="viewbtn" >Approve</button>
 				<button href="#" name="declinebtn" id="declinebtn" class="viewbtn" >Decline</button>

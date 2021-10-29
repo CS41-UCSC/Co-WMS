@@ -156,7 +156,7 @@
         <div class="container">
 			<div class="item1">
 			<div class="back_arrow">
-				<a href="#"><i class="fa fa-arrow-left fa-2x"></i></a>
+				<a href="http://localhost/Co-WMS/employeeWorkProgress"><i class="fa fa-arrow-left fa-2x"></i></a>
 			</div>
 			<div class="right-icons">
 				<!--<i class="fa fa-search-plus fa-lg" ></i>
