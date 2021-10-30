@@ -158,13 +158,14 @@
                         <div>
                             
                                 <input type="submit" value="Back" class="rectan">
+                                <input type="submit" value="Submit" class="rectan">
                            
                         </div>
-                        <div>
+                        <!-- <div>
                             
                                 <input type="submit" value="Submit" class="rectan">
                             
-                        </div>
+                        </div> -->
                 </div>
 
             </form>
