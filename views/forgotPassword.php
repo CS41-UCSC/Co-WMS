@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/forgotPassword_style.css?<?php echo time(); ?>" type="text/css">
+    <link rel="stylesheet" href="../style/forgotPassword_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -26,7 +26,7 @@
                     <h4>Or</h4>
 
                     <div class="link">
-                        <h4>Back to <a href="login">Login</a></h4>
+                        <h4>Back to <a href="http://localhost/Co-WMS/login">Login</a></h4>
                     </div>
                 </form>
 
@@ -38,7 +38,7 @@
                 <h1>Do you not Remember the Password?</h1>
             </div>
             <div class="text2">
-                <h1>No Problem !!! Enter your Email or Username. We will send you an Email with instruction to reset your password......</h1>
+                <h1>No Problem !!! Enter your Email and Username. We will send you an Email with instruction to reset your password......</h1>
             </div>
 
         </div>
