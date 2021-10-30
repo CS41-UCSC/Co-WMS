@@ -30,11 +30,11 @@ class manageDepartmentAdd extends Controller{
 		else{
 			$dManagerId = NULL;
 		}
-		echo $dManagerId;
+		
         $this->model->insertDepartment($dName,$dId,$dManagerId);
 		
         header('location: http://localhost/CO-WMS/manageDepartmentAdd');
-
+		
     }
     
 }
