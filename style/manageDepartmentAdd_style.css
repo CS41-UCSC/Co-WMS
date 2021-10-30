@@ -113,11 +113,12 @@ nav .icon-burger .line {
     .flex-container > div {
 
       background-color: #ffffff;
-      width: 48%;
+      width: 70%;
       margin: 10px;
       text-align: left;
       line-height: 35px;
       font-size: 20px;
+      margin-left: 200px;
     }
 
 
@@ -133,6 +134,7 @@ nav .icon-burger .line {
       border-radius: 4px;
       box-sizing: border-box;
       border-color: #33628C;
+      height: 50%;
     }
 
 
@@ -148,8 +150,8 @@ nav .icon-burger .line {
 
     .rectan{
 
-      width: 200px;
-      height: 38px;
+      width: 30%;
+      height: 48px;
       cursor: pointer;
       border-radius: 100px;
       border: none;
@@ -158,7 +160,7 @@ nav .icon-burger .line {
       font-family: Roboto;
       font-style: normal;
       font-size: 24px;
-      
+      margin-left: 80px;
       
       color: #FFFFFF;
       
