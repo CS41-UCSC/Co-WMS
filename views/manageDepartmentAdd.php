@@ -157,13 +157,10 @@
                         <div>
                             
                                 <input type="submit" value="Back" class="rectan">
-                            
-                        </div>
-                        <div>
-                            
                                 <input type="submit" value="Submit" class="rectan">
                             
                         </div>
+                        
                 </div>
             </form>
            
