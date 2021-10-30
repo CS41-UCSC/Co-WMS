@@ -75,7 +75,7 @@
 
     .flex-container1 {
       display: flex;
-      margin-top: 60px;
+      margin-top: 120px;
       margin-left: 0.1%;
       margin-right: 3%;
       flex-direction: column;
@@ -118,7 +118,7 @@
     }
 
     .flex-container {
-      margin-top: -10px;
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       background-color: #ffffff;
@@ -128,11 +128,15 @@
     .flex-container > div {
 
       background-color: #ffffff;
-      width: 48%;
+      width: 70%;
       margin: 10px;
       text-align: left;
       line-height: 35px;
       font-size: 20px;
+
+      margin-left: 215px;
+      margin-bottom: 20px;
+      
     }
 
 
@@ -148,6 +152,7 @@
       border-radius: 4px;
       box-sizing: border-box;
       border-color: #33628C;
+      height: 60%;
     }
 
 
@@ -162,9 +167,9 @@
     } */
 
     .rectan{
-
-      width: 200px;
-      height: 38px;
+      margin-top: 30px;
+      width: 30%;
+      height: 48px;
       cursor: pointer;
       background: #5093eb;
       border-radius: 100px;
@@ -176,6 +181,8 @@
       
       
       color: #FFFFFF;
+
+      margin-left: 80px;
       
     }
 
