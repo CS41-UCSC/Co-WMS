@@ -105,7 +105,7 @@
         <ul class="links">
             <li><a href="myprogressCompleted">Completed</a></li>
             <li><a href="myprogressAccepted">In Progress</a></li>
-            <li><a href="myprogressOverdue">Overdue</a></li>
+            <li><a href="myprogressOverdue" class="activelink">Overdue</a></li>
             <li><a href="myprogressPending">Pending</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
@@ -146,7 +146,7 @@
                             <td data-label="Assigned On">10/10/2021</td>
                             <td data-label="Due On">15/10/2021</td>
                             <td data-label="Done On">16/10/2021</td>
-                            <td data-label="Reason">personal reasons</td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                             <td data-label="Reason Status">Reject</td>
                         </tr>
 
@@ -156,7 +156,7 @@
                             <td data-label="Assigned On">11/10/2021</td>
                             <td data-label="Due On">16/10/2021</td>
                             <td data-label="Done On">18/10/2021</td>
-                            <td data-label="Reason">Due to illness</td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                             <td data-label="Reason Status">Approve</td>
                         </tr>
 
@@ -166,7 +166,7 @@
                             <td data-label="Assigned On">12/10/2021</td>
                             <td data-label="Due On">17/10/2021</td>
                             <td data-label="Done On">19/10/2021</td>
-                            <td data-label="Reason">Due to technical issue</td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                             <td data-label="Reason Status">Reject</td>
                         </tr>
 
@@ -176,7 +176,7 @@
                             <td data-label="Assigned On">14/10/2021</td>
                             <td data-label="Due On">19/10/2021</td>
                             <td data-label="Done On">22/10/2021</td>
-                            <td data-label="Reason">personal reasons</td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                             <td data-label="Reason Status">Approve</td>
                         </tr>
                         <tr>
@@ -185,7 +185,7 @@
                             <td data-label="Assigned On">17/10/2021</td>
                             <td data-label="Due On">20/10/2021</td>
                             <td data-label="Done On">22/10/2021</td>
-                            <td data-label="Reason">Due to illness</td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                             <td data-label="Reason Status">Approve</td>
                         </tr>
 
@@ -193,6 +193,22 @@
                         
                     </tbody>
                 </table>
+                <div id="modalOne" class="modal">
+                    <div class="modal-content">
+                        <div class="contact-form">
+                            <a class="close">&times;</a>
+                            <form action="/">
+                                <h3>Reason</h3>
+                                <!-- <span>Message</span> -->
+                                <div class="message">Message</div>
+                                <div>
+                                    <textarea rows="4"></textarea>
+                                </div>
+                                <button type="submit" href="/">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     
             </div>
         </div>
@@ -217,6 +233,28 @@
                 con.classList.remove("containerN");
             });
         });
+    </script>
+     <script>
+      let modalBtns = [...document.querySelectorAll(".button")];
+      modalBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          let modal = btn.getAttribute('data-modal');
+          document.getElementById(modal)
+            .style.display = "block";
+        }
+      });
+      let closeBtns = [...document.querySelectorAll(".close")];
+      closeBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          let modal = btn.closest('.modal');
+          modal.style.display = "none";
+        }
+      });
+      window.onclick = function(event) {
+        if(event.target.className === "modal") {
+          event.target.style.display = "none";
+        }
+      }
     </script>
 </body>
 </html>

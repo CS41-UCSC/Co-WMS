@@ -102,7 +102,7 @@
     <input id="nav-toggle" type="checkbox"> 
         <ul class="links">
             <li><a href="manageEmployee">Employees</a></li>
-            <li><a href="manageDepartment">Departments</a></li>
+            <li><a href="manageDepartment" class="activelink">Departments</a></li>
             <li><a href="manageTeam">Teams</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
@@ -138,7 +138,7 @@
                         <th>Department Name</th>
 			<th>Department Manager ID</th>
                         <th>Edit</th>
-                        <th>Terminate</th>
+                        <!-- <th>Terminate</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -159,7 +159,7 @@
                                     echo '<td>' . $row['DeptName'] . '</td>';
                                     echo '<td>' . $row['Dept_Manager'] . '</td>';
                                     echo '<td data-label="Edit"><a href="manageDepartmentEditDelete"><i class="fa fa-pencil fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
-                                    echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
+                                    // echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
                                 echo '</tr>';
                             }
                         ?> 

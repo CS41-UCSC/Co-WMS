@@ -102,7 +102,7 @@
     <input id="nav-toggle" type="checkbox"> 
         <ul class="links">
             <li><a href="myprogressCompleted">Completed</a></li>
-            <li><a href="myprogressAccepted">In Progress</a></li>
+            <li><a href="myprogressAccepted" class="activelink">In Progress</a></li>
             <li><a href="myprogressOverdue">Overdue</a></li>
             <li><a href="myprogressPending">Pending</a></li>
         </ul>

@@ -104,7 +104,7 @@
     <input id="nav-toggle" type="checkbox"> 
         <ul class="links">
             <li><a href="manageEmployee">Employees</a></li>
-            <li><a href="manageDepartment">Departments</a></li>
+            <li><a href="manageDepartment" class="activelink">Departments</a></li>
             <li><a href="manageTeam">Teams</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
