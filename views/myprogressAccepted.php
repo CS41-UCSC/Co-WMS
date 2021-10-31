@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/myprogressAccepted_style.css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <link rel="stylesheet" href="../Co-WMS/style/myprogressAccepted_style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>">
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -104,7 +104,7 @@
     <input id="nav-toggle" type="checkbox"> 
         <ul class="links">
             <li><a href="myprogressCompleted">Completed</a></li>
-            <li><a href="myprogressAccepted">In Progress</a></li>
+            <li><a href="myprogressAccepted" class="activelink">In Progress</a></li>
             <li><a href="myprogressOverdue">Overdue</a></li>
             <li><a href="myprogressPending">Pending</a></li>
         </ul>
@@ -134,6 +134,7 @@
                         <th>Due On</th>
                         <th>Required Time</th>
                         <th>View</th>
+                        <th>Remark</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,6 +145,7 @@
                             <td data-label="Due On">18/07/2021</td>
                             <td data-label="Required Time">5 hrs</td>
                             <td data-label="View"><a href="myprogressInprogressSelect"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">18</td>
@@ -152,6 +154,7 @@
                             <td data-label="Due On">10/07/2021</td>
                             <td data-label="Required Time">12 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">19</td>
@@ -160,6 +163,7 @@
                             <td data-label="Due On">22/05/2021</td>
                             <td data-label="Required Time">2 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">15</td>
@@ -168,6 +172,7 @@
                             <td data-label="Due On">12/09/2021</td>
                             <td data-label="Required Time">3 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">12</td>
@@ -176,6 +181,7 @@
                             <td data-label="Due On">23/10/2021</td>
                             <td data-label="Required Time">28 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">21</td>
@@ -184,6 +190,7 @@
                             <td data-label="Due On">12/04/2021</td>
                             <td data-label="Required Time">4 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">24</td>
@@ -192,6 +199,7 @@
                             <td data-label="Due On">15/03/2021</td>
                             <td data-label="Required Time">6 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         <tr>
                             <td data-label="Task Id">17</td>
@@ -200,13 +208,29 @@
                             <td data-label="Due On">21/07/2021</td>
                             <td data-label="Required Time">16 hrs</td>
                             <td data-label="View"><a href="#"><i class="fa fa-eye fa-2x" style="color:gray;" aria-hidden="true"></i></a></td>
+                            <td data-label="Remark"><button class="button" data-modal="modalOne"><i class="fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></button></td>
                         </tr>
                         
                         
-                    
-                    
                     </tbody>
                 </table>
+
+                <div id="modalOne" class="modal">
+                    <div class="modal-content">
+                        <div class="contact-form">
+                            <a class="close">&times;</a>
+                            <form action="/">
+                                <h3>Remark</h3>
+                                <!-- <span>Message</span> -->
+                                <div class="message">Message</div>
+                                <div>
+                                    <textarea rows="4"></textarea>
+                                </div>
+                                <button type="submit" href="/">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     
             </div>
         </div>
@@ -232,5 +256,28 @@
             });
         });
     </script>
+
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function(btn) {
+            btn.onclick = function() {
+            let modal = btn.getAttribute('data-modal');
+            document.getElementById(modal)
+                .style.display = "block";
+            }
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function(btn) {
+            btn.onclick = function() {
+            let modal = btn.closest('.modal');
+            modal.style.display = "none";
+            }
+        });
+        window.onclick = function(event) {
+            if(event.target.className === "modal") {
+            event.target.style.display = "none";
+            }
+        }
+        </script>
 </body>
 </html>
