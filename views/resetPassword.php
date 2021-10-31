@@ -34,7 +34,7 @@
 
         </div>
         <div class="right">
-            <div class="text1">
+            <!-- <div class="text1">
                 <h1>You Can Chanage The Password To Your Liking....</h1>
             </div>
             <div class="text2">
@@ -44,7 +44,16 @@
                     <li>English uppercase/lowercase letters</li>
                     <li>Numerals and Symbols</li>
                 </ul>
+            </div> -->
+            <div class="text2">
+                <h1>Password must have : </h1>
+                <ul>
+                    <li>Minimum 8 characters</li>
+                    <li>English uppercase/lowercase letters</li>
+                    <li>Numerals and Symbols</li>
+                </ul>
             </div>
+            <img src="../Asserts/reset_password.png" class="image">
 
         </div>
     </div>
