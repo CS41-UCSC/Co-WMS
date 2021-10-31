@@ -66,6 +66,10 @@ nav .icon-burger .line {
     transition: all .3s ease-in-out;
     
 }
+.activelink{
+  font-weight: 550;
+}
+
 
 
   
