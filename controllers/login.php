@@ -50,10 +50,9 @@ class login extends Controller
     {
 
         $user_name = $_POST['username'];
-        $email = $_POST['email'];
 
         $model = new login_Model();
-        $res = $model->doOTP($user_name, $email);
+        $res = $model->doOTP($user_name);
 
         if ($res) {
             echo '<script>alert("Sent Your OPT code")</script>';

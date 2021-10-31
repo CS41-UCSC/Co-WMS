@@ -17,7 +17,6 @@ class logout extends Controller{
         session_destroy();
 
         echo '<script>
-        alert("Session TimeOut");
         window.location.href="home";
         </script>';   
 
