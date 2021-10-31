@@ -1,6 +1,7 @@
 <?php
 
 include_once('controllers/team.php');
+include_once('controllers/department.php');
 
 
 class manageEmployeeAdd extends Controller{
@@ -17,6 +18,8 @@ class manageEmployeeAdd extends Controller{
 
         $team = new Team();
         $this->view->teams = $team->getTeams(); 
+        $team = new Department();
+        $this->view->depts = $team->getDepartments(); 
         $this->view->render('manageEmployeeAdd');
 
     }
@@ -29,6 +32,7 @@ class manageEmployeeAdd extends Controller{
         $empname= $_POST['Ename'];
         $empemail = $_POST['email'];
         $team = $_POST['team'];
+        $dept = $_POST['dept'];
         $emprole = $_POST['role'];
         $password = $_POST['password'];
         $Cpassword = $_POST['Cpassword'];
@@ -37,7 +41,7 @@ class manageEmployeeAdd extends Controller{
 
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $res = $this->model->insertEmployee($empid,$empname,$empemail,$team,$emprole,$hash,$password);
+            $res = $this->model->insertEmployee($empid,$empname,$empemail,$team,$dept,$emprole,$hash,$password);
 
             if($res){
                 /*$to = '$empemail';

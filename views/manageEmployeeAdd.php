@@ -154,12 +154,24 @@
                         <label for="mail">Employee Email :</label><br>
                         <input type="email" id="email" name="email" placeholder="Email Address" required onkeyup="email_validation();"><br>
                     </div>
+
+                    <div>
+                        <label for="role" id="label-role">Employee Role :</label><br>
+                        <select name="role" id="role">
+                            <option value="Team_Leader">Team_Leader</option>
+                            <option value="Team_Member">Team_Member</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Dept_Manager">Dept_Manager</option>
+                        </select><br>
+                    </div>
+
                     <div>
                         <?php
-                        $res = $this->teams;
+                        $res = $this->depts;
                         ?>
-                        <label for="Tname">Team Name :</label><br>
-                        <select name="team" id="role">
+                        <label for="Dname">Department Name :</label><br>
+                        <select name="dept" id="role">
+                            <option value=""></option>;
                             <?php
                             $i=0;
                             foreach ($res as $row) {
@@ -171,15 +183,23 @@
                     </div>
 
                     <div>
-                        <label for="role" id="label-role">Employee Role :</label><br>
-                        <select name="role" id="role">
-                            <option value="Team_Leader">Team_Leader</option>
-                            <option value="Team_Member">Team_Member</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Dept_Manager">Dept_Manager</option>
+                        <?php
+                        $res = $this->teams;
+                        ?>
+                        <label for="Tname">Team Name :</label><br>
+                        <select name="team" id="role">
+                            <option value=""></option>;
+                            <?php
+                            $i=0;
+                            foreach ($res as $row) {
+                                echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                $i=$i+1;
+                            } ?>
+
                         </select><br>
                     </div>
-                    <div></div>
+
+                    
                     <div>
                         <label for="password">Password :</label><br>
                         <input type="password" id="cpass" name="password" placeholder="Password" required onkeyup="validationc();"><br>

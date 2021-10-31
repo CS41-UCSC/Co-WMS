@@ -112,7 +112,7 @@
 
                     <?php
                     $result = $this->users;
-
+                                                               
                     foreach ($result as $row) {
 
                         echo '<div class="member">
