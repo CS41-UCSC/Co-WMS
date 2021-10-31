@@ -113,10 +113,10 @@ class login_Model extends Model{
         }   
     }
 
-    function doOTP($user_name, $email){
+    function doOTP($user_name){
 
 
-        $sql = "SELECT * FROM systemuser WHERE EmpID = ('$user_name') AND EmpEmail = ('$email') ; ";
+        $sql = "SELECT * FROM systemuser WHERE EmpID = ('$user_name') ; ";
         $res = $this->db->runQuery($sql);
 
         $otp = mt_rand(10000000, 99999999);
@@ -125,9 +125,10 @@ class login_Model extends Model{
         
         if(count($res) > 0){
 
+            $email = $res[0][3];
             $mail_subject = 'Message from Co-WMS website';
             $email_body = "Hello {$user_name}\n" ;
-            $email_body .= "Your OPT code : {$otp} \n";
+            $email_body .= "Your OTP code : {$otp} \n";
             $email_body .= "Thank you.";
             $from = 'From: cowmsofficial@gmail.com';
 
