@@ -14,7 +14,7 @@ class leave_Model extends Model{
 	function insert($start, $end, $leavetype){
 		$empID = $_SESSION['login_user'];
 		$status = "pending";
-		$sql="INSERT INTO leaves (StartDate,EndDate,Reason,EmpID,status) VALUES ('$start','$end','$leavetype','$empID',)";
+		$sql="INSERT INTO empleave (StartDate,EndDate,LeaveType,LStatus,EmpID) VALUES ('$start','$end','$leavetype','$status','$empID')";
 		return $this->db->runQuery($sql);
 		
 		/*try{
