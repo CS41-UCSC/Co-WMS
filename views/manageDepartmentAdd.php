@@ -156,7 +156,8 @@
                         
                         <div>
                             
-                                <input type="submit" value="Back" class="rectan">
+                                <!-- <input type="submit" value="Back" class="rectan"> -->
+                                <a href="manageDepartment" class="back" style="color: grey;"><span><i class="fa fa-arrow-left"></i>Back</span></a>
                                 <input type="submit" value="Submit" class="rectan">
                             
                         </div>
