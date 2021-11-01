@@ -21,10 +21,11 @@ class manageEmployeeEditDelete extends Controller{
         $empname= $_POST['Ename'];
         $empemail = $_POST['email'];
         $emprole = $_POST['role'];
+        $empstatus=$_POST['Estatus'];
         // $password = $_POST['password'];
         // $Cpassword = $_POST['Cpassword'];
 
-        $this->model->editEmployee($empid,$empname,$empemail,$emprole);
+        $this->model->editEmployee($empid,$empname,$empemail,$emprole,$empstatus);
         
         header('location: http://localhost/CO-WMS/manageEmployeeEditDelete');
 
