@@ -67,6 +67,10 @@
       
   }
 
+  .activelink{
+    font-weight: 550;
+}
+
   
   /*background: rgba(87, 87, 87, 0.5);
   backdrop-filter: blur(1px);*/
@@ -182,7 +186,7 @@
       
       color: #FFFFFF;
 
-      margin-left: 80px;
+      margin-left: 535px;
       
     }
 
