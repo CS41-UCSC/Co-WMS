@@ -154,15 +154,15 @@
                     <!-- <form action=""> -->
                     <div>
                         <label for="epmId">Employee Id :</label><br>
-                        <input type="text" id="epmId" name="epmId" value="<?php echo $emp[0]['EmpID'] ;?>"><br>
+                        <input type="text" id="epmId" name="epmId" value="<?php if(!empty($emp[0]['EmpID'])){ echo $emp[0]['EmpID'];}else{echo "";}?>"><br>
                     </div>
                     <div>
                         <label for="Ename">Employee name :</label><br>
-                        <input type="text" id="Ename" name="Ename" value="<?php echo $emp[0]['EmpName'] ;?>"><br>
+                        <input type="text" id="Ename" name="Ename" value="<?php if(!empty($emp[0]['EmpName'])){ echo $emp[0]['EmpName'];}else{echo "";}?>"><br>
                     </div>
                     <div>
                         <label for="mail">Employee Email :</label><br>
-                        <input type="email" id="email" name="email" value="<?php echo $emp[0]['EmpEmail'] ;?>"><br>
+                        <input type="email" id="email" name="email" value="<?php if(!empty($emp[0]['EmpEmail'])){ echo $emp[0]['EmpEmail'];}else{echo "";}?>"><br>
                     </div>
                     <!-- <div>
                             <label for="mnumber">Employee Role :</label><br>

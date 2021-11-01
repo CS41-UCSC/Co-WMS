@@ -142,7 +142,7 @@
                 <div class="flex-container">
                         <div>
                             <label for="tname">Team Name :</label>
-                            <input type="text" id="tname" name="tname" placeholder="Team Name"><br>
+                            <input type="text" id="tname" name="tname" placeholder="Team Name" required><br>
                         </div>
                         <!-- <div>
                             <label for="tId">Team Id :</label>
@@ -151,7 +151,7 @@
                        
                         <div>
                             <label for="dId">Department Id :</label>
-                            <input type="text" id="dId" name="dId" placeholder="Department Id"><br>
+                            <input type="text" id="dId" name="dId" placeholder="Department Id" required><br>
                         </div>
                         <!-- <div></div> -->
                         

@@ -159,7 +159,7 @@
                             echo '<td>' . $row['EmpEmail'] . '</td>';
                             echo '<td>' . $row['EmpRole'] . '</td>';
                             // echo '<td data-label="Edit"><a href="manageEmployeeEditDelete"><i class="fa fa-pencil fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
-                            echo '<td data-label="Edit"><a href="manageEmployeeEditDelete?empId='.$row['EmpID'].'"><i class="fa fa-pencil fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
+                            echo '<td data-label="Edit"><a href="manageEmployeeEditDelete?epmId='.$row['EmpID'].'"><i class="fa fa-pencil fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
                             echo '<td data-label="Terminate"><a href="#"><i class="fa fa-minus-circle fa-lg" style="color:grey;" aria-hidden="true"></i></a></td>';
                             echo '</tr>';
                         }
