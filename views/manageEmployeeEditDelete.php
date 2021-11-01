@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/manageEmployeeEditDelete_style.css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <link rel="stylesheet" href="../Co-WMS/style/manageEmployeeEditDelete_style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>">
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
@@ -107,8 +107,8 @@
         <input id="nav-toggle" type="checkbox">
         <ul class="links">
             <li><a href="manageEmployee" class="activelink">Employees</a></li>
-            <li><a href="manageDepartment" class="activelink">Departments</a></li>
-            <li><a href="manageTeam" class="activelink">Teams</a></li>
+            <li><a href="manageDepartment">Departments</a></li>
+            <li><a href="manageTeam">Teams</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -142,12 +142,13 @@
             <?php 
                 $emp=$this->users;
 
-                // foreach($emp as $row){
-
-                // }
-
-
             ?>
+            
+
+
+
+
+            
 
                 <div class="flex-container">
                     <!-- <form action=""> -->
@@ -170,7 +171,7 @@
                     <div>
                         <label for="role" id="label-role">Employee Role :</label><br>
                         <select name="role" id="role">
-                            <!-- <option value="HR Manager">HR Manager</option> -->
+                            <option value="HR_Manager">HR Manager</option>
                             <option value="Dept_Manager">Department Manager</option>
                             <option value="Team_Leader">Team Leader</option>
                             <option value="Team_Member">Team Member</option>
@@ -186,23 +187,30 @@
                         <label for="Cpassword">Confirm Password :</label><br>
                         <input type="text" id="Cpassword" name="Cpassword" placeholder="Confirm Password"><br>
                     </div> -->
-                    <!-- <div>
+                    <div>
                             <label for="Estatus">Employee Status :</label><br>
-                            <input type="text" id="Estatus" name="Estatus" placeholder="Employee Status"><br>
-                        </div> -->
+                            <select name="Estatus" id="Estatus">
+                                <option value="active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                        </select><br>
+                        </div>
+                        <div></div>
+               
 
                     <div>
                         <a href="manageEmployee" class="back" style="color: grey;"><span><i class="fa fa-arrow-left"></i>Back</span></a>
                     </div>
                     <div>
-                        <!-- <form action="POST">
-                                <input type="submit" value="Add" name="Add" class="rectan">
-                            </form> -->
+                        <!-- <form action="manageEmployee">
+                                <input type="submit" value="Submit" name="Add" class="rectan">
+                        </form> -->
                         <button type="submit" class="rectan" name="Add">Submit</button>
+                        
                     </div>
-                    <!-- </form> -->
+                    
                 </div>
             </form>
+
         </div>
     </main>
 

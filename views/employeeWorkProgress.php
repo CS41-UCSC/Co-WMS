@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/employeeWorkProgress_style.css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <link rel="stylesheet" href="../Co-WMS/style/employeeWorkProgress_style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>">
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -245,7 +245,7 @@
 
                 for (i = 0; i < tr.length; i++) {
 
-                    td = tr[i].getElementsByTagName("td")[0];
+                    td = tr[i].getElementsByTagName("td")[1];
 
                     if (td) {
                         txtValue = td.textContent || td.innerText;

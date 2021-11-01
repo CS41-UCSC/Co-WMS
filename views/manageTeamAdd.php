@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/manageTeamAdd_style.css">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <link rel="stylesheet" href="../Co-WMS/style/manageTeamAdd_style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>">
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
@@ -107,7 +107,7 @@
         <ul class="links">
             <li><a href="manageEmployee">Employees</a></li>
             <li><a href="manageDepartment">Departments</a></li>
-            <li><a href="manageTeam">Teams</a></li>
+            <li><a href="manageTeam" class="activelink">Teams</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -156,11 +156,15 @@
                         <!-- <div></div> -->
                         
                         <div>
-                            
-                                <input type="submit" value="Back" class="rectan">
+                                <!-- <input type="submit" value="Back" class="rectan"> -->
+                                <a href="manageTeam" class="back" style="color: grey;"><span><i class="fa fa-arrow-left"></i>Back</span></a>
                                 <input type="submit" value="Submit" class="rectan">
                            
                         </div>
+
+                        <!-- <div>
+                            <a href="manageTeam" class="back" style="color: grey;"><span><i class="fa fa-arrow-left"></i>Back</span></a>
+                        </div> -->
                         <!-- <div>
                             
                                 <input type="submit" value="Submit" class="rectan">

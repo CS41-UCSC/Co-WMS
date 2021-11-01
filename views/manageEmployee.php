@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css" type="text/css">
-    <link rel="stylesheet" href="../Co-WMS/style/manageEmployee_style.css" type="text/css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>" type="text/css">
+    <link rel="stylesheet" href="../Co-WMS/style/manageEmployee_style.css?<?php echo time(); ?>" type="text/css">
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -103,7 +103,7 @@
     <nav class="subnav">
         <input id="nav-toggle" type="checkbox">
         <ul class="links">
-            <li><a href="manageEmployee">Employees</a></li>
+            <li><a href="manageEmployee" class="activelink">Employees</a></li>
             <li><a href="manageDepartment">Departments</a></li>
             <li><a href="manageTeam">Teams</a></li>
         </ul>

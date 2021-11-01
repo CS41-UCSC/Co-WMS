@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css"> -->
     <link rel="stylesheet" href="../Co-WMS/style/myprogressPending_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="../Co-WMS/style/navbar_style.css?<?php echo time(); ?>" type="text/css">
-    <script language="javascript" src="../Co-WMS/views/navigation.js"></script>
+    <script language="javascript" src="../Co-WMS/views/navigation.js?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -109,7 +109,7 @@
             <li><a href="myprogressCompleted">Completed</a></li>
             <li><a href="myprogressAccepted">In Progress</a></li>
             <li><a href="myprogressOverdue">Overdue</a></li>
-            <li><a href="myprogressPending">Pending</a></li>
+            <li><a href="myprogressPending" class="activelink">Pending</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
