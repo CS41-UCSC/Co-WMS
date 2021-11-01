@@ -165,7 +165,7 @@
 			</div>
 			</div>
 			<div class="item2">
-				<h2>Employee Progress Report</br>Month of Oct 2021</h2>
+				<h2>Employee Progress Report</br>Month of <?php echo date("M") ." ". date("Y"); ?></h2>
 				<span>Generated on - <?php echo date("d")." ". date("M") ." ". date("Y"); ?></span></br>
 				<p>Employee ID: </br>
 				Employee Name: </br></br>
