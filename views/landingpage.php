@@ -167,8 +167,8 @@
         var ap = '<?php echo $a; ?>';
         var pe = '<?php echo $d; ?>';
 
-        var xValues = ["Assign Taks", "Completed Tasks", "Approved Tasks", "Pending Tasks"];
-        var yValues = [pe, cp, ap, pe];
+        var xValues = ["Pending Tasks", "Completed Tasks", "Approved Tasks", "Pending Tasks"];
+        var yValues = [ip, cp, ap, pe];
         var barColors = ["#407294", "#01786f", "#bd6c82", "#69a8a2", ];
 
         new Chart("myChart", {
@@ -206,7 +206,7 @@
         var ap = '<?php echo $a; ?>';
         var pe = '<?php echo $d; ?>';
         var ov = 0;
-        var ashours = (Number(ip) + Number(cp) + Number(ap));
+        var ashours = (Number(ip) + Number(cp) + Number(ap) + Number(pe));
 
         if (ap > 160) {
             ov = 160 - ap;
