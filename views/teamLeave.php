@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://localhost/Co-WMS/style/myleave.css?<?php echo time(); ?>" type="text/css">
 	<link rel="stylesheet" href="http://localhost/Co-WMS/style/nav_style.css?<?php echo time(); ?>" type="text/css">
+	<link rel="stylesheet" href="http://localhost/Co-WMS/style/notification_style.css?<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="http://localhost/Co-WMS/font-awesome-4.7.0/css/font-awesome.min.css">
-	<script language="javascript" src="http://localhost/Co-WMS/views/navigation.js?<?php echo time(); ?>" >
+	<script language="javascript" src="http://localhost/Co-WMS/views/navigation.js?<?php echo time(); ?>">
 	</script>
 	<style>
 	.item4{
@@ -17,7 +18,7 @@
     <title>CO-WMS</title>
 </head>
 
-<body class="preload" onload='setbutton()'>
+<body class="preload" onload='setbutton("<?php echo $_SESSION["memberaccess"] ?>","<?php echo $_SESSION["myprofile"] ?>","<?php echo $_SESSION["manageraccess"] ?>","<?php echo $_SESSION["leaderaccess"] ?>","<?php echo $_SESSION["hraccess"] ?>","<?php echo $_SESSION["adminaccess"] ?>")'>
     <header class="header">
         <button class="header-button" id="btnNav" type="button">
             <i class="fa fa-bars fa-lg"></i>
@@ -39,7 +40,18 @@
                                         
                                     ?>
         </label>
-        <div class="notification" ><a href="#" ><i class="fa fa-bell fa-lg" > </i> </a> </div>
+        <div class="notification" >
+			<button class="icon"><i class="fa fa-bell fa-lg" ></i>
+				<span class="badge">5</span>
+			</button>
+			<div class="list" >
+				<a href="#">TaskID 101 has been Approved</a>
+				<a href="#">TaskID 121 has been Assigned</a>
+				<a href="#">TaskID 102 is Overdue</a>
+				<a href="#">LeaveRq 100 has been Approved</a>
+				<a href="#">10 Hours Pending to Complete</a>
+			</div>
+		</div>
         <div class="user-login"> <?php echo $_SESSION['login_user']; ?> </div>
         <img  class="img-rounded-circle" src="http://localhost/Co-WMS/Asserts/avator.jpg" alt="" />
     </header>
@@ -99,7 +111,10 @@
             <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="dashboard">
                 <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
             </a>
-			<a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_progress">
+            <a href="http://localhost/Co-WMS/landingpage" class="nav-link" id="d_dashboard">
+                <i class="fa fa-tachometer fa-lg" ><span>Dashboard</span></i>
+            </a>
+            <a href="http://localhost/Co-WMS/teamProgress" class="nav-link" id="d_progress">
                 <i class="fa fa-tachometer fa-lg" ><span>Department Progress</span></i>
             </a>
             <a href="http://localhost/Co-WMS/myprofile" class="nav-link" id="my_profile">

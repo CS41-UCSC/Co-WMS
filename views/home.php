@@ -17,13 +17,13 @@
 	<div class="welcome"> <h3> Welcome to the Home page of CO-WMS </h3> </div>
     <div class="container">
         <div class="item1">
-			<img src="../Co-WMS/Asserts/login.jpeg" alt="">
+			<img src="../Co-WMS/Asserts/abnavod.jpeg" alt="">
         </div>
         <div class="item2">
             <img src="../Co-WMS/Asserts/login.jpeg" alt="">
         </div>
 		<div class="item3">
-			<img src="../Co-WMS/Asserts/login.jpeg" alt="">
+			<img src="../Co-WMS/Asserts/images.jpeg" alt="">
         </div>
     </div>
 	<div class="company">
