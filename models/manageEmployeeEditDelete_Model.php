@@ -7,9 +7,9 @@ class manageEmployeeEditDelete_Model extends Model{
         parent::__construct();
     }
 
-    function editEmployee($empid,$empname,$empemail,$emprole,$empstatus){
+    function editEmployee($empid,$empname,$empemail,$emprole){
 
-        $sql = "UPDATE systemuser SET EmpName='$empname' , EmpEmail='$empemail' , EmpRole='$emprole' , EmpStatus='$empstatus' WHERE EmpID=('$empid') " ;
+        $sql = "UPDATE systemuser SET EmpName='$empname' , EmpEmail='$empemail' , EmpRole='$emprole' WHERE EmpID=('$empid') " ;
 
         // return $this->db->query($sql);
 
