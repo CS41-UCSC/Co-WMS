@@ -167,7 +167,7 @@
         var ap = '<?php echo $a; ?>';
         var pe = '<?php echo $d; ?>';
 
-        var xValues = ["Pending Tasks", "Completed Tasks", "Approved Tasks", "Pending Tasks"];
+        var xValues = ["InProgress Tasks", "Completed Tasks", "Approved Tasks", "Pending Tasks"];
         var yValues = [ip, cp, ap, pe];
         var barColors = ["#407294", "#01786f", "#bd6c82", "#69a8a2", ];
 
