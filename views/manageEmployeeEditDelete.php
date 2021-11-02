@@ -187,14 +187,14 @@
                         <label for="Cpassword">Confirm Password :</label><br>
                         <input type="text" id="Cpassword" name="Cpassword" placeholder="Confirm Password"><br>
                     </div> -->
-                    <div>
+                    <!-- <div>
                             <label for="Estatus">Employee Status :</label><br>
                             <select name="Estatus" id="Estatus">
                                 <option value="active">Active</option>
                                 <option value="Inactive">Inactive</option>
                         </select><br>
                         </div>
-                        <div></div>
+                        <div></div> -->
                
 
                     <div>
