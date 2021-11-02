@@ -23,11 +23,11 @@ class manageEmployeeEditDelete extends Controller{
             $empname= $_POST['Ename'];
             $empemail = $_POST['email'];
             $emprole = $_POST['role'];
-            $empstatus=$_POST['Estatus'];
+            // $empstatus=$_POST['Estatus'];
             // $password = $_POST['password'];
             // $Cpassword = $_POST['Cpassword'];
 
-            $this->model->editEmployee($empid,$empname,$empemail,$emprole,$empstatus);
+            $this->model->editEmployee($empid,$empname,$empemail,$emprole);
 
             //$this->view->users =  $this->model->getData($_POST['epmId']);
            // $this->view->employee=0;
