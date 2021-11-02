@@ -10,11 +10,13 @@ class manageDepartmentAdd_Model extends Model{
     function insertDepartment($dName,$dId,$dManagerId){
 		
 		$sql="";
-		if($ManagerId == NULL){
+		if($dManagerId == NULL){
 			$sql = "INSERT INTO `dept`( `DeptID`, `DeptName`) VALUES ('$dId','$dName')";
+            
 		}
         else{
 			$sql = "INSERT INTO `dept`( `DeptID`, `DeptName`,`Dept_Manager`) VALUES ('$dId','$dName','$dManagerId')";
+            
 		}
 
 
