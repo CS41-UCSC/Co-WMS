@@ -117,6 +117,7 @@
 
                         echo '<div class="member">
                         <div id="eid" value=' . $row['0'] . '>' . $row['0'] . '</div>
+                        <div>' . $row['1'] . ' h</div>
                         <div><progress id="file" value=' . $row['1'] . ' max="160">' . $row['1'] . '</progress></div>
                         <div id=' . $row['0'] . '><input type="button" class="view"  onclick="loadTask()" ></div>
                         </div>';
