@@ -142,11 +142,11 @@
                 <div class="flex-container">
                         <div>
                             <label for="dname">Department Name :</label>
-                            <input type="text" id="dname" name="dname" placeholder="Department Name"><br>
+                            <input type="text" id="dname" name="dname" placeholder="Department Name" required><br>
                         </div>
                         <div>
                             <label for="dId">Department Id :</label>
-                            <input type="text" id="dId" name="dId" placeholder="Department Id"><br>
+                            <input type="text" id="dId" name="dId" placeholder="Department Id" required><br>
                         </div>
                         <div>
                             <label for="dMId">Department Manager Id :</label>
